@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>File</title>
+</head>
+
+<body>
+<p>File-Dir</p>
+<ul>
+  <li>Object
+    <ul>
+      <li><a href="http://ruby-doc.org/core-1.8.7/Dir.html">Dir</a></li>
+      <li><a href="http://ruby-doc.org/core-1.8.7/File.html"></a></li>
+      <li><a href="http://ruby-doc.org/core-1.8.7/FileTest.html">FileTest</a></li>
+      <li><a href="http://ruby-doc.org/core-1.8.7/IO.html">IO</a>
+        <ul>
+          <li><a href="http://ruby-doc.org/core-1.8.7/File.html">File</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="http://shop.oreilly.com/product/9780596523695.do">Ruby Cookbook</a>, Chapter 6, Files and Directories</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Checking to See If a File Exists<br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Checking Your Access to a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Changing the Permissions on a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Seeing When a File Was Last Used Problem</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Listing a Directory</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Reading the Contents of a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Writing to a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Writing to a Temporary File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><br />
+Picking a Random Line from a File<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Finding the Files You Want<br />
+Finding and Changing the Current Working Directory</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Comparing Two Files</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Performing Random Access on &quot;Read-Once&quot; Input Streams</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Walking a Directory Tree</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Locking a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+Backing Up to Versioned Filenames</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Pretending a String Is a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Redirecting Standard Input or Output</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Processing a Binary File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Deleting a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Truncating a File</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>How to find Rails's root</p>
+<ul>
+  <li>PHOTO_STORE = File.join Rails.root, 'public', 'photo_store'</li>
+  <li>&quot;#{Rails.root}/public/photo_store&quot;</li>
+  <li>File.expand_path(RAILS_ROOT)</li>
+</ul>
+<p>&nbsp;</p>
+<p>procedure</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>read</td>
+    <td>examine</td>
+    <td>write</td>
+  </tr>
+  <tr>
+    <td>name parts</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>path</td>
+    <td>File.join Rails.root , &quot;shem_config&quot;, &quot;ServiceModule.zh.txt&quot;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>file</td>
+    <td>open(self.config_path) { |f|<br />
+      <br />
+# see next step<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>content / lines ... </td>
+    <td>f.readlines.each { |line|<br />
+puts line<br />
+items &lt;&lt; line<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="http://www.ruby-doc.org/core-1.9.3/File.html">File</a></h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+      <p>::chmod<br />
+        ::chown</p>
+      <p>::stat</p>
+      <p>::lstat<br />
+    </p>
+      <p>::lchmod<br />
+        ::lchown</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td><p><br />
+      #chmod<br />
+      #chown
+      </p>
+      <p><br />
+        <br />
+        #lstat<br />
+        <br />
+        #flock<br />
+      </p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::path</td>
+    <td>&nbsp;</td>
+    <td>#path<br />
+      <br />
+#to_path</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+      <p>::truncate</p></td>
+    <td>&nbsp;</td>
+    <td>#truncate</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::absolute_path<br />
+      <br />
+      ::basename</td>
+    <td>::blockdev?<br />
+      ::chardev?</td>
+    <td>::delete</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::dirname</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::expand_path<br />
+      ::extname</td>
+    <td><br />
+      ::exist?<br />
+      ::exists?</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::join</p>
+      <p>::split</p>
+      <p>&nbsp;</p>
+      <p>::realdirpath<br />
+        ::realpath</p></td>
+    <td><p>::fnmatch<br />
+        ::fnmatch?</p></td>
+    <td><p>::rename</p>
+      <p>::unlink</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>::ftype<br />
+      <br />
+::identical?<br />
+<br />
+::readlink</td>
+    <td><p>::symlink</p>
+      <p>::link</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+      <p><br />
+      </p></td>
+    <td><p><br />
+    </p>
+<p></p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::new<br />
+::open<br /></td>
+    <td><p>&nbsp;</p></td>
+    <td><p>::umask</p>
+    <p>::utime</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>(some) File's class methods vs. (all) File::Stat instance methods</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="http://ruby-doc.org/core-1.9.3/File.html">File</a>'s class methods</td>
+    <td><a href="http://ruby-doc.org/core-1.9.3/File.html">File</a>'s instance methods</td>
+    <td><a href="http://ruby-doc.org/core-1.9.3/File/Stat.html">File::Stat</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>::new<br />
+      #&lt;=&gt;<br />
+      <br />
+      #blksize<br />
+      <br />
+      #blocks<br />
+        <br />
+        #dev<br />
+        #dev_major<br />
+        #dev_minor<br />
+        <br />
+        #ftype<br />
+        <br />
+        #ino<br />
+        #inspect<br />
+        #mode<br />
+        <br />
+        #nlink<br />
+        <br />
+        <br />
+        #rdev<br />
+        #rdev_major<br />
+        #rdev_minor<br />
+    </p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::atime</p>
+      <p>::ctime</p>
+    <p>::mtime</p></td>
+    <td><p>#atime<br />
+    #ctime</p>
+    <p>#mtime</p></td>
+    <td><p>#atime</p>
+    <p>#ctime</p>
+    <p>#mtime</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>::owned?</p>
+      <p>::grpowned?</p>
+      <p>::setgid?<br />
+    ::setuid?</p></td>
+    <td><p>#owned?</p>
+      <p>#grpowned?</p>
+      <p>#setgid?<br />
+        #setuid?</p>
+    <p>#gid</p>
+    <p>#uid</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::executable?<br />
+::executable_real?</p>
+      <p>::world_readable?<br />
+        ::world_writable?<br />
+        ::writable?<br />
+        ::writable_real?</p>
+      <p>::readable?<br />
+    ::readable_real?</p>
+    <p>::zero?</p></td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+      <p>#executable?<br />
+#executable_real?</p>
+      <p>#readable?<br />
+#readable_real?</p>
+      <p>#world_readable?<br />
+        #world_writable?<br />
+        #writable?<br />
+        #writable_real?<br />
+    #zero?</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::size</p>
+    <p>::size?</p></td>
+    <td><p>#size</p>
+    <p>&nbsp;</p></td>
+    <td><p>&nbsp;</p>
+    <p>#size<br />
+#size?</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::file?</p>
+    <p>::directory?</p>
+    <p>::socket?<br />
+      <br />
+::sticky?</p>
+    <p>::symlink?</p>
+    <p>::pipe?</p></td>
+    <td>&nbsp;</td>
+    <td><p>#directory?<br />
+      <br />
+    #file?</p>
+    <p>#socket?<br />
+#sticky?<br />
+#symlink?</p>
+    <p>#pipe?</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>#blockdev?<br />
+#chardev?</td>
+  </tr>
+</table>
+<p><br />
+  <br />
+  <br />
+</p>
+<h2>Dir</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>::[]</p>
+      <p>::glob</p>
+      <p>::entries</p>
+      <p>::foreach</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>::chdir<br />
+      ::chroot<br /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::home<br />
+      ::getwd<br />
+      ::pwd</td>
+    <td>&nbsp;</td>
+    <td>::mkdir</td>
+  </tr>
+  <tr>
+    <td><br />
+      ::new<br />
+      ::open</td>
+    <td>::exist?<br />
+      ::exists?</td>
+    <td>&nbsp;</td>
+    <td><p>::delete</p>
+      <p>::rmdir<br />
+        ::unlink</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>instance methods seem all like reading</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>#close<br />
+      #each<br />
+      <br />
+      <br /></td>
+    <td>#pos<br />
+      #pos=<br />
+      #read<br />
+      #rewind<br />
+      #seek<br />
+      #tell</td>
+    <td><p>#inspect<br />
+      #path</p>
+      <p>#to_path</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><br />
+</p>
+<p><br />
+  <br />
+</p>
+<p><br />
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

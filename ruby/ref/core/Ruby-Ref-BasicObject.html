@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ruby-Ref-BasicObject</title>
+</head>
+
+<body>
+<h1>Ruby-Ref-BasicObject</h1>
+<p>&nbsp;</p>
+<ul>
+  <li><a href="http://www.ruby-doc.org/core-1.9.3/BasicObject.html">BasicObject</a>
+    <ul>
+      <li><a href="http://www.ruby-doc.org/core-1.9.3/Object.html">Object</a>
+        <ul>
+          <li><a href="http://www.ruby-doc.org/core-1.9.3/Method.html">Method</a></li>
+          <li><a href="http://www.ruby-doc.org/core-1.9.3/Module.html">Module</a>
+            <ul>
+              <li><a href="http://www.ruby-doc.org/core-1.9.3/Class.html">Class</a></li>
+            </ul>
+          </li>
+          <li><a href="http://www.ruby-doc.org/core-1.9.3/Proc.html">Proc</a></li>
+          <li><a href="http://www.ruby-doc.org/core-1.9.3/Symbol.html">Symbol</a></li>
+          <li><a href="http://www.ruby-doc.org/core-1.9.3/UnboundMethod.html">UnboundMethod</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://www.ruby-doc.org/core-1.9.3/ObjectSpace.html">ObjectSpace</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>Object</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>obj == other =&gt; true or false <br />
+      equal?(other) =&gt; true or false<br />
+    eql?(other) =&gt; true or false</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>obj === other =&gt; true or false</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>__id__ =&gt; fixnum <br />
+    object_id =&gt; fixnum</td>
+    <td>hash =&gt; fixnum</td>
+    <td>inspect =&gt; string</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>clone → an_object</td>
+    <td>nil?()</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>display(port=$&gt;) =&gt; nil</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>dup → an_object</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_enum(method = :each, *args) <br />
+    enum_for(method = :each, *args)</td>
+    <td>extend(module, ...) =&gt; obj</td>
+    <td><p>freeze =&gt; obj</p>
+    <p>frozen? =&gt; true or false</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>class</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>class =&gt; class</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_of?(class) =&gt; true or false</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>is_a?(class) =&gt; true or false <br />
+kind_of?(class) =&gt; true or false</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>taint</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>taint → obj</p>
+      <p>tainted? =&gt; true or false</p>
+    <p>untaint =&gt; obj</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_eval(string [, filename [, lineno]] ) =&gt; obj <br />
+    instance_eval {| | block } =&gt; obj</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_exec(arg...) {|var...| block } =&gt; obj </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>instance_variable and method</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_variable_defined?(symbol) =&gt; true or false </td>
+    <td>respond_to?(symbol, include_private=false) =&gt; true or false</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_variable_get(symbol) =&gt; obj</td>
+    <td><p>method(sym) =&gt; method</p>
+    <p>send(symbol [, args...]) =&gt; obj <br />
+__send__(symbol [, args...]) =&gt; obj</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_variable_set(symbol, obj) =&gt; obj</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>instance_variables =&gt; array</td>
+    <td><p>methods =&gt; array</p>
+    <p>private_methods(all=true) =&gt; array</p>
+    <p>protected_methods(all=true) =&gt; array</p>
+    <p>public_methods(all=true) =&gt; array</p></td>
+    <td>singleton_methods(all=true) =&gt; array</td>
+  </tr>
+</table>
+<p>tap{|x|...} =&gt; obj</p>
+<p>to_a → anArray</p>
+<p>to_s =&gt; string</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Method, Proc &amp; UnboundMethod</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>Method</p>
+    <p> Class Method is used to represent methods that are associated with a particular object: these method objects are bound to that object. Bound method objects for an object can be created using Object#method.</p></td>
+    <td><p>Proc</p>
+    <p>Proc objects are blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables.</p></td>
+    <td><p>UnboundMethod</p>
+      <p>Class Method is used to represent methods that are associated with a particular object: these method objects are bound to that object. Bound method objects for an object can be created using Object#method.</p>
+    <p>Ruby also supports unbound methods; methods objects that are not associated with a particular object. These can be created either by calling Module#instance_method or by calling unbind on a bound method object. The result of both of these is an UnboundMethod object.</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>meth == other_meth =&gt; true or false</td>
+    <td>prc == other_proc =&gt; true or false</td>
+    <td>meth == other_meth =&gt; true or false</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>call(args, ...) =&gt; obj <br />
+meth[args, ...] =&gt; obj</td>
+    <td>call(params,...) =&gt; obj <br />
+    prc[params,...] =&gt; obj</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>arity =&gt; fixnum</td>
+    <td>arity → fixnum</td>
+    <td>arity =&gt; fixnum</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>N/A</td>
+    <td>binding =&gt; binding</td>
+    <td>bind(obj) → method</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>clone()</td>
+    <td><p>clone()</p>
+    <p>dup()</p></td>
+    <td>clone()</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_s =&gt; string <br />
+    inspect =&gt; string</td>
+    <td>to_s =&gt; string</td>
+    <td><p>&nbsp;</p>
+    <p>to_s =&gt; string <br />
+      inspect =&gt; string</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>name =&gt; string</td>
+    <td>N/A</td>
+    <td>name =&gt; string</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>owner =&gt; class_or_module</td>
+    <td>N/A</td>
+    <td>owner =&gt; class_or_module</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>receiver =&gt; object</td>
+    <td>N/A</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_proc =&gt; prc</td>
+    <td>to_proc → prc</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>unbind =&gt; unbound_method</td>
+    <td>N/A</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Symbol </h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>::all_symbols =&gt; array</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>obj == other =&gt; true or false <br />
+      equal?(other) =&gt; true or false<br />
+    eql?(other) =&gt; true or false</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>id2name =&gt; string <br />
+to_s =&gt; string</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>inspect =&gt; string</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_i =&gt; fixnum</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_proc</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>to_sym =&gt; sym</td>
+    <td>In general, to_sym returns the Symbol corresponding to an object. As sym is already a symbol, self is returned in this case.</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

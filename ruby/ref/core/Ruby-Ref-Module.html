@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ruby-Ref-Module</title>
+</head>
+
+<body>
+<h1>Ruby-Ref-Module</h1>
+<p>&nbsp;</p>
+<h2>Module</h2>
+<p>Basics</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>#ancestors</p>
+      <p>#name<br />
+        <br />
+        #to_s</p></td>
+    <td>#&lt;<br />
+      #&lt;=<br />
+      #&lt;=&gt;<br />
+      #==<br />
+      #===<br />
+      #&gt;<br />
+      #&gt;=</td>
+    <td>::nesting<br />
+      ::new</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<h3>constants and variables</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#const_defined?<br />
+      <br />
+      <br />      <br /></td>
+    <td>&nbsp;</td>
+    <td>#class_variable_defined?<br />
+      <br />      <br /></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#constants</td>
+    <td>&nbsp;</td>
+    <td>#class_variables</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>#const_get</p>
+      <p>&nbsp;</p></td>
+    <td>#attr<br />
+#attr_accessor<br />
+#attr_reader<br />
+#attr_writer</td>
+    <td>#class_variable_get</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><br />
+      #const_set</p>
+      <p>#const_missing<br />
+    </p></td>
+    <td>&nbsp;</td>
+    <td>#class_variable_set</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#remove_const</td>
+    <td>&nbsp;</td>
+    <td>#remove_class_variable</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>```</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>::constants</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h3><br />
+  methods<br />
+</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>method</td>
+    <td>instance method</td>
+    <td>singleton method</td>
+    <td>class_method</td>
+  </tr>
+  <tr>
+    <td>defined?</td>
+    <td><p>&nbsp;</p>
+      <ul>
+        <li>#method_defined?</li>
+        <li>#public_method_defined?</li>
+        <li>#protected_method_defined?</li>
+        <li>#private_method_defined?</li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>list</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>#instance_methods</li>
+      <li>#public_instance_methods</li>
+      <li>#protected_instance_methods</li>
+      <li>#private_instance_methods<br />
+      </li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>get</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>#instance_method</li>
+      <li>#public_instance_method</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td><p>#public_class_method</p>
+      <p>#private_class_method</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>set</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+      <p>remove</p></td>
+    <td>#remove_method</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>callback</td>
+    <td>#method_added<br />
+      <br />
+      #method_removed<br />
+      #method_undefined<br /></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>#private<br />
+      <br />
+      #protected<br />
+      <br />
+      #public</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>#alias_method</p>
+      <p>#define_method</p></td>
+    <td>#undef_method</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>include</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>public instance method</td>
+    <td>private</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+      #include?<br />
+      <br />
+      #included_modules</td>
+    <td>#include</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>#included</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>eval</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#class_eval<br />
+      #class_exec</td>
+    <td>#module_eval<br />
+      #module_exec</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><br />
+  <br />
+  #append_features<br />
+  <br />
+  #autoload<br />
+  #autoload?<br />
+  <br />
+  <br />
+  #extend_object<br />
+  #extended<br />
+  #freeze<br />
+  <br />
+  <br />
+  #module_function<br />
+</p>
+<h2>Class</h2>
+<p>::new<br />
+  #allocate<br />
+  #inherited<br />
+  #new<br />
+  #superclass</p>
+</body>
+</html>
