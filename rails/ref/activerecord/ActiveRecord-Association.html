@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ActiveRecord-Association</title>
+</head>
+
+<body>
+<h1>ActiveRecord-Association</h1>
+<p>&nbsp;</p>
+<h2>Association (<a href="https://github.com/rails/rails/tree/master/activerecord/lib/active_record/associations">Github</a>)</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> # This is the root class of all associations ('+ Foo' signifies an included module Foo):<br />
+#</p>
+<ul>
+  <li>Association
+    <ul>
+      <li>SingularAssociation
+        <ul>
+          <li># HasOneAssociation<br />
+            <ul>
+              <li># HasOneThroughAssociation + ThroughAssociation<br />
+                </li>
+            </ul>
+          </li>
+          <li># BelongsToAssociation<br />
+            <ul>
+              <li># BelongsToPolymorphicAssociation<br />
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li># CollectionAssociation<br />
+        <ul>
+          <li># HasAndBelongsToManyAssociation<br />
+            </li>
+          <li># HasManyAssociation<br />
+            <ul>
+              <li># HasManyThroughAssociation + ThroughAssociation</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>private</td>
+  </tr>
+  <tr>
+    <td>Assocation</td>
+    <td><p>owner, target, reflection</p>
+    <p>delete :options, :to =&gt; :reflection</p></td>
+    <td><p>aliased_table_name</p>
+    <p>reset</p>
+    <p>reload</p>
+    <p>loaded?</p>
+    <p>loaded!</p>
+    <p>stale_target?</p>
+    <p>target=(target)</p>
+    <p>scope</p>
+    <p>assocation_scope</p>
+    <p>reset_scope</p>
+    <p>set_inverse_instance(record)</p>
+    <p>klass</p>
+    <p>target_scope</p>
+    <p>load_target</p>
+    <p>interpolate(sql, record=nil)</p>
+    <p>marshal_dump</p>
+    <p>marshal_load(data)</p>
+    <p>&nbsp;</p></td>
+    <td><p>find_target?</p>
+    <p>creation_attributes</p>
+    <p>set_owner_attributes(record)</p>
+    <p>foreign_key_present?</p>
+    <p>raise_on_type_mismatch(record)</p>
+    <p>inverse_reflection_for(record)</p>
+    <p>invertbile_for?(record)</p>
+    <p>stale_state</p>
+    <p>build_record(attributes)</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>SingularAssociation</td>
+    <td>&nbsp;</td>
+    <td>reader, writer, create, create!, build</td>
+    <td><p>create_scope</p>
+    <p>find_target</p>
+    <p>replace</p>
+    <p>set_new_record</p>
+    <p>create_record</p></td>
+  </tr>
+  <tr>
+    <td>HasOneAssocation</td>
+    <td>&nbsp;</td>
+    <td><p>handle_dependency</p>
+    <p>replace(record, save=true)</p>
+    <p>delete(method = options[:dependent])</p></td>
+    <td><p>set_new_record(record)</p>
+    <p>remove_target!(method)</p>
+    <p>nullify_owner_attributes(record)</p>
+    <p>transaction_if(value)</p></td>
+  </tr>
+  <tr>
+    <td><p>HasOneThroughAssociation</p>
+    <p>include ThroughAssocation</p></td>
+    <td>&nbsp;</td>
+    <td>replace(record)</td>
+    <td><p>create_through_record(record)</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>handle_dependency</p>
+      <p>replace</p>
+      <p>reset</p>
+    <p>updated?</p></td>
+    <td><p>find_target?</p>
+    <p>update_counters(record)</p></td>
+  </tr>
+  <tr>
+    <td>BelongsToPolymorphicAssocation</td>
+    <td>klass</td>
+    <td>&nbsp;</td>
+    <td><p>replace_keys(record)</p>
+    <p>different_target?(record)</p>
+    <p>inverse_reflection_for(record)</p>
+    <p>raise_on_type</p></td>
+  </tr>
+  <tr>
+    <td>CollectionAssocation</td>
+    <td><p>reader(force_reload=false)</p>
+    <p>ids_reader</p>
+    <p>select(select = nil)</p>
+    <p>find(*args)</p>
+    <p>first(*args)</p>
+    <p>last(*args)</p>
+    <p>count(column_name=nil, count_options={})</p>
+    <p>size</p>
+    <p>length</p>
+    <p>empty?</p>
+    <p>any?</p>
+    <p>many?</p>
+    <p>null_scope?</p></td>
+    <td><p>write(records)
+    </p>
+      <p>ids_writer(ids)</p>
+    <p>reset</p>
+    <p>build(attributes={}, &amp;block)</p>
+    <p>create(attributes={}, &amp;block)</p>
+    <p>create!(attributes={}, &amp;block)</p>
+    <p>concat(*records)</p>
+    <p>transaction(*args)</p>
+    <p>delete_all</p>
+    <p>destroy_all</p>
+    <p>&nbsp;</p>
+    <p>delete(*records)</p>
+    <p>destroy(*records)</p>
+    <p>&nbsp;</p>
+<p>uniq</p>
+    <p>replace(other_array)</p>
+    <p>include?(record)</p>
+    <p>load_target</p>
+    <p>add_to_target(record)</p>
+    <p>scope(opts={})</p></td>
+    <td><p>custom_counter_sql</p>
+    <p>costom_finder_sql</p>
+    <p>find_target</p>
+    <p>merge_target_lists(persisted, memory)</p>
+    <p>create_record(attributes, raise=false, &amp;block)</p>
+    <p>insert_record(record, validate=true, raise=false)</p>
+    <p>create_scope</p>
+    <p>delete_or_destroy(records, method)</p>
+    <p>remove_records(existing_records, records, method)</p>
+    <p>delete_records(records, method)</p>
+    <p>replace_records(new_target, original_target)</p>
+    <p>concat_records(records)</p>
+    <p>callback(method, record)</p>
+    <p>callbacks_for(callback_name)</p>
+    <p>fetch_first_or_last_using_find?(args)</p>
+    <p>include_in_memory?(record)</p>
+    <p>find_by_scan(*args)</p>
+    <p>first_or_last(type, *args)</p></td>
+  </tr>
+  <tr>
+    <td>HasAndBelongsToManyAssociation</td>
+    <td>join_table</td>
+    <td>insert_record(record, validate=true, raise=false)</td>
+    <td><p>count_records</p>
+    <p>delete_records(records, method)</p>
+    <p>invertible_for?(record)</p></td>
+  </tr>
+  <tr>
+    <td>HasManyAssociation</td>
+    <td>&nbsp;</td>
+    <td><p>handle_dependency</p>
+    <p>insert_record(record, validate=true, raise=false)</p></td>
+    <td><p>count_records</p>
+    <p>has_cached_counter?(reflection=reflection)</p>
+    <p>cached_counter_attribute_name(reflection=reflection)</p>
+    <p>update_counter(difference, reflection=reflection)</p>
+    <p>inverse_updates_counter_cache(reflection=reflection)</p>
+    <p>delete_records(records, method)</p>
+    <p>foreign_key_present?</p></td>
+  </tr>
+  <tr>
+    <td><p>HasManyThroughAssocation</p>
+    <p>include ThroughAssocation</p></td>
+    <td>&nbsp;</td>
+    <td><p>size</p>
+    <p>concat(*records)</p>
+    <p>concat_records(*records)</p>
+    <p>insert_record(record, validate=true, raise=false)</p>
+    <p>&nbsp;</p></td>
+    <td><p>through_assocation</p>
+    <p>build_through_record(record)</p>
+    <p>save_through_record(record)</p>
+    <p>build_record(attributes)</p>
+    <p>target_reflection_has_associated_record?</p>
+    <p>delete_records(records, method)</p>
+    <p>through_records_for(record)</p>
+    <p>delete_through_records(records)</p>
+    <p>find_target</p>
+    <p>invertible_for?(record)</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

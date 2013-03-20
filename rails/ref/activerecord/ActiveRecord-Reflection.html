@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ActiveRecord-Reflection</title>
+</head>
+
+<body>
+<h1>ActiveRecord-Reflection</h1>
+<p>&nbsp;</p>
+<h2>Reflection (<a href="https://github.com/rails/rails/blob/master/activerecord/lib/active_record/reflection.rb">Github</a>)</h2>
+<ul>
+  <li>MacroReflection
+    <ul>
+      <li>AggregateReflection</li>
+      <li>AssociationReflection
+        <ul>
+          <li>ThroughReflection</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>MacroReflection<br />
+    </p></td>
+    <td><p>&nbsp;</p>
+      <ul>
+        <li>name </li>
+        <li>macro</li>
+        <li> scope </li>
+        <li>options</li>
+        <li>active_record</li>
+        <li>plural_name</li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td>klass<br />
+      class_name</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>AggregateReflection</td>
+    <td>&nbsp;</td>
+    <td>mapping</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>AssociationReflection</p>
+      <p>&nbsp;</p></td>
+    <td><p>&nbsp;</p></td>
+    <td><p>klass<br />
+      table_name<br />
+      quoted_table_name<br />
+      join_table<br />
+      foreign_key<br />
+      foreign_type</p>
+      <p>type</p>
+      <p>primary_key_column<br />
+        association_foreign_key</p>
+      <p>association_primary_key(klass = nil)</p>
+      <p>active_record_primary_key<br />
+        counter_cache_column</p>
+      <p>columns(tbl_name)</p>
+      <p>has_inverse?</p>
+      <p>inverse_of</p>
+    <p>association_class</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>ThroughReflection<br />
+    </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    <td>delegate :foreign_key, :foreign_type, :association_foreign_key,<br />
+      :active_record_primary_key, :type, :to =&gt; :source_reflection</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
