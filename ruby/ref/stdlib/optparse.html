@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>optparse</title>
+</head>
+
+<body>
+<p><a href="http://ruby-doc.org/stdlib-2.0/libdoc/optparse/rdoc/OptionParser.html">optparse</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+::each_const<br />
+::getopts<br />
+<br />
+<br />
+::search_const<br />
+::show_version<br />
+<br />
+::with</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>::accept</p>
+    <p>::inc<br />
+::new</p>
+    <p>::reject</p>
+    <p>::terminate<br />
+    ::top</p></td>
+    <td><p>#accept</p>
+    <p>#inc</p>
+    <p>#new</p>
+    <p>#reject</p>
+    <p>#terminate#top</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+      #abort<br />
+      <br />
+      #banner<br />
+      #base<br />
+      #candidate<br />
+      <br />
+      #environment<br />
+      #getopts<br />
+      #help<br />
+      <br />
+      #load<br />
+      #make_switch<br />      <br /></td>
+    <td>#def_head_option<br />
+#def_option<br />
+#def_tail_option<br />
+#define<br />
+#define_head<br />
+#define_tail</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#on<br />
+#on_head<br />
+#on_tail<br />
+<br />
+#program_name<br />
+<br />
+#release<br />
+#remove<br />
+#separator<br />
+#summarize<br />
+<br />
+#to_a<br />
+#to_s<br />
+<br />
+#ver<br />
+#version<br />
+#warn</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#order<br />
+#order!<br />
+#parse<br />
+#parse!<br />
+#permute<br />
+#permute!</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Mandatory argument.</td>
+    <td><br />
+opts.on(&quot;-r&quot;, &quot;--require LIBRARY&quot;,<br />
+&quot;Require the LIBRARY before executing your script&quot;) do |lib|<br />
+options.library &lt;&lt; lib<br />
+end</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Optional argument; multi-line description.</td>
+    <td><p>&nbsp;</p>
+      <p><br />
+        opts.on(&quot;-i&quot;, &quot;--inplace [EXTENSION]&quot;,<br />
+  &quot;Edit ARGV files in place&quot;,<br />
+  &quot;  (make backup if EXTENSION supplied)&quot;) do |ext|<br />
+        options.inplace = true<br />
+        options.extension = ext || ''<br />
+        options.extension.sub!(/\A\.?(?=.)/, &quot;.&quot;)  # Ensure extension begins with dot.<br />
+    end</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Cast 'delay' argument to a Float.</td>
+    <td><br />
+opts.on(&quot;--delay N&quot;, Float, &quot;Delay N seconds before executing&quot;) do |n|<br />
+options.delay = n<br />
+end</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Cast 'time' argument to a Time object.</td>
+    <td><p>&nbsp;</p>
+      <p><br />
+        opts.on(&quot;-t&quot;, &quot;--time [TIME]&quot;, Time, &quot;Begin execution at given time&quot;) do |time|<br />
+        options.time = time<br />
+        end</p>
+    <p></p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Cast to octal integer.</td>
+    <td><br />
+opts.on(&quot;-F&quot;, &quot;--irs [OCTAL]&quot;, OptionParser::OctalInteger,<br />
+&quot;Specify record separator (default \\0)&quot;) do |rs|<br />
+options.record_separator = rs<br />
+end</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># List of arguments.</td>
+    <td><br />
+opts.on(&quot;--list x,y,z&quot;, Array, &quot;Example 'list' of arguments&quot;) do |list|<br />
+options.list = list<br />
+end</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Keyword completion.  We are specifying a specific set of arguments (CODES<br />
+# and CODE_ALIASES - notice the latter is a Hash), and the user may provide<br />
+# the shortest unambiguous text.</td>
+    <td><p>code_list = (CODE_ALIASES.keys + CODES).join(',')<br />
+        opts.on(&quot;--code CODE&quot;, CODES, CODE_ALIASES, &quot;Select encoding&quot;,<br />
+  &quot;  (#{code_list})&quot;) do |encoding|<br />
+        options.encoding = encoding<br />
+    end</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Optional argument with keyword completion.</td>
+    <td><p><br />
+      opts.on(&quot;--type [TYPE]&quot;, [:text, :binary, :auto],<br />
+  &quot;Select transfer type (text, binary, auto)&quot;) do |t|<br />
+      options.transfer_type = t<br />
+      end</p>
+      <p><br />
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td># Boolean switch.</td>
+    <td>opts.on(&quot;-v&quot;, &quot;--[no-]verbose&quot;, &quot;Run verbosely&quot;) do |v|<br />
+options.verbose = v<br />
+end</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
