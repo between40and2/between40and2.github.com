@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>csv</title>
+</head>
+
+<body>
+<h1>csv</h1>
+<p>&nbsp;</p>
+<p>http://ruby-doc.com/stdlib-2.0/libdoc/csv/rdoc/index.html</p>
+<p>&nbsp;</p>
+<p>CSV</p>
+<p>CCSV::Row</p>
+<p>CCSV::Table</p>
+<p>CCSV::MalformedCSVError</p>
+<p>CObject</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="http://stackoverflow.com/questions/8476769/import-from-csv-into-ruby-array-with-1st-field-as-hash-key-then-lookup-a-field">import from CSV into Ruby array, with 1st field as hash key, then lookup a field's value given header row</a></td>
+    <td>&nbsp;</td>
+    <td><p>require 'csv'</p>
+      <p>tickers = {}</p>
+      <p>CSV.foreach(&quot;stocks.csv&quot;, :headers =&gt; true, :header_converters =&gt; :symbol, :converters =&gt; :all) do |row|<br />
+        tickers[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]<br />
+    end</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
