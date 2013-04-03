@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ch 2 Tuesday: Methods</title>
+</head>
+
+<body>
+<p><br />
+</p>
+<p>&nbsp; </p>
+<h2>Ch 2 Tuesday: Methods</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2.1  A Duplication Problem</td>
+    <td><p>The Legacy system</p>
+      <p>Double, Treble ... Trouble</p>
+      <p>Bill's plan</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2.2 Dynamic Methods</td>
+    <td><p>Calling methods dynamically</p>
+      <p>The camping example</p>
+      <p>The Test::Unit example</p>
+      <p>Defning methods dynamically</p>
+      <p>Refactoring the Computer class</p>
+      <p>Step 1: adding dynamic dispatches</p>
+      <p>Step 2: generating methods dynamically</p>
+      <p>Step 3: sprinkling the code with introspection</p></td>
+    <td><p>&nbsp;</p>
+      <p>class A</p>
+      <p>define_method :my_met do |arg|</p>
+      <p>end</p>
+      <p>end</p></td>
+    <td><p>Symbols</p>
+      <p>Privacy matters</p></td>
+  </tr>
+  <tr>
+    <td>2.3 method_missing()</td>
+    <td><p>Overriding method_missing()</p>
+      <p>Ghost Methods</p>
+      <p>The Ruport example</p>
+      <p>The OpenStruct example</p>
+      <p>Dynamic Proxies</p>
+      <p>The Flickr example</p>
+      <p>Refactoring the Computer class (Again)</p>
+      <p>Refactor It!</p>
+      <p>Overriding respond_to?()</p>
+      <p>Refactoring Wrap-up</p></td>
+    <td>&nbsp;</td>
+    <td><p>Delegate</p>
+      <p>const_missing()</p></td>
+  </tr>
+  <tr>
+    <td>2.4 Quiz: Bug Hunt</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2.5 More method_missing()</td>
+    <td><p>When methods clash</p>
+      <p>The Builder example</p>
+      <p>Fixing the Computer class</p>
+      <p>Wrapping it up</p></td>
+    <td>Blank State</td>
+    <td><p>Performance Anxiety</p>
+      <p>Reserved methods</p>
+      <p>BasicObject</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>approaches to make method</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>- one is to make rule and make it configurable - leave the logic outside the code.</p>
+      <p>don't dream code can understand human's semantics, human must figure it out first, and them teach the code/machine</p>
+    <p>template is just a low end/profile among many approaches</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>one way is to look outside</td>
+    <td><p>its caller, and big picture.</p>
+    <p>what does it do? - the category of job</p>
+    <p>what are the drives to define specific methods?</p>
+    <p>what does the framework require? - please it.. </p>
+    <p>&nbsp;</p></td>
+    <td><p>type of callers</p>
+      <ul>
+        <li>framework - downwards - callback method</li>
+        <li>client - upwards - interface method</li>
+      </ul>
+    <p>which way is up?? and what does up mean in our case?</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>role of class - narrows the scope of methods/category</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>method_missing &amp; respond_to?</p>
+<p>&nbsp;</p>
+<p>http://technicalpickles.com/posts/using-method_missing-and-respond_to-to-create-dynamic-methods/</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><pre>def self.method_missing(method_sym, *arguments, &amp;block)    
+ # the first argument is a Symbol, so you need to_s it if you want to pattern match     
+  if method_sym.to_s =~ /^find_by_(.*)$/       
+   find($1.to_sym =&gt; arguments.first)     
+  else 
+      super  
+   end   
+end</pre></td>
+    <td><pre>def self.respond_to?(method_sym, include_private = false)     
+  if method_sym.to_s =~ /^find_by_(.*)$/  
+     true     
+  else     
+    super   
+  end   
+end</pre></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+</body>
+</html>

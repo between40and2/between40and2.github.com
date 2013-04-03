@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ch 5 Friday: Code That Writes Code</title>
+</head>
+
+<body>
+<h2>Ch 5 Friday: Code That Writes Code</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.1 Leading the Way</td>
+    <td><p>The Boss' challenge</p>
+      <p>A development plan</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.2 Kernel#eval</td>
+    <td><p>The Capistrano example</p>
+      <p>The irb example</p>
+      <p>strings of code vs. blocks</p>
+      <p>The trouble with eval()</p>
+      <p>Code injection</p>
+      <p>Defending yourself from code injection</p>
+      <p>Tainted objects and safe levels</p>
+      <p>Th eRB example</p></td>
+    <td>&nbsp;</td>
+    <td><p>Binding Objects</p>
+      <p>Nested irb sessions</p>
+      <p>Here Documents</p>
+      <p>Kernel#eval() and Kernal#load()</p></td>
+  </tr>
+  <tr>
+    <td>5.3 Quiz: Checked Attributes (Step 1)</td>
+    <td><p>Before you solve this Quiz...</p>
+    <p>Quiz Solution</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.4 Quiz: Checked Attributes (Step 2)</td>
+    <td><p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.5 Quiz: Checked Attributes (Step 3)</td>
+    <td><p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.6 Quiz: Checked Attributes (Step 4)</td>
+    <td><p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5.7 Hook Methods</td>
+    <td><p>&nbsp;</p>
+    <p>More Hooks</p>
+    <p>The Merb example</p>
+    <p>Class extension mixins</p></td>
+    <td>&nbsp;</td>
+    <td>Plugging into standard methods</td>
+  </tr>
+  <tr>
+    <td>5.8 Quiz: Checked Attributes (Step 5)</td>
+    <td><p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>Way of Metaprogramming</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Ways to define class methods</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Open class</td>
+    <td>def self.meth</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Class Extension Mixins (p185, c5.7)</td>
+    <td><pre>
+module AAA
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+  module ClassMethods
+  end
+
+end</pre></td>
+    <td><pre>module BBB 
+  include AAA
+end</pre></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>define it dynamically?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Ch 6 Epilogue</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+</html>

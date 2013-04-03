@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ch 4 Thursday: Class Definitions</title>
+</head>
+
+<body>
+<h2>Ch 4 Thursday: Class Definitions</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>4.1 Class Definitions Demystified</td>
+    <td><p>Inside class definitions</p>
+      <p>the current class</p>
+      <p>class_eval()</p>
+      <p>current class wrap-up</p>
+      <p>class instance variables</p>
+      <p>working on bookworm again</p>
+      <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td><p>The current class and special cases</p>
+      <p>deciding between instance_eval() and class_eval()</p>
+      <p>class variables</p></td>
+  </tr>
+  <tr>
+    <td>4.2 Quiz: Class Taboo</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>4.3 Singleton Methods</td>
+    <td><p>Introducing singleton methods</p>
+      <p>singleton methods in action</p>
+      <p>the turth about class methods</p>
+      <p>class macros</p>
+      <ul>
+        <li>the attr_accessor() example</li>
+      </ul>
+      <p>class macros applied</p></td>
+    <td><p>def self.deprecate(old_m, new_m)</p>
+      <p>define_method(old_m) do |*args, &amp;block|</p>
+      <p>warn</p>
+      <p>send(new_m, *args, &amp;block)</p>
+      <p>end</p>
+      <p>end</p>
+      <p>&nbsp;</p>
+      <p>deprecate :GetTitle, :title</p></td>
+    <td>Duck typing</td>
+  </tr>
+  <tr>
+    <td>4.4 Eigenclasses</td>
+    <td><p>The mystery of singleton methods</p>
+      <p>Eigenclasses revealed</p>
+      <p>Method lookup revisited</p>
+      <ul>
+        <li>lookup reviewed</li>
+        <li>eigenclasses and method lookup</li>
+      </ul>
+      <p>eigenclases and inheritance</p>
+      <p>The Great Unified Theory</p>
+      <p>Class Attributes</p></td>
+    <td>&nbsp;</td>
+    <td><p>Eigen...what?</p>
+      <p>Eigenclasses and instance_eval()</p>
+      <p>class method syntaxes</p>
+      <p>meta squared</p></td>
+  </tr>
+  <tr>
+    <td>4.5 Quiz: Module Trouble</td>
+    <td><p>&nbsp;</p>
+      <p>Class methods and include()</p>
+      <p>Object#entend</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>4.6 Aliases</td>
+    <td><p>method aliases</p>
+      <p>around aliases</p>
+      <p>the RubyGem example</p>
+      <p>The JCode example</p>
+      <p>Two words of warning</p>
+      <p>Solving the Amazon problem</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>4.7 Quiz: Broken Math</td>
+    <td><p>&nbsp;</p>
+      <p>Calling it a Day</p></td>
+    <td>&nbsp;</td>
+    <td>Don't forget modules!</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Define Open - there are still chances to change things after complication </p>
+<p>method making = rule + setting/directives </p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.ruby-forum.com/topic/67759">An alternative to the class Foo &lt; Struct.new(vars) idiom</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="http://caiustheory.com/defining-ruby-superclasses-on-the-fly">Defining Ruby Superclasses On The Fly</a></td>
+    <td><p>def current_awkward_bugger<br />
+      $awkward_bugger<br />
+      end</p>
+      <p>class Simon; end<br />
+        $awkward_bugger = Simon</p>
+      <p>class Fred &lt; current_awkward_bugger()<br />
+        end<br />
+    Fred.superclass # =&gt; Simon</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+</body>
+</html>
