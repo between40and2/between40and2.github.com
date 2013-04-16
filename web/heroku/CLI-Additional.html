@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Heroku CLI-Additional</title>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku keys</td>
+    <td><p>display keys for the current user</p>
+    <p>-l, --long  # display extended information for each key</p></td>
+    <td><p>$ heroku keys<br />
+      === email@example.com Keys<br />
+      ssh-rsa ABCDEFGHIJK...OPQRSTUV== email@example.com</p>
+      <p> $ heroku keys --long<br />
+        === email@example.com Keys<br />
+    ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAp9AJD5QABmOcrkHm6SINuQkDefaR0MUrfgZ1P</p>
+      <p>xir3a4fM1fwa00dsUwbUaRuR7FEFD8n1E9WwDf8SwQTHtyZsJg09G9myNqUzkYXCmydN7oGr</p>
+      <p>5IdVhRyv5ixcdiE0hj7dRnOJg2poSQ3Qi+Ka8SVJzF7nIw1YhuicHPSbNIFKi5s0D5a+nZb/E6MNGvhxoFCQX2IcNxaJMq</p>
+      <p>hzy1ESwlixz45aT72mXYq0LIxTTpoTqma1HuKdRY8HxoREiivjmMQulYP+CxXFcMyV9kxTKIUZ/FXqlC6G5vSm3J4YScSatPOj9ID5Howp</p>
+      <p>dlIx8F6y4p1/28r2tTl4CY40FFyoke4MQ== email@example.com</p>
+    <br /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku keys:add [KEY]</td>
+    <td><p>add a key for the current user</p>
+    <p> if no KEY is specified, will try to find ~/.ssh/id_[rd]sa.pub</p></td>
+    <td><p> $ heroku keys:add<br />
+      Could not find an existing public key.<br />
+      Would you like to generate one? [Yn] y<br />
+      Generating new SSH public key.<br />
+      Uploading SSH public key /.ssh/id_rsa.pub... done</p>
+      <p> $ heroku keys:add /my/key.pub<br />
+    Uploading SSH public key /my/key.pub... done</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku keys:remove KEY</td>
+    <td>remove a key from the current user</td>
+    <td> $ heroku keys:remove email@example.com<br />
+Removing email@example.com SSH key... done</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>heroku keys:clear</p>
+    <p>&nbsp;</p></td>
+    <td>remove all authentication keys from the current user</td>
+    <td> $ heroku keys:clear<br />
+Removing all SSH keys... done</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>sharing</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku sharing</td>
+    <td>list collaborators on an app</td>
+    <td> $ heroku sharing<br />
+=== example Collaborators<br />
+collaborator@example.com<br />
+email@example.com</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku sharing:add EMAIL</td>
+    <td> add a collaborator to an app</td>
+    <td> $ heroku sharing:add collaborator@example.com<br />
+Adding collaborator@example.com to example collaborators... done</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku sharing:remove EMAIL</td>
+    <td><p> remove a collaborator from an app</p></td>
+    <td>$ heroku sharing:remove collaborator@example.com<br />
+Removing collaborator@example.com to example collaborators... done</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku sharing:transfer EMAIL</td>
+    <td>transfer an app to a new owner</td>
+    <td>$ heroku sharing:transfer collaborator@example.com<br />
+Transferring example to collaborator@example.com... done</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

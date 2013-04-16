@@ -104,16 +104,109 @@ You have added to the Gemfile:<br />
 <p>&nbsp;</p>
 <p>$ heroku open</p>
 <p>&nbsp;</p>
+<h2>DB migration</h2>
+<p>Migration is a concept in activerecord, which in turn can be used with Sinatra.</p>
+<p>https://github.com/baloi/sinatra_sample/blob/master/howto.txt</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>create migration</td>
+    <td>rake db:create_migration NAME=create_dish</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>migrate</td>
+    <td>rake db:migrate</td>
+    <td>&nbsp;</td>
+    <td>heroku run rake db:migrate</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>Addons - Postgresql </h2>
 <p>https://addons.heroku.com/heroku-postgresql</p>
 <p>&nbsp;</p>
-<p>Added heroku-postgresql:dev to quiet-atoll-8841 (Free). Attached as HEROKU_POSTGRESQL_BLACK_URL Database has been created and is available ! This database is empty. If upgrading, you can transfer ! data from another database with pgbackups:restore.</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>$ heroku addons:add heroku-postgresql:dev</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>If you click &quot;Add Dev for Free&quot; button more than one time, you will get mutliple addons (of the same type, in this case, postgresql), with different &quot;color&quot; names.</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>CLI</td>
+    <td>website</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>heroku addons:add heroku-postgresql:dev</p>
+      <p><br />
+        Adding heroku-postgresql:dev on quiet-atoll-8841... done, v12 (free)<br />
+        Attached as HEROKU_POSTGRESQL_COBALT_URL<br />
+        Database has been created and is available<br />
+        ! This database is empty. If upgrading, you can transfer<br />
+        ! data from another database with pgbackups:restore.<br />
+    Use `heroku addons:docs heroku-postgresql:dev` to view documentation.</p></td>
+    <td><p>https://addons.heroku.com/heroku-postgresql</p>
+    <p>Added heroku-postgresql:dev to quiet-atoll-8841 (Free). Attached as HEROKU_POSTGRESQL_BLACK_URL Database has been created and is available ! This database is empty. If upgrading, you can transfer ! data from another database with pgbackups:restore.</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>heroku config</p>
+      <p><br />
+        === quiet-atoll-8841 Config Vars<br />
+        DATABASE_URL:                 sqlite:///development.db<br />
+        HEROKU_POSTGRESQL_BLACK_URL:  postgres://poevubaexfkrck:SOfbI1AIAM5qEZQlSkhWc16tUi@ec2-107-22-169-108.compute-1.amazonaws.com:5432/d2dov6ofp0hb1m<br />
+    HEROKU_POSTGRESQL_COPPER_URL: postgres://nhjmplubkbngdl:VYVK-QAJVUXYjhLh4wTSc2tSpT@ec2-23-21-161-255.compute-1.amazonaws.com:5432/d94thv9m47u2or</p></td>
+    <td>https://postgres.heroku.com/databases</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>heroku pg:promote HEROKU_POSTGRESQL_BLACK_URL</p>
+      <p><br />
+    Promoting HEROKU_POSTGRESQL_BLACK_URL to DATABASE_URL... done</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>heroku run rake db:migrate</p>
+      <p> <br />
+        Running `rake db:migrate` attached to terminal... up, run.4044<br />
+        (in /app)<br />
+        /usr/local/bin/rake<br />
+        /app/web.rb<br />
+        /app/web.rb<br />
+        ==  CreateRoles: migrating ====================================================<br />
+        -- create_table(:users)<br />
+        NOTICE:  CREATE TABLE will create implicit sequence &quot;users_id_seq&quot; for serial column &quot;users.id&quot;<br />
+        NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index &quot;users_pkey&quot; for table &quot;users&quot;<br />
+        -&gt; 0.2161s<br />
+    ==  CreateRoles: migrated (0.2163s) ===========================================</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>

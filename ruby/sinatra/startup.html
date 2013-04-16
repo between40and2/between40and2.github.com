@@ -133,5 +133,98 @@
 <p>&nbsp;</p>
 <p>http://momoliu.iteye.com/blog/1741989</p>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><p>require 'sinatra'</p>
+      <p>get '/' do<br />
+        'Hello world!'<br />
+        end</p></td>
+    <td colspan="2"><p>require 'sinatra/base'</p>
+      <p>class MyApp &lt; Sinatra::Base<br />
+        # ... app code here ...</p>
+      <p> # start the server if ruby file executed directly<br />
+        run! if app_file == $0<br />
+        end</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>require './app'<br />
+      run Sinatra::Application</td>
+    <td>&nbsp;</td>
+    <td>require './my_app'<br />
+      run MyApp</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>ruby my_app.rb</td>
+    <td>rackup -p 4567</td>
+    <td>ruby my_app.rb</td>
+    <td>rackup -p 4567</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Filter</p>
+<p>&nbsp;</p>
+<p>Helper</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>helpers do<br />
+      def bar(name)<br />
+      &quot;#{name}bar&quot;<br />
+      end<br />
+      end</p>
+      <p>get '/:name' do<br />
+        bar(params[:name])<br />
+        end</p></td>
+    <td><p>module FooUtils<br />
+      def foo(name) &quot;#{name}foo&quot; end<br />
+      end</p>
+      <p>module BarUtils<br />
+        def bar(name) &quot;#{name}bar&quot; end<br />
+        end</p>
+      <p>helpers FooUtils, BarUtils</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </body>
 </html>
