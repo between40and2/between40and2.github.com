@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>2-DictionaryRepresentative</title>
+</head>
+
+<body>
+<h1>2-DictionaryRepresentative</h1>
+<p>&nbsp;</p>
+<h2>JXDictionaryRepresentative_base</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>- (id) objectFromDictionary: (NSDictionary*) dictionary error: (NSError **) error;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (NSDictionary*) dictionaryFromObject:  (id) object error: (NSError **) error;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Style issue</h2>
+<p>Even for the same model, different occasion may have different style of dictionary structure. To differentiate it, there are currently following ways:</p>
+<ul>
+  <li>using ProjectCode.</li>
+  <li>using __implmentation.</li>
+</ul>
+<p>I once thought to add another parameters in these 2 instance methods. Later I found out it is not the best solution. </p>
+<p>&nbsp;</p>
+<h2>Inheritance and Reference</h2>
+<p>A model's DR should inherit the model's superclass's DR. so that its superclass's DR will process the properties defined in superclass; and this model's DR will process its own properties - no need to process its superclass' properties in duplciation way.</p>
+<p>A model's DR should has-a the DRs of model's relationships. When coming to process the relationship, the relationship's DR will be used, rather than processing the relationship in this model's DR itself.</p>
+<p>For example</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>B is-a A</td>
+    <td>DR_B is-a DR_A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p>B has-a X</p></td>
+    <td>DR_B has-a DR_X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Shortcuts</h2>
+<p>&nbsp;</p>
+<p>JXPropertyMapping</p>
+<p>&nbsp;</p>
+<h2>Big Picture</h2>
+<p>While I am working on &quot;property (relationship) incarnation&quot; in Ruby for ExcelExport project, I realized that the property mapping is such a common place.. The mapping is worthy to be defined in an object !!</p>
+<p>You know, such property mapping work DOES create new objects, but not new data or semantics. It is just a pure engineering work. Some works like an adaptor, connecting between different systems. Other passes data from one role (Model) in arch to another role (Dictionary/Hash)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Block</title>
+</head>
+
+<body>
+<h1>Block </h1>
+<h2>Block简介</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>Block是IOS4.0引入的一个新特性。Block可以极大的简化代码，他们可以帮助你减少代码，减少对代理的依赖，并且写出更加简洁，可读性强的代码。Block核心就是一段可以再以后的时间里执行的代码，因为Block是对象，所以可以作为参数传递，作为方法的返回值，赋值给变量，在没有Block之前，如果我们想在之后某个时间回调一个方法，一般会用代理或者NSNoificationCenter，</td>
+  </tr>
+</table>
+<p>block vs function pointer</p>
+<p>&nbsp;</p>
+<h2>Block格式</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>声明格式</td>
+    <td>return_type (^block_name)(param_type,param_type,...)</td>
+  </tr>
+  <tr>
+    <td>定义格式</td>
+    <td>^return_type(param_type param_name,param_type param_name,...){};</td>
+  </tr>
+  <tr>
+    <td>执行</td>
+    <td>block_name(param_type,param_type,...);</td>
+  </tr>
+  <tr>
+    <td>实例</td>
+    <td> <p>int(^myBlock)(int)=^(int num){return num;};</p>
+      <ul>
+        <li>返回值是int</li>
+        <li>参数1个为int</li>
+        <li>参数名称num</li>
+      </ul>
+    <p>int resultFromBlock = myBlock(5);</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h2>Block示例</h2>
+<h3>调用系统API</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>未使用Block</td>
+    <td>使用Block</td>
+  </tr>
+  <tr>
+    <td>-(void)removeAnimationVIew:(id)sender{<br />
+[animationView removeFromSuperview];<br />
+}<br />
+-(void)viewDidAppear:(BOOL)animated{<br />
+[super viewDidAppear:animated];<br />
+[UIView beginAnimations:@&quot;&quot; context:nil];<br />
+[UIView setAnimationDuration:5.0];<br />
+[UIView setAnimationDidStopSelector:@selector(removeAnimationVIew:)];<br />
+[animationView setAlpha:0];<br />
+[UIView commitAnimations];<br />
+}</td>
+    <td>-(void)viewDidAppear:(BOOL)animated{<br />
+[super viewDidAppear:animated];<br />
+[UIView animateWithDuration:5.0 animations:^{<br />
+[animationVIew setAlpha:0];<br />
+}completion:^(BOOL finished){<br />
+[animationView removeFromSuperview];<br />
+}];<br />
+}</td>
+  </tr>
+</table>
+<h3>自定义block</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>BlockUIAlertView.h </td>
+    <td>BlockUIAlertView.m</td>
+    <td><p>自定义的BlockUIAlertView的调用</p></td>
+  </tr>
+  <tr>
+    <td><p>typedef void(^AlertBlock)(NSInteger);</p>
+      <p>@property(nonatomic,copy)AlertBlock block;  </p>
+      <p>- (id)initWithTitle:(NSString *)title 
+           clickButton:(AlertBlock)_block ;</p>
+<p>&nbsp;</p></td>
+    <td>- (id)initWithTitle:(NSString *)title
+          clickButton:(AlertBlock)_block  {  
+      <ul>
+         self = [super initWithTitle:title delegate:self];  
+      </ul>
+      <ul>
+           
+        <p>if (self) {  </p>
+        <p>      self.block = _block;  </p>
+        <p>}  </p>
+      </ul>
+      <ul>
+        <p>return self;  </p>
+        <p>}    </p>
+        <p>- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {  </p>
+        <p> self.block(buttonIndex);  </p>
+        <p>}  </p>
+      </ul></td>
+    <td><p>BlockUIAlertView *alertView = [[BlockUIAlertView alloc] initWithTitle:@&quot;提示&quot; clickButton:^(NSInteger indexButton){  </p>
+      <p> NSLog(@&quot;%d&quot;,indexButton);        </p>
+      <p>}];  </p>
+      <p>[alertView show];  </p>
+<br />
+    <br /></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Block &amp; delegate 区别</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>delegate</td>
+    <td>block</td>
+  </tr>
+  <tr>
+    <td><p>class A</p>
+    <p>-(void)viewDidLoad{</p>
+    <p>classB *b = [[classB alloc]init];</p>
+    <p>b.deletate = self;</p>
+    <p>}</p>
+    <p>-(void)b-delegate:(NSString*)name{</p>
+    <p>得到name</p>
+    <p>}</p></td>
+    <td><p>class A</p>
+    <p>-(void)viewDidLoad{</p>
+    <p>classB *b = [[classB alloc]init];</p>
+    <p>[b requestName:^(id object){</p>
+    <p>得到name</p>
+    <p>}];</p>
+    <p>}</p></td>
+  </tr>
+  <tr>
+    <td><p>class B.h 定义B-Delegate {-(void)b-delegate:(NSString*)name;}</p>
+      <p>@property (no..,ass..)id&lt;B-Delegate&gt;delegate</p>
+      <p>class B.m</p>
+      <p>-(void)request{</p>
+      <p>[deletate b-delegate:@&quot;&quot;];</p>
+      <p>}</p>
+    <p>&nbsp;</p></td>
+    <td><p>class B.h 定义typedef  void(^myBlock)(id)</p>
+    <p>class B.m</p>
+    <p>-(void)request:(myBlock)block{</p>
+    <p>block(@&quot;&quot;);</p>
+    <p>}</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

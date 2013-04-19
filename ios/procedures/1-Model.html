@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iOS-Procedure-Model</title>
+</head>
+
+<body>
+<h1>iOS-Procedure-1-Model</h1>
+<p>&nbsp;</p>
+<h2>Naming</h2>
+<p>&lt;ProjectCode&gt;Model_&lt;ModelName&gt;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Core and Derived</h2>
+<p>&nbsp;</p>
+<p>Model class should provide easy-to-use /shortcut methods for specific view to use. Such methods should be placed in this class's category named after the specific view/VC.</p>
+<p>&nbsp;</p>
+<h2>Notification</h2>
+<p>Model should consider to give notification on the data and state changes inside the model. </p>
+<p>Model should use NSNotification as approach, becuase it is a broadcast style. (Compared with delegate of view and VC, which is one-to-one mode)</p>
+<p>&nbsp;</p>
+<h2>Models (Management)</h2>
+<p>&nbsp;</p>
+<p>SHEMModels</p>
+<p>SHEMModelType</p>
+<p>&nbsp;</p>
+<p>AppDelegate.h , or root header file of framework, should #import it, so that other class would not need to #import it.</p>
+<p>&nbsp;</p>
+<h2>Mutability</h2>
+<p>what is mutable.. it is, the identity/reference of the object REMAINS THE SAME, but the PART of it has been changed.</p>
+<p>wholesales - not mutable</p>
+<p>retails - partial mutable.</p>
+<p>&nbsp;</p>
+<h2>Collection Update - Wholesales or Retails</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>Wholesales</td>
+    <td>Retails</td>
+    <td>Both</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>Not supported..</p>
+    <p>Ambiguiity on which one take prepiory . wholesales or retails? </p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>.h</td>
+    <td>NSArray * array ; // RW</td>
+    <td>NSMutableArray * array; // RO</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>.m</td>
+    <td><p>init</p>
+    <p>do nothing</p></td>
+    <td><p>init</p>
+    <p>_array = [NSMutableArray array];</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Collection and selection</h2>
+<p>Do not add property regarding to selection in element object!! instead, add relationship to refer to the selected, along the side with collection.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>in format design. </h2>
+<p>do not presume the collection must be an array. </p>
+<p>do not store array in key-value manner, with key as some specific property in object. and value as element in array. </p>
+<p>&nbsp;</p>
+<h2>The enemy of design.</h2>
+<p>Shortsighted...</p>
+<p>&nbsp;</p>
+<h2>singleton-phobic</h2>
+<p>model should not access other data via singleton. That is to say, not to access singleton by called some class's [+sharedInstance], but it is ok to have a property set which its value is from a singleton. </p>
+<p>(see hydrophilic - hydrophobic)</p>
+<p>&nbsp;</p>
+<h2>Life of model</h2>
+<p>who should create, own and access it?</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>server</td>
+    <td>client</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>archetype</td>
+    <td>collection</td>
+    <td>store</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>who creates</td>
+    <td>Data Access</td>
+    <td>UI</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>who owns</td>
+    <td><p>AppLogic</p>
+    <p>Manager</p></td>
+    <td>Model System</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>who accesses</td>
+    <td>UI</td>
+    <td>UI</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Model Notification/Event</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>class</td>
+    <td>code</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>In model's client</td>
+    <td><p>&nbsp;</p>
+    <p>- (void) setModel: (id) model {</p>
+    <p>_model = model;</p>
+    <p>&nbsp;</p>
+    <p>// listen to object</p>
+    <p>}</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>In model</td>
+    <td><p>- (void) setX: (id) x {</p>
+    <p>&nbsp;</p>
+    <p>[[NSNotifcationCenter defaultCenter] postNotification:];</p>
+    <p>}</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
