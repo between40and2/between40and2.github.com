@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iOS Performance - Profiling (with Instruments)</title>
+</head>
+
+<body>
+<h1>iOS Performance - Profiling (with Instruments)</h1>
+<p>&nbsp;</p>
+<h2>Profiling Strategy</h2>
+<ol>
+  <li>Profile Time/Speed first!</li>
+  <li>Profile memory allocations. 
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>App Candidates</h2>
+<p>Only after you have some baseline apps, then you will know how unhealthy your complicated apps are!</p>
+<p>&nbsp; </p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Zero app. Empty template.</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Smaller-than-Zero. hiding status bar. </td>
+    <td>Status bar is initially hidden</td>
+    <td><p>add </p>
+    <p>&lt;key&gt;UIStatusBarHidden&lt;/key&gt;<br />
+&lt;true/&gt;</p>
+    <p>inside <br />
+  &lt;/dict&gt;<br />
+  &lt;/plist&gt;</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>File Size</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>Zero,without Default.png (s)</td>
+    <td>Zero</td>
+    <td>Demo-ImageIO</td>
+  </tr>
+  <tr>
+    <td><p>ipa</p>
+    <p>(size/size in disk)</p></td>
+    <td>17/20</td>
+    <td>23K/25K</td>
+    <td>31K/33K</td>
+  </tr>
+  <tr>
+    <td>unzipped</td>
+    <td>64K / 86K</td>
+    <td>87K / 115K</td>
+    <td>100K/131K</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Memory</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>Zero</td>
+    <td>smaller than Zero</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>memory</td>
+    <td>680K-690K</td>
+    <td>298K</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Time </h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>Zero</td>
+    <td>smaller than Zero</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>memory</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p>time, total on main thread</p></td>
+    <td>136ms, 91.8%</td>
+    <td>39ms, </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>time spent on _createStatusBarWithRequestedStyle:orientation:hidden:]</td>
+    <td>116.0ms, 78%</td>
+    <td>23ms, 45%</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSLog</td>
+    <td>9.0ms</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>http://stackoverflow.com/questions/4264072/how-to-hide-status-bar-in-iphone-application</p>
+</body>
+</html>
