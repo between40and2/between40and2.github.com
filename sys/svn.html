@@ -38,6 +38,221 @@
     <td>&nbsp;</td>
   </tr>
 </table>
+<<<<<<< HEAD
 <p>http://ystar.me/technology/svn-checksum-mismatch-while-updating/</p>
+=======
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>http://stackoverflow.com/questions/3584643/svn-access-denied-when-comparing-revisions</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Valid options:</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>list (ls): List directory entries in the repository.<br />
+      usage: list [TARGET[@REV]...]</p>
+      <p> List each TARGET file and the contents of each TARGET directory as<br />
+        they exist in the repository.  If TARGET is a working copy path, the<br />
+        corresponding repository URL will be used. If specified, REV determines<br />
+        in which revision the target is first looked up.</p>
+      <p> The default TARGET is '.', meaning the repository URL of the current<br />
+    working directory.</p></td>
+    <td><p>With --verbose, the following fields will be shown for each item:</p>
+      <p> Revision number of the last commit<br />
+        Author of the last commit<br />
+        If locked, the letter 'O'.  (Use 'svn info URL' to see details)<br />
+        Size (in bytes)<br />
+    Date and time of the last commit</p></td>
+    <td><br />
+-r [--revision] ARG      : ARG (some commands also take ARG1:ARG2 range)<br />
+A revision argument can be one of:<br />
+NUMBER       revision number<br />
+'{' DATE '}' revision at start of the date<br />
+'HEAD'       latest in repository<br />
+'BASE'       base rev of item's working copy<br />
+'COMMITTED'  last commit at or before BASE<br />
+'PREV'       revision just before COMMITTED<br />
+-v [--verbose]           : print extra information<br />
+-R [--recursive]         : descend recursively, same as --depth=infinity<br />
+--depth ARG              : limit operation by depth ARG ('empty', 'files',<br />
+'immediates', or 'infinity')<br />
+--incremental            : give output suitable for concatenation<br />
+--xml                    : output in XML</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>svn diff</p>
+<p>&nbsp;</p>
+<p>diff (di): Display the differences between two revisions or paths.<br />
+  usage: 1. diff [-c M | -r N[:M]] [TARGET[@REV]...]<br />
+2. diff [-r N[:M]] --old=OLD-TGT[@OLDREV] [--new=NEW-TGT[@NEWREV]] \<br />
+[PATH...]<br />
+3. diff OLD-URL[@OLDREV] NEW-URL[@NEWREV]</p>
+<p> 1. Display the changes made to TARGETs as they are seen in REV between<br />
+  two revisions.  TARGETs may be all working copy paths or all URLs.<br />
+  If TARGETs are working copy paths, N defaults to BASE and M to the<br />
+  working copy; if URLs, N must be specified and M defaults to HEAD.<br />
+  The '-c M' option is equivalent to '-r N:M' where N = M-1.<br />
+  Using '-c -M' does the reverse: '-r M:N' where N = M-1.</p>
+<p> 2. Display the differences between OLD-TGT as it was seen in OLDREV and<br />
+  NEW-TGT as it was seen in NEWREV.  PATHs, if given, are relative to<br />
+  OLD-TGT and NEW-TGT and restrict the output to differences for those<br />
+  paths.  OLD-TGT and NEW-TGT may be working copy paths or URL[@REV].<br />
+  NEW-TGT defaults to OLD-TGT if not specified.  -r N makes OLDREV default<br />
+  to N, -r N:M makes OLDREV default to N and NEWREV default to M.</p>
+<p> 3. Shorthand for 'svn diff --old=OLD-URL[@OLDREV] --new=NEW-URL[@NEWREV]'</p>
+<p> Use just 'svn diff' to display local modifications in a working copy.</p>
+<p>&nbsp;</p>
+<p>Valid options:</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>-r [--revision] ARG</td>
+    <td>: ARG (some commands also take ARG1:ARG2 range)<br />
+A revision argument can be one of:<br />
+NUMBER       revision number<br />
+'{' DATE '}' revision at start of the date<br />
+'HEAD'       latest in repository<br />
+'BASE'       base rev of item's working copy<br />
+'COMMITTED'  last commit at or before BASE<br />
+'PREV'       revision just before COMMITTED</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>-c [--change] ARG</td>
+    <td>: the change made by revision ARG (like -r ARG-1:ARG)<br />
+If ARG is negative this is like -r ARG:ARG-1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--old ARG</td>
+    <td> use ARG as the older target</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--new ARG</td>
+    <td>use ARG as the newer target</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> -N [--non-recursive]</td>
+    <td>obsolete; try --depth=files or --depth=immediates</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--depth ARG</td>
+    <td>limit operation by depth ARG ('empty', 'files',<br />
+'immediates', or 'infinity')</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--diff-cmd ARG</td>
+    <td>use ARG as diff command</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>-x [--extensions] ARG</td>
+    <td>Default: '-u'. When Subversion is invoking an<br />
+external diff program, ARG is simply passed along<br />
+to the program. But when Subversion is using its<br />
+default internal diff implementation, or when<br />
+Subversion is displaying blame annotations, ARG<br />
+could be any of the following:<br />
+-u (--unified):<br />
+Output 3 lines of unified context.<br />
+-b (--ignore-space-change):<br />
+Ignore changes in the amount of white space.<br />
+-w (--ignore-all-space):<br />
+Ignore all white space.<br />
+--ignore-eol-style:<br />
+Ignore changes in EOL style.<br />
+-p (--show-c-function):<br />
+Show C function name in diff output.</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--no-diff-deleted</td>
+    <td>do not print differences for deleted files</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--notice-ancestry </td>
+    <td>notice ancestry when calculating differences</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--summarize</td>
+    <td>show a summary of the results</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--changelist ARG</td>
+    <td>operate only on members of changelist ARG<br />
+[aliases: --cl]</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--force</td>
+    <td>force operation to run</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>--xml</td>
+    <td>output in XML</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Global options:<br />
+  --username ARG           : specify a username ARG<br />
+  --password ARG           : specify a password ARG<br />
+  --no-auth-cache          : do not cache authentication tokens<br />
+  --non-interactive        : do no interactive prompting<br />
+  --trust-server-cert      : accept unknown SSL server certificates without<br />
+  prompting (but only with '--non-interactive')<br />
+  --config-dir ARG         : read user configuration files from directory ARG<br />
+  --config-option ARG      : set user configuration option in the format:<br />
+  FILE:SECTION:OPTION=[VALUE]<br />
+  For example:<br />
+servers:global:http-library=serf</p>
+>>>>>>> a7f7e265aebd7532f43a58c35c05938f3f8cef9b
 </body>
 </html>
