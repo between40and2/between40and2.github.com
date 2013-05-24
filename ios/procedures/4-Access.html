@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iOS-Procedure-4-Access</title>
+</head>
+
+<body>
+<h1>iOS-Procedure-4-Access</h1>
+<p>&nbsp;</p>
+<ul>
+  <li>NSObject
+    <ul>
+      <li>JXAccess_base
+        <ul>
+          <li>JXAccess_id_base
+            <ul>
+              <li>JXFSAccess_id_base
+                <ul>
+                  <li>JXFSAccess_id_base__directory</li>
+                  <li>JXFSAccess_id_base__directory (ParsingModelFile)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>JXURLAccess_base
+            <ul>
+              <li> </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXAccess_base</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXAccess_base (ByRequest)</td>
+    <td><p>- (void) performRequest:(id)request<br />
+      resultBlock:(JXBlock_Object)resultBlock<br />
+    errorBlock:(JXBlock_Error)errorBlock;</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p> JXAccess_id_base <br />
+    </p>
+      <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td><p>- (void) list_ObjectID__criteria: (id) criteria<br />
+      resultBlock: (JXBlock_Object) resultBlock<br />
+      errorBlock: (JXBlock_Error) errorBlock;</p>
+      <p>&nbsp;</p>
+      <p>- (void) list_Object__criteria: (id) criteria<br />
+        resultBlock: (JXBlock_Object) resultBlock<br />
+        errorBlock: (JXBlock_Error) errorBlock;<br />
+      </p>
+      <p>&nbsp;</p>
+      <p>- (void) get_Object__by_ID: (id) ID<br />
+        resultBlock: (JXBlock_Object) resultBlock<br />
+    errorBlock: (JXBlock_Error) errorBlock;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXFSAccess_id_base</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXFSAccess_id_base__directory</td>
+    <td>@property (nonatomic, strong) NSURL * directoryURL;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>History</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Stone Age</td>
+    <td>model-related method name.</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Bronze Age</td>
+    <td><p>- (NSArray*) list_Object;<br />
+      - (id) get_Object__by_ID: (id) ID ;</p>
+      <p>- (BOOL) create_Object: (id) object error: (NSError**) error;<br />
+        - (BOOL) update_Object: (id) object error: (NSError**) error;<br />
+    - (BOOL) delete_Object: (id) object error: (NSError**) error;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Iron Age</td>
+    <td>- (void)performRequest:(id)request<br />
+resultBlock:(JXBlock_Object)resultBlock<br />
+errorBlock:(JXBlock_Error)errorBlock;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Configuration on FSAccess and URLAccess</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>FSAccess</td>
+    <td><p>what is the base URL.</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>URLAccess</td>
+    <td>&nbsp;</td>
+    <td><p> NSString * server_ip = [ud valueForKey: SHEMBC_SERVER_IP];<br />
+      NSString * server_port = [ud valueForKey: SHEMBC_SERVER_PORT];<br />
+      NSString * url_subPath__order = [ud valueForKey: SHEMBC_URL_SUBPATH__ORDER];</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<blockquote>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>1.	Json</p>
+  <ul>
+    <li>use the iOS class &quot;NSJSONSerialization&quot; with method &quot;dataWithJSONObject&quot;</li>
+    <li>parameter is a kindof class &quot;NSDictionary&quot;</li>
+  </ul>
+  <p>for example:</p>
+  <p> NSData * postData = [NSJSONSerialization dataWithJSONObject: dictionary options: nil error: &amp;error];</p>
+  <p>&nbsp;</p>
+  <p>There will be a model - json conversion mechanism. the json format may be server/external specified, therefore the conversion should NOT be in model class. </p>
+  <p>&nbsp;</p>
+</blockquote>
+<table width="100%" border="1">
+  <tr>
+    <td>Where is the conversion located?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Model</td>
+    <td>@property NSDictionary * dictionaryRepresentation</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ServiceSpecificConvertor</td>
+    <td><ul>
+      <li>+ (NSDictionary*) dictionaryForObject: (id) obj</li>
+      <li>+ (id) objectFromDictionary : (NSDictionary*) dict</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

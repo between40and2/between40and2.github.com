@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>method-invocation</title>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>method-invocation</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> NSMethodSignature * ms =<br />
+[[self class] instanceMethodSignatureForSelector: @selector(obj:)];<br />
+<br />
+NSInvocation * inv = [NSInvocation invocationWithMethodSignature: ms];</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>For scalar and struct parameters</h2>
+<p><br /></p>
+<p>&nbsp;</p>
+<ul>
+  <li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/Reference/Reference.html">NSMethodSignature</a></li>
+  <li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/Reference/Reference.html">NSInvocation</a></li>
+  <li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject.html">NSObject Protocol</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>http://stackoverflow.com/questions/2302415/trying-to-pass-cgrect-to-performselector-withobject</p>
+<p>http://stackoverflow.com/questions/7075620/iphone-performselector-with-bool-parameter</p>
+<p>&nbsp;</p>
+</body>
+</html>

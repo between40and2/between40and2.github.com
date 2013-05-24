@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MultilingualString</title>
+</head>
+
+<body>
+<h1>MultilingualString</h1>
+<p>Problem</p>
+<p>Existing solution for multi-lingual ..</p>
+<p>name, name_en (locale_suffix)</p>
+<p>problems:</p>
+<ul>
+  <li>double the number of properties</li>
+  <li>when the supported locales grows, ....</li>
+</ul>
+<p>Solution</p>
+<p>represents a semanticially same text in multi-language context.</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>default_string, string_1st_locale</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>string_2nd_locale </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>stringForLocale</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>strings</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>string_locales</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Suggestion in model</h2>
+<p>original property, such as &quot;name&quot;, will be removed. compiler error will lead the way to find the occurances</p>
+<p>replacing property, named with suffix of &quot;_ml&quot;, will be introduced, type of MutlilingualString</p>
+<h2>Internal representation and implementation</h2>
+<p>{} vs [[]]</p>
+<ul>
+  <li> array of objects, which are type of array, first element is string in that locale, second element is locale code.</li>
+  <li>hash, key is locale code, value is string in locale</li>
+</ul>
+<h3>External? String presentation (in database storage)</h3>
+<p>zh: 红烧肉, en: &quot;Red Roast Pork&quot;</p>
+<p>&nbsp;</p>
+<p>Appendix A: Locale decision</p>
+<p>ways to specify the order of locales</p>
+<ul>
+  <li>system locales</li>
+  <li>project/app/build-specific. use plist to store</li>
+  <li>server-config</li>
+</ul>
+<p>&nbsp;</p>
+<h2>UI Impact</h2>
+<p>&nbsp;</p>
+<h3>LanguageChoosingPopup</h3>
+<p>&nbsp;</p>
+<p>#import &quot;SHEMBAUIVCAssist_Language.h&quot;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>View</td>
+    <td>VC</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>originally designed for VC</p>
+    <p>but now supports View</p></td>
+    <td>assist_lang = [[SHEMBAUIVCAssist_Language alloc] initWithViewController: nil];</td>
+    <td>assist_lang = [[SHEMBAUIVCAssist_Language alloc] initWithViewController: self];</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>assist_lang.usesButton = YES;</p>
+    <p>assist_lang.button;</p>
+    <p>&nbsp;</p></td>
+    <td>self.navigationItem.rightBarButtonItems = @[assist_lang.buttonItem, item_refresh ];</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>For each view/VC who are interested in language change, </h3>
+<ul>
+  <li>UI (both VC and View, or even Story) must register notif</li>
+  <li>listen and react</li>
+  <li>for both data and decoration</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>View</td>
+    <td>VC</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>#import &quot;SHEMMultilingualManager_base.h&quot;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>register</td>
+    <td><p>[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handleNotif_languageChanged:) name:SHEMMultilingualManagerLanguageChangedNotification object: nil];</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (void) handleNotif_languageChanged: (NSNotification*) notif {<br />
+      <br />
+[self setObject: self.object];<br />
+<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>For decoration....</h3>
+<ul>
+  <li>Usually (even not good habit) decoration's value are set only once at the beginning of VC/View. </li>
+  <li>Now 
+    <ul>
+      <li>their UI components should be ivars. and </li>
+      <li>there is a changeLanguage_decoration. in which each UI components should be re(set) value according to current locale/language</li>
+    </ul>
+  </li>
+</ul>
+<h3>&nbsp;</h3>
+<h3>System (NSLocale) or App Defined (JXLocale)</h3>
+<p>&nbsp;</p>
+<p>Restriction of NSLocale. The good side of it is that it works with iOS global setting on locale. But the bad side of the same design is that you cannot change locale within your app, even the OS-level locale setting remains unchanged.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

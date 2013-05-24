@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NSURL-File</title>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p><a href="http://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/Reference/Reference.html">NSURL Class Reference</a></p>
+<p><a href="http://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/Reference/Reference.html#/apple_ref/doc/constant_group/Common_File_System_Resource_Keys">Common File System Resource Keys</a></p>
+<p>4.0</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLAttributeModificationDateKey</td>
+    <td><p>The time at which the resource's attributes were most recently modified, returned as an NSDate object if the volume supports attribute modification dates, or nil if attribute modification dates are unsupported.</p></td>
+    <td>NSDate</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLContentAccessDateKey</td>
+    <td><p>The time at which the resource was most recently accessed, returned as an NSDate object if the volume supports access dates, or nil if access dates are unsupported.</p></td>
+    <td>NSDate</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLContentModificationDateKey</td>
+    <td><p>The time at which the resource was most recently modified, returned as an NSDate object if the volume supports modification dates, or nil if modification dates are unsupported.</p></td>
+    <td>NSDate</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLCreationDateKey</td>
+    <td>The resource's creation date, returned as an NSDate object if the volume supports creation dates, or nil if creation dates are unsupported.</td>
+    <td>NSDate</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLCustomIconKey</td>
+    <td>The icon stored with the resource, returned as an NSImage object, or nil if the resource has no custom icon.</td>
+    <td>NSImage</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLEffectiveIconKey</td>
+    <td>The resource's normal icon, returned as an NSImage object.</td>
+    <td>NSImage</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLHasHiddenExtensionKey</td>
+    <td>Key for determining whether the resource's extension is normally removed from its localized name, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsDirectoryKey</td>
+    <td>Key for determining whether the resource is a directory, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsHiddenKey</td>
+    <td>Key for determining whether the resource is normally not displayed to users, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsPackageKey</td>
+    <td>Key for determining whether the resource is a file package, returned as a Boolean NSNumber object. A true value means that the resource is a file package.<br />
+      Value is read/write. In versions of OS X prior to 10.8, value is read-only.<br />
+    If you attempt to set or clear this key's value on a file instead of a directory, the system ignores your attempt. If the directory is defined as a package by way of its filename extension or other reason apart from this key, setting this key's value to false has no effect.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsRegularFileKey</td>
+    <td>Key for determining whether the resource is a regular file, as opposed to a directory or a symbolic link. Returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsSymbolicLinkKey</td>
+    <td>Key for determining whether the resource is a symbolic link, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsSystemImmutableKey</td>
+    <td>Key for determining whether the resource's system immutable bit is set, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsUserImmutableKey</td>
+    <td>Key for determining whether the resource's user immutable bit is set, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsVolumeKey</td>
+    <td>Key for determining whether the resource is the root directory of a volume, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLabelColorKey</td>
+    <td>The resource's label color, returned as an NSColor object, or nil if the resource has no label color.</td>
+    <td>NSColor</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLabelNumberKey</td>
+    <td>The resource's label number, returned as an NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLinkCountKey</td>
+    <td>The number of hard links to the resource, returned as an NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLocalizedLabelKey</td>
+    <td>The resource's localized label text, returned as an NSString object, or nil if the resource has no localized label text.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLocalizedNameKey</td>
+    <td>The resource's localized or extension-hidden name, returned as an NSString object.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLLocalizedTypeDescriptionKey</td>
+    <td>The resource's localized type description, returned as an NSString object.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLNameKey</td>
+    <td>The resource's name in the file system, returned as an NSString object.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLParentDirectoryURLKey</td>
+    <td>The parent directory of the resource, returned as an NSURL object, or nil if the resource is the root directory of its volume.</td>
+    <td>NSURL</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLTypeIdentifierKey</td>
+    <td>The resource's uniform type identifier (UTI), returned as an NSString object.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLVolumeURLKey</td>
+    <td>The root directory of the resource's volume, returned as an NSURL object.</td>
+    <td>NSURL</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>5.0</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLFileResourceIdentifierKey</td>
+    <td><p>The resource's unique identifier, returned as an id.<br />
+      This identifier can be used to determine equality between file system resources with the isEqual: method. Two resources are equal if they have the same file-system path or if their paths link to the same inode on the same file system.<br />
+    The value of this identifier is not persistent across system restarts.</p></td>
+    <td>id</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLFileResourceTypeKey</td>
+    <td>The resource's object type, returned as an NSString object. See &quot;File Resource Types&quot; for possible values.</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLFileSecurityKey</td>
+    <td>The resource's security information, returned as an NSFileSecurity object.</td>
+    <td>NSFileSecurity</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsExecutableKey</td>
+    <td><p>Key for determining whether the current process (as determined by the EUID) can execute the resource (if it is a file) or search the resource (if it is a directory), returned as a Boolean NSNumber object.</p></td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsMountTriggerKey</td>
+    <td><p>Key for determining whether the URL is a file system trigger directory, returned as a Boolean NSNumber object. Traversing or opening a file system trigger directory causes an attempt to mount a file system on the directory.</p></td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsReadableKey</td>
+    <td>Key for determining whether the current process (as determined by the EUID) can read the resource, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsWritableKey</td>
+    <td>Key for determining whether the current process (as determined by the EUID) can write to the resource, returned as a Boolean NSNumber object.</td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLPreferredIOBlockSizeKey</td>
+    <td><p>The optimal block size to use when reading or writing this file's data, returned as an NSNumber object, or nil if the preferred size is not available.</p></td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLVolumeIdentifierKey</td>
+    <td>The unique identifier of the resource's volume, returned as an id.<br />
+      This identifier can be used with the isEqual: method to determine whether two file system resources are on the same volume.<br />
+    The value of this identifier is not persistent across system restarts.</td>
+    <td>id</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>5.1</p>
+<p></p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLIsExcludedFromBackupKey</td>
+    <td><p>Key for determining whether the resource is excluded from all backups of app data, returned as a Boolean NSNumber object. Read/write access.<br />
+    You can use this property to exclude cache and other app support files which are not needed in a backup. Some operations commonly made to user documents cause this property to be reset to false; consequently, do not use this property on user documents.</p></td>
+    <td>NSNumber</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p>6.0</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSURLPathKey</td>
+    <td><p>The file system path for the URL, returned a read-only NSString object.</p></td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+</body>
+</html>

@@ -46,9 +46,233 @@
   <li>DA</li>
   <li>inter-VC</li>
 </ul>
-<p>Now UIStory </p>
+<p>Now UIStory emerges and is designed to take following tasks.</p>
+<ul>
+  <li>create and manages rootViewController for UIWindow and other level of module.</li>
+  <li>manages inter-VC interaction. For example, JXUIStory_MasterDetail takes care of UISplitViewController's delegate. so that both master and detail vc would NOT consider so much on how to pass the data to another VC. </li>
+</ul>
+<h2>Unification of RO-UIStory and RW one</h2>
+<p>In the case of 2-screen, the main UIStory is for iOS screen (RW), and the other UIStory is for secondary screen (RO - does not handle touch events).</p>
+<p>Both respond to something. </p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>responds to </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>RO</td>
+    <td>external changes, which it does not generated or initiate the change </td>
+    <td>&nbsp;</td>
+    <td><p>define method and wait to be called.</p>
+    <p>or observing notif or KVO</p></td>
+  </tr>
+  <tr>
+    <td>RW</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>being the delegate of UIVCs</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>How it works in AppDelegate</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>prepare window and present</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>if window or screen is present, (mainly speaking with concern of second screen), create responsponding UIStory instance, and store the reference to &quot;strong&quot; ivar.</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>associate UIStory's rootVC to window</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>start loading data</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>at the completion/result block of data manager, associate the result/data with uistory</p>
+    <p>The time for data to meet UI!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>return YES; </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Class Inheritance</p>
+<p>&nbsp;</p>
+<ul>
+  <li>NSObject
+    <ul>
+      <li>JXUIStory_base
+        <ul>
+          <li>JXUIStory_container
+            <ul>
+              <li>JXUIStory_MainFlipside</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Subclassing</td>
+  </tr>
+  <tr>
+    <td>JXUIStory_base</td>
+    <td>@property (nonatomic, readonly) UIViewController * rootViewController; </td>
+    <td>UIKIT_EXTERN NSString  * const JXUIStoryEventNotification ;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>// hybrid array of<br />
+      //  (1) vc instance<br />
+      //  (2) vcConfig instance<br />
+      //  (3) uiStory instance</p>
+    <p>@property (nonatomic, strong) NSArray * vcConfigs; </p></td>
+    <td>&nbsp;</td>
+    <td>- (void) handleNotifFromVC: (UIViewController*) vc userInfo: (NSDictionary*) userInfo ;</td>
+  </tr>
+  <tr>
+    <td>JXUIStory_MainFlipside</td>
+    <td><p>@property (nonatomic, strong) NSString * className_MainVC;<br />
+      @property (nonatomic, strong) NSString * nibName_MainVC_iPhone;<br />
+      @property (nonatomic, strong) NSString * nibName_MainVC_iPad;</p>
+      <p>@property (nonatomic, strong) NSString * className_FlipsideVC;<br />
+        @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPhone;<br />
+        @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPad;<br />
+      </p>
+      <p>@property (nonatomic, readonly) UIViewController * mainVC;<br />
+        @property (nonatomic, readonly) UIViewController * flipsideVC;<br />
+      </p>
+      <p>- (void) presentFlipside: (id) sender ;<br />
+    - (void) dismissFlipside; </p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>JXUIStory_MasterDetail</p>
+    <p>&nbsp;</p></td>
+    <td><p>&lt;UISplitViewControllerDelegate&gt;</p>
+      <p>@property (nonatomic, readonly) UIViewController * masterVC;<br />
+        @property (nonatomic, readonly) UIViewController * detailVC;</p>
+    <p>- (void) presentDetailVCWithObject: (id) object ; </p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>JXUIStory_Tabbed</p>
+    <p>&lt;UITabBarControllerDelegate&gt;</p></td>
+    <td><p><br />
+    </p>
+    <p>@property (nonatomic, readonly) UITabBarController * tabBarController;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Notes:</p>
+<p>AppDelegate or other UIStory's client must retain UIStory instance..... because UIStory also function as delegate of something inside. If the external entity does it retain it, it will be release after use, and then being a delegate (of someone else) will be meaningless.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Code Injection for VC's navigationItem</p>
+<p>SHMDUIStory_ImportActivity</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>[self.rootViewController presentViewController: nc animated: YES completion:^{<br />
+      <br />
+// now let's inject something to that vc...<br />
+UIBarButtonItem * item_cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemCancel) target: self  action: @selector(handleAction_cancel:)];<br />
+<br />
+vc_url.navigationItem.leftBarButtonItem = item_cancel;<br />
+<br />
+}];</td>
+    <td>- (void) handleAction_cancel: (id) sender {<br />
+      <br />
+[self.rootViewController dismissViewControllerAnimated: YES completion:^{<br />
+vc_url.navigationItem.leftBarButtonItem = nil;<br />
+}];<br />
+<br />
+}</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>JXUIStory_MasterDetail - SHMDUIStory_ImportActivity</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>VC_list</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;	</p>
+<p>VC_object</p>
+<p>override [- setObject: id]</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

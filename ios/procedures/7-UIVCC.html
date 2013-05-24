@@ -44,5 +44,61 @@
   </tr>
 </table>
 <p>&nbsp;</p>
+<p>JXUIVCC_SideBySide</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (void)viewDidLoad<br />
+      {<br />
+[super viewDidLoad];<br />
+// Do any additional setup after loading the view.<br />
+<br />
+<br />
+// we cannot predict how many child vcs has been added.<br />
+<br />
+for (int i = 0; i&lt;2; i++) {<br />
+UIView * v = [self.childViewControllers[i] view];<br />
+<br />
+v.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;<br />
+<br />
+[self.view addSubview: v];<br />
+}<br />
+<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>- (void) viewWillLayoutSubviews {<br />
+      [super viewWillLayoutSubviews];<br />
+  <br />
+      CGSize size = self.view.bounds.size;<br />
+      <br />
+  <br />
+      for (int i = 0; i&lt;2; i++) {<br />
+      UIView * v = [self.childViewControllers[i] view];<br />
+      v.frame = CGRectMake(size.width/2.0 * i, 0, size.width/2.0, size.height);</p>
+      <p> }<br />
+    }</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </body>
 </html>

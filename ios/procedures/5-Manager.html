@@ -16,6 +16,42 @@
 <p>&nbsp;</p>
 <p>The other problem to force every manager a singleton is, that model classes cannot refer to it.. Only other 5-Manager level (and above) will be able to refer to managers.</p>
 <p>&nbsp;</p>
+<p>Each type of manager is in charge of specific aspect of the app. &quot;In charge&quot; means that it will have its own final say. Also it comes with responsibility, so that when the app disbehave at that aspect, the root will be found directly and easily there.</p>
+<p>&nbsp;</p>
+<p>Types of managers</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>access manager</td>
+    <td><p>when trying to access the data storage, use manager, rather than use access directly. </p>
+    <p>manager will configure the access with, such as , base URL or connectivity etc.</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>process manager</td>
+    <td><p>when we try to &quot;do&quot; something in manageable manner, such as concurrency, dependency. </p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>.</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <h2>Using Access</h2>
 <p>The other purpose for establishing the role of manager, is to use and manage variety of Access. </p>
 <p>&nbsp;</p>
@@ -24,10 +60,129 @@
 <p>&nbsp;</p>
 <p>must define Notification Names???</p>
 <p>&nbsp;</p>
+<p>JX</p>
+<h3>3-types of functional , from architecture perspective.</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>base</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+    <p>define the behavior of the manager, via @interface, and Notification</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>functional</td>
+    <td>&nbsp;</td>
+    <td><p> Functional enrichment/embodyment subclass<br />
+      <br />
+      - assign mdoel/feature in [-init]<br />
+      - override [-process] if needed<br />
+  <br />
+    </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>serving</td>
+    <td>&nbsp;</td>
+    <td>Serving subclass<br />
+      <br />
+- singleton, for final subclass</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p></p>
 <p>&nbsp;</p>
 <h2>Coding-Implementation</h2>
+<h3>base</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>define Notification(s)</td>
+    <td><p>extern NSString * const JXNotification_ResourcePackageManger_Completed;<br />
+      extern NSString * const JXNotification_ResourcePackageManger_Failed;</p>
+    <p>&nbsp;</p></td>
+    <td>// assign the const with real values</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>define enum(s)</td>
+    <td><p>typedef enum {<br />
+      JXEnum_ResourcePackageManager_Status_NotStarted= 100,<br />
+      JXEnum_ResourcePackageManager_Status_Running ,<br />
+      JXEnum_ResourcePackageManager_Status_Completed ,<br />
+      JXEnum_ResourcePackageManager_Status_Failed,<br />
+  <br />
+  <br />
+      } JXEnum_ResourcePackageManager_Status;</p>
+      <p>typedef enum  {<br />
+        JXEnum_ResourcePackageManager_FailurePolicy_FailedThenStop = 100,<br />
+        JXEnum_ResourcePackageManager_FailurePolicy_FailedAndContinue<br />
+  <br />
+    } JXEnum_ResourcePackageManager_FailurePolicy;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>define the action/method</td>
+    <td>- start</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>functional</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>config-style</td>
+    <td>assign specific value in [-init]</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>code-style</td>
+    <td>override the certain method(s)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>serving</h3>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>

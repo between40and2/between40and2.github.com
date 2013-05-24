@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iOS-Procedure-UIVC</title>
+</head>
+
+<body>
+<h1>iOS-Procedure-UIVC</h1>
+<p>&nbsp; </p>
+<h1>Questions of VC</h1>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>View management</td>
+    <td>How VC does create, use and dispose view</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Model</td>
+    <td>What data model, and other properties, will be presented in this VC</td>
+    <td>&nbsp;</td>
+    <td>VC主要对象是model</td>
+  </tr>
+  <tr>
+    <td>Orientation</td>
+    <td>When device orientation changes, should VC respond? if so, how does it notifies its view</td>
+    <td>&nbsp;</td>
+    <td>通知View方向改变 改变布局</td>
+  </tr>
+  <tr>
+    <td>DA-</td>
+    <td><p>Where the model come frome(数据从哪里来)</p>
+      <ul>
+        <li>global access: such as NSUserDefaults, </li>
+        <li>via property. data are given by this VC's client</li>
+        <li>self-generated. such as random </li>
+      </ul>
+    <p>&nbsp;</p></td>
+    <td><p>UIStory</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Inter-VC  VC间的关系</p>
+      <ul>
+        <li>UIStoryboard  iOS 5</li>
+        <li>container VC iOS 5</li>
+        <li>tabbarController navigationController toolbar</li>
+        <li>presenting/dismissing</li>
+      </ul></td>
+    <td>How one VC bring up another VC
+<p>What is the relationship between related VCs.</p>
+<ul>
+  <li>containment
+    <ul>
+      <li>包含关系 父子 navigationController与VC, UITabBarController</li>
+      </ul>
+  </li>
+  <li>Flow
+    <ul>
+      <li>范围从小到大, such as menu-category-dish</li>
+      <li>Presenting-dismissing 插入方式（添加）</li>
+      <li>popover</li>
+    </ul>
+  </li>
+  </ul></td>
+    <td><p>UIStory</p>
+      <p>VC Flow</p>
+      <p>&nbsp;</p></td>
+    <td><ul>
+      <li></li>
+      <li>Flow关系
+        <ul>
+          <li>UIStory 范围从小到大</li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td>iOS 6 Restoration</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;</p>
+<p>These works will fall into 2 Roles</p>
+<table width="100%" border="1">
+  <tr>
+    <td>VC  subclass</td>
+    <td>UIStory</td>
+  </tr>
+  <tr>
+    <td><ul>
+      <li>View management</li>
+      <li>Model</li>
+      <li>Orientation</li>
+    </ul></td>
+    <td><ul>
+      <li>DA</li>
+      <li>inter-VC</li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>ABC - Configuration</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>SHEMUI</td>
+    <td>SHEMBWUI</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>UITableViewController</p>
+      <p>UINavigationController</p>
+      <p>&nbsp;</p></td>
+    <td>any VC</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>plain UI</td>
+    <td>fancy UI if designed so</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Data oriented</td>
+    <td>app/user oriented</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>English only</td>
+    <td>multilingual</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>no customized cell</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>for developer</td>
+    <td>for user</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>direct </td>
+    <td>via UIStory</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Golden Design Rules for UIVC</h2>
+<ul>
+  <li>Thin VC</li>
+  <li>One VC, one View, one Model
+    <ul>
+      <li>no subview's properties in this view</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<ul>
+  <li>when addingChildViewController, do not necessarily have to addSubview. subview may be added later on demand</li>
+  <li></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Golden Design Rules for UIView</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>不能隔代管理，应该逐级上传下达。</p>
+    <p>兄弟之间不能直接交流，要通过父亲。</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1、<br />
+  2、只有model和access用notification，view和VC用delegate，因为delegate只有一个听众，而View和VC只能有一个客户，model可能有多个客户。<br />
+  3、<br />
+  4、上传用delegate和notification，下达用property和method。<br />
+  5、知识最小原则，不该知道的不用知道。<br />
+6、</p>
+<p>当VC和View给下属传数据时用property，但如果数据内部发生变化时，应该由该数据以notification形式通知。当数据实例发生变化时用View和VC传。</p>
+<p>Example, </p>
+<p>&nbsp;</p>
+<h2>Coding Style</h2>
+<ul>
+  <li>remove Xcode template generated code, if you do not modify them.. such as AppDelegate's BecomeActive, etc. </li>
+</ul>
+<p>&nbsp;</p>
+<p>in view's .h file, list properties in the order as following:</p>
+<ul>
+  <li>model</li>
+  <li>delegate</li>
+  <li>subview, if needed..</li>
+</ul>
+<p>&nbsp;</p>
+<p>Layout code should stay together. do not litter them around. [-layoutSubviews] is the most appropricate place for them. </p>
+<p>&nbsp;</p>
+<h2>References</h2>
+<ul>
+  <li><a href="iOS-Procedure-UIVCC.html">iOS-Procedure-UIVCC</a></li>
+  <li><a href="iOS-Procedure-UIVCAssistant.html">iOS-Procedure-UIVCAssistant</a></li>
+  <li><a href="iOS-Procedure-UIView.html">iOS-Procedure-UIView</a></li>
+</ul>
+<p>&nbsp;</p>
+</body>
+</html>
