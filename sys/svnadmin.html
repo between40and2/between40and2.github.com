@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>svnadmin</title>
+</head>
+
+<body>
+<h1>svnadmin</h1>
+<p>&nbsp;</p>
+<p>mkdir SHRC</p>
+<p>vnadmin create SHRC</p>
+<p>&nbsp;</p>
+<h2>Configuration</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>### This file is an example authorization file for svnserve.<br />
+      ### Its format is identical to that of mod_authz_svn authorization<br />
+      ### files.<br />
+      ### As shown below each section defines authorizations for the path and<br />
+      ### (optional) repository specified by the section name.<br />
+      ### The authorizations follow. An authorization line can refer to:<br />
+      ###  - a single user,<br />
+      ###  - a group of users defined in a special [groups] section,<br />
+      ###  - an alias defined in a special [aliases] section,<br />
+      ###  - all authenticated users, using the '$authenticated' token,<br />
+      ###  - only anonymous users, using the '$anonymous' token,<br />
+      ###  - anyone, using the '*' wildcard.<br />
+      ###<br />
+      ### A match can be inverted by prefixing the rule with '~'. Rules can<br />
+      ### grant read ('r') access, read-write ('rw') access, or no access<br />
+      ### ('').</p>
+      <p>[aliases]<br />
+        # joe = /C=XZ/ST=Dessert/L=Snake City/O=Snake Oil, Ltd./OU=Research Institute/CN=Joe Average</p>
+      <p>[groups]<br />
+        # harry_and_sally = harry,sally<br />
+        # harry_sally_and_joe = harry,sally,&amp;joe</p>
+      <p># [/foo/bar]<br />
+        # harry = rw<br />
+        # &amp;joe = r<br />
+        # * =</p>
+      <p># [repository:/baz/fuz]<br />
+        # @harry_and_sally = rw<br />
+    # * = r</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>passwd </td>
+    <td><p>### This file is an example password file for svnserve.<br />
+      ### Its format is similar to that of svnserve.conf. As shown in the<br />
+      ### example below it contains one section labelled [users].<br />
+      ### The name and password for each user follow, one account per line.</p>
+      <p>[users]<br />
+        # harry = harryssecret<br />
+    # sally = sallyssecret</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h3>svnserve.conf </h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>### This file controls the configuration of the svnserve daemon, if you<br />
+      ### use it to allow access to this repository.  (If you only allow<br />
+      ### access through http: and/or file: URLs, then this file is<br />
+      ### irrelevant.)</p>
+    <p>### Visit http://subversion.apache.org/ for more information.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>[general]<br />
+      ### These options control access to the repository for unauthenticated<br />
+      ### and authenticated users.  Valid values are &quot;write&quot;, &quot;read&quot;,<br />
+      ### and &quot;none&quot;.  The sample settings below are the defaults.<br />
+      # anon-access = read<br />
+      # auth-access = write<br />
+      ### The password-db option controls the location of the password<br />
+      ### database file.  Unless you specify a path starting with a /,<br />
+      ### the file's location is relative to the directory containing<br />
+      ### this configuration file.<br />
+      ### If SASL is enabled (see below), this file will NOT be used.<br />
+      ### Uncomment the line below to use the default password file.<br />
+      # password-db = passwd<br />
+      ### The authz-db option controls the location of the authorization<br />
+      ### rules for path-based access control.  Unless you specify a path<br />
+      ### starting with a /, the file's location is relative to the the<br />
+      ### directory containing this file.  If you don't specify an<br />
+      ### authz-db, no path-based access control is done.<br />
+      ### Uncomment the line below to use the default authorization file.<br />
+      # authz-db = authz<br />
+      ### This option specifies the authentication realm of the repository.<br />
+      ### If two repositories have the same authentication realm, they should<br />
+      ### have the same password database, and vice versa.  The default realm<br />
+      ### is repository's uuid.<br />
+    # realm = My First Repository</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>[sasl]<br />
+      ### This option specifies whether you want to use the Cyrus SASL<br />
+      ### library for authentication. Default is false.<br />
+      ### This section will be ignored if svnserve is not built with Cyrus<br />
+      ### SASL support; to check, run 'svnserve --version' and look for a line<br />
+      ### reading 'Cyrus SASL authentication is available.'<br />
+      # use-sasl = true<br />
+      ### These options specify the desired strength of the security layer<br />
+      ### that you want SASL to provide. 0 means no encryption, 1 means<br />
+      ### integrity-checking only, values larger than 1 are correlated<br />
+      ### to the effective key length for encryption (e.g. 128 means 128-bit<br />
+      ### encryption). The values below are the defaults.<br />
+      # min-encryption = 0<br />
+    # max-encryption = 256</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

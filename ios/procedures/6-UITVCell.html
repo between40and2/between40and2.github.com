@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>6-UITVCell</title>
+</head>
+
+<body>
+<h1>6-UITVCell</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>data structure and type , for a cell</h2>
+<h3>primitive type</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>value only , no key</td>
+    <td>kv</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>primitive type</td>
+    <td>Cell_Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>NSString</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSDate</td>
+    <td>NSDate</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSData</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Transformer - general </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UIImage</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h3>object</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>value only</td>
+    <td>kv pair</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>id - general object</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSManagedObject</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSManagedObject - as the value of relationship... </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>other model</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Diff between JXUITVCell_NSManagedObject and JXUITVCell_NSManagedObject_Relationship</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>JXUITVCell_NSManagedObject</td>
+    <td>JXUITVCell_NSManagedObject_Relationship</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>hint for display</td>
+    <td>consult mo's userInfo</td>
+    <td>consult rel's userInfo first</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>extra display</td>
+    <td>no need. since. for ToMany-rel, the rel's info is display on header. </td>
+    <td>display rel.name as key.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>use case</td>
+    <td>list of mo,or frc</td>
+    <td>in mo item.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>API</td>
+    <td>mo only</td>
+    <td>mo + rel. </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>suggestions: </h2>
+<p>all UILabel's backgroundColor should be set as clearColor, to avoid it obstacle  other UI elements..</p>
+<p>&nbsp;</p>
+<h2>Class Inheritance</h2>
+<p>&nbsp;</p>
+<ul>
+  <li>UITableViewCell
+  <ul>
+    <li>JXUITVCell_id
+      <ul>
+        <li>SHEMUITVCell_OrderItem__base</li>
+        </ul>
+    </li>
+    <li>JXUITVCell_base -- with a UITextField as editing detailedTextLabel... 
+      <ul>
+        <li>JXUITVCell__subtitle</li>
+        <li>JXUITVCell__value1</li>
+        <li>JXUITVCell__value2</li>
+      </ul>
+    </li>
+    </ul>
+  </li>
+</ul>
+<p>Callback</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>delegate</td>
+    <td>block</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>NSObject
+        <ul>
+          <li>JXUITVCellDelegate_id
+            <ul>
+              <li>SHEMUITVCellDelegate_OrderItem</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUITVCell_id</td>
+    <td><p>@property (nonatomic, strong) id object;<br />
+    </p>
+      <p>@property (nonatomic, assign) id&lt;JXUITVCellDelegate_id&gt; delegate; <br />
+        <br />
+      </p>
+<p>&nbsp;</p></td>
+    <td><p>@interface JXUITVCell_id (Subclassing )</p>
+      <p>- (void) postActionObject: (id) object;</p>
+    <p>@end</p></td>
+    <td><p>@interface JXUITVCell_id (UIParts)<br />
+      @property (nonatomic, readonly) UILabel * topRightLabel;<br />
+      @property (nonatomic, readonly) UILabel * bottomRightLabel;</p>
+      <p>&nbsp;</p>
+    <p>@end</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>JXUITVCell_kv</h2>
+<p>&nbsp;</p>
+<ul>
+  <li>JXUITVCell__value1
+    <ul>
+      <li>JXUITVCell_kv_base
+        <ul>
+          <li>JXUITVCell_kv_Bool</li>
+          <li>JXUITVCell_kv_NSDate</li>
+          <li>JXUITVCell_kv_NSString</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>@property(nonatomic, strong) id key;<br />
+      @property (nonatomic, strong) id value;</p>
+    <p>@property (nonatomic, strong) JXBlock_ObjectObject block_kv_valueChanged; </p></td>
+    <td><p>block_kv_valueChanged is called in Cell's setEditing:animated: when editing is YES </p>
+    <p>if (_dirty) {<br />
+_dirty = NO;<br />
+if (self.boolean != _proposedBool) {<br />
+<br />
+self.boolean = _proposedBool;<br />
+<br />
+if (self.block_kv_valueChanged) {<br />
+self.block_kv_valueChanged(self.key, self.value);<br />
+}<br />
+<br />
+}<br />
+}</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Implementation Guide </h2>
+<p>Define required UI part.</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Bool</td>
+    <td>UISwitch</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSDate</td>
+    <td>UITextField</td>
+    <td>UIDatePicker </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>NSString</td>
+    <td>UITextField</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>In application of CoreData</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>AttributeType</td>
+    <td>Cell Reusable ID</td>
+    <td>cell class</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Boolean</td>
+    <td>Cell-Attr-Bool</td>
+    <td>JXUITVCell_kv_Bool</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Cell-Attr-NSString</td>
+    <td>JXUITVCell_kv_NSString</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>Cell-Attr-NSDate</td>
+    <td>JXUITVCell_kv_NSDate</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Cell-kv-UIImage</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Working with UITableViewController</p>
+<p>1. register cell classes - in [-viewDidLoad], you can use JXUITVCell's [+ </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Fresh, Mind, and Soul</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Fresh</td>
+    <td>Physical</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Mind</td>
+    <td>Structure</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Soul</td>
+    <td>Model</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+</body>
+</html>

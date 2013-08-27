@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>iOS-Procedure-8-UIStory</title>
+<title>8-UIStory</title>
 </head>
 
 <body>
-<h1>iOS-Procedure-8-UIStory</h1>
+<h1>8-UIStory</h1>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+<h2>Why UIStory</h2>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
@@ -38,19 +38,74 @@
   </tr>
 </table>
 <p>&nbsp;</p>
-<p>Traditional UIVC needs to process the following issues:</p>
-<ul>
-  <li>model</li>
-  <li>view mgmt</li>
-  <li>orientation</li>
-  <li>DA</li>
-  <li>inter-VC</li>
-</ul>
-<p>Now UIStory emerges and is designed to take following tasks.</p>
-<ul>
-  <li>create and manages rootViewController for UIWindow and other level of module.</li>
-  <li>manages inter-VC interaction. For example, JXUIStory_MasterDetail takes care of UISplitViewController's delegate. so that both master and detail vc would NOT consider so much on how to pass the data to another VC. </li>
-</ul>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>Before</p>
+    <p>The problem</p></td>
+    <td><p>Now</p>
+    <p>The solution</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>the scope of job</td>
+    <td><p>Traditional UIVC needs to process the following issues:</p>
+      <ul>
+        <li>model</li>
+        <li>view mgmt</li>
+        <li>orientation</li>
+        <li>DA</li>
+        <li>inter-VC</li>
+    </ul></td>
+    <td><p>Now UIStory emerges and is designed to take following tasks.</p>
+      <ul>
+        <li>create and manages rootViewController for UIWindow and other level of module.</li>
+        <li>manages inter-VC interaction. For example, JXUIStory_MasterDetail takes care of UISplitViewController's delegate. so that both master and detail vc would NOT consider so much on how to pass the data to another VC. </li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>working with UA</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Issues</p>
+<p>&nbsp;</p>
+<p>&nbsp;	</p>
+<p>&nbsp;</p>
 <h2>Unification of RO-UIStory and RW one</h2>
 <p>In the case of 2-screen, the main UIStory is for iOS screen (RW), and the other UIStory is for secondary screen (RO - does not handle touch events).</p>
 <p>Both respond to something. </p>
@@ -175,19 +230,19 @@
   </tr>
   <tr>
     <td>JXUIStory_MainFlipside</td>
-    <td><p>@property (nonatomic, strong) NSString * className_MainVC;<br />
-      @property (nonatomic, strong) NSString * nibName_MainVC_iPhone;<br />
-      @property (nonatomic, strong) NSString * nibName_MainVC_iPad;</p>
-      <p>@property (nonatomic, strong) NSString * className_FlipsideVC;<br />
-        @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPhone;<br />
-        @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPad;<br />
+    <td><p><br />
       </p>
       <p>@property (nonatomic, readonly) UIViewController * mainVC;<br />
         @property (nonatomic, readonly) UIViewController * flipsideVC;<br />
       </p>
       <p>- (void) presentFlipside: (id) sender ;<br />
     - (void) dismissFlipside; </p></td>
-    <td>&nbsp;</td>
+    <td><p>@property (nonatomic, strong) NSString * className_MainVC;<br />
+      @property (nonatomic, strong) NSString * nibName_MainVC_iPhone;<br />
+      @property (nonatomic, strong) NSString * nibName_MainVC_iPad;</p>
+      <p>@property (nonatomic, strong) NSString * className_FlipsideVC;<br />
+        @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPhone;<br />
+    @property (nonatomic, strong) NSString * nibName_FlipsideVC_iPad;</p></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -214,7 +269,7 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Notes:</p>
-<p>AppDelegate or other UIStory's client must retain UIStory instance..... because UIStory also function as delegate of something inside. If the external entity does it retain it, it will be release after use, and then being a delegate (of someone else) will be meaningless.</p>
+<p>AppDelegate or other UIStory's client <strong>must</strong> retain UIStory instance..... because UIStory also function as delegate of something inside. If the external entity does it retain it, it will be release after use, and then being a delegate (of someone else) will be meaningless.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Code Injection for VC's navigationItem</p>
@@ -264,15 +319,130 @@ vc_url.navigationItem.leftBarButtonItem = nil;<br />
 <p>&nbsp;</p>
 <h3>JXUIStory_MasterDetail - SHMDUIStory_ImportActivity</h3>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p>VC_list</p>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;	</p>
 <p>VC_object</p>
 <p>override [- setObject: id]</p>
+<p>&nbsp;</p>
+<h3>JXUIStory_id_mgmt (2013-07-05)</h3>
+<p>This covers the typical list-item scenario. Of couse, it is model driven. ? </p>
+<ul>
+  <li>JXUIStory_id_mgmt
+    <ul>
+      <li>JXUIStory_id_mgmt__default</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIStory_id_mgmt</td>
+    <td><p>Client has to provide the following properties/info:</p>
+      <ul>
+        <li>JXUIVCConfig * vcConfig_list</li>
+        <li>JXUIVCConfig * vcConfig_item</li>
+        <li>NSArray * array</li>
+    </ul></td>
+    <td><p>editable_list</p>
+    <p>showsAdd_list</p>
+    <p>showsEdit_list</p></td>
+    <td><p>init VCof list and item</p>
+    <p>connect list-item, passing values</p>
+    <ul>
+      <li>itemSelectionBlock</li>
+      <li>itemActionBlock(item, action)</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>The NSFetchedResultsController-version </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>will be provided later.</td>
+  </tr>
+  <tr>
+    <td>JXUIStory_id_mgmt__default</td>
+    <td><p>The default impl (JXUIStory_id_mgmt__default) uses two VCs, each for list and item. </p>
+      <ul>
+        <li>JXUIVC_id_list__tv__propertyKeyPath - 
+          <ul>
+            <li>which may gets the primary and secondary propertyKeyPath if model class defines [+ (NSArray*) propertyKeyPaths_preferred]</li>
+          </ul>
+        </li>
+        <li>JXOCUIVC_id__tv
+          <ul>
+            <li>using JXOC to investigate object's class</li>
+          </ul>
+        </li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Reminder: vcConfig's viewController can be additionally configured via postInitBlock</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Revisions</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>doc renaming: from iOS-Procedure-8-UIStory</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

@@ -99,6 +99,74 @@ v.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibl
   </tr>
 </table>
 <p>&nbsp;</p>
+<p>JXUIVCC_ViewStack</p>
+<p>JXUIVCC_ViewStack</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>appearing</td>
+    <td>consequential</td>
+    <td>disappearing</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>JXUIVC__01 -- viewWillAppear</p>
+      <p>JXUIVC__01 -- viewDidAppear</p>
+      <p>JXUIVCC_ViewStack -- viewWillAppear</p>
+      <p>JXUIVC__01 -- viewWillAppear</p>
+      <p>JXUIVC__02 -- viewWillAppear</p>
+      <p>JXUIVCC_ViewStack -- viewDidAppear</p>
+      <p>JXUIVC__01 -- viewDidAppear</p>
+    <p>JXUIVC__02 -- viewDidAppear</p></td>
+    <td><p>JXUIVC__01 -- viewWillDisappear</p>
+      <p>JXUIVC__02 -- viewWillAppear</p>
+      <p> JXUIVC__01 -- viewDidDisappear</p>
+    <p>JXUIVC__02 -- viewDidAppear</p></td>
+    <td><p>JXUIVCC_ViewStack -- viewWillDisappear</p>
+      <p>JXUIVC__01 -- viewWillDisappear</p>
+      <p> JXUIVC__02 -- viewWillDisappear</p>
+      <p> JXUIVC__0100 -- viewWillAppear</p>
+      <p> JXUIVCC_ViewStack -- viewDidDisappear</p>
+      <p>JXUIVC__01 -- viewDidDisappear</p>
+      <p>JXUIVC__02 -- viewDidDisappear</p>
+    <p> JXUIVC__0100 -- viewDidAppear</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/CreatingCustomContainerViewControllers/CreatingCustomContainerViewControllers.html">Creating Custom Container View Controllers</a> in <a href="https://developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html">View Controller Programming Guide for iOS</a></h2>
+<p>&nbsp;</p>
+<ul>
+  <li>Designing Your Container View Controller</li>
+  <li>Examples of Common Container Designs
+    <ul>
+      <li>A Navigation Controller Manages a Stack of Child View Controllers</li>
+      <li>A Tab Bar Controller Uses a Collection of Child Controllers</li>
+      <li>A Page Controller Uses a Data Source to Provide New Children</li>
+    </ul>
+  </li>
+  <li>Implementing a Custom Container View Controller
+    <ul>
+      <li>Adding and Removing a Child</li>
+      <li>Customizing Appearance and Rotation Callback Behavior</li>
+    </ul>
+  </li>
+  <li>Practical Suggestions for Building a Container View Controller</li>
+</ul>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
 </html>
