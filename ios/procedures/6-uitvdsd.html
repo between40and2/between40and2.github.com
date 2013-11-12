@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>6-uitvdsd</title>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<h1>6-uitvdsd</h1>
+<p>&nbsp;</p>
+<h2>Concepts</h2>
+<p>also appliable for CVDSD</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>TV</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CV</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>EV = Element View</td>
+    <td>such as Cell, header/footer, etc. </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>EVReuse</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Item - IndexPath</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>decorateCell: forItem:</p>
+    <p>decorateCell: forItem: atIndexPath:</p>
+    <p>decorateCell: atIndexPath:</p></td>
+  </tr>
+  <tr>
+    <td>Group - Section </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+    <p>forGroup: </p>
+    <p>forGroup: atSection:</p>
+    <p>atSection: </p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Classes and Protocols: UIKit</h2>
+<p>&nbsp;</p>
+<h2>Classes and Protocols: JXUI</h2>
+<p>&nbsp;</p>
+<p>Working with UIVCBuilder - Content part..</p>
+<p>&nbsp;</p>
+<ul>
+  <li>NSObject
+    <ul>
+      <li>JXUITVElementsReusability
+        <ul>
+          <li>JXUITVDSD_DSOnly_base
+            <ul>
+              <li>JXUITVDSD_base
+                <ul>
+                  <li>JXUITVDSD_NSFetchedResultsController</li>
+                  <li>JXUITVDSD_id_list_base
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <ul>
+    <ul>
+      <ul>
+        <ul>
+          <li>JXUITVDSD_LVSections</li>
+        </ul>
+      </ul>
+    </ul>
+  </ul>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>to-client for service/use</td>
+    <td>subclassing</td>
+    <td>configuration (to-client, for construction/growth)</td>
+  </tr>
+  <tr>
+    <td>JXUITVElementsReusability</td>
+    <td><p>#pragma mark ReuseID-Cell (Class and Nib) mapping management</p>
+      <p>// value can be either Class or NSString. if NSString, use NSClassFromString<br />
+        @property (nonatomic, strong) NSDictionary * classForCellReuseId;</p>
+      <p>&nbsp;</p>
+    <p>- (NSString*) cellReuseIdForItemAtIndexPath: (NSIndexPath*) indexPath;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>JXUITVDSD_DSOnly_base</p>
+    <p>&lt;UITableViewDataSource&gt;</p></td>
+    <td><p><br />
+      </p>
+      <p>- (void) configureCell: (UITableViewCell*) cell forItem: (id) item ;<br />
+    </p>
+      <p>#pragma mark Editing</p>
+      <p>@property (nonatomic, assign) BOOL editing;</p>
+    <p>- (void) setEditing:(BOOL)editing animated:(BOOL)animated ;</p></td>
+    <td><p>- (void) configureCell: (UITableViewCell*) cell forItem: (id) item ;</p>
+    <p>- (void) configureCell: (UITableViewCell*) cell forIndexPath: (NSIndexPath*) indexPath;</p></td>
+    <td>@property (nonatomic, strong)  JXBlock_ObjectObject block_decorateCellForItem;</td>
+  </tr>
+  <tr>
+    <td><p>JXUITVDSD_base</p>
+    <p>&lt;UITableViewDelegate&gt;</p></td>
+    <td><p>@property (nonatomic, strong) id object;</p>
+      <p>&nbsp;</p>
+    <p>- (id) itemAtIndexPath: (NSIndexPath*) indexPath ;    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>@property (nonatomic, strong) JXBlock_Object block_itemSelection;<br />
+@property (nonatomic, strong) JXBlock_ObjectIndexpath  block_itemIndexpathSelection;</td>
+  </tr>
+  <tr>
+    <td><p>JXUITVDSD_NSFetchedResultsController</p>
+    <p>&lt;NSFetchedResultsControllerDelegate&gt;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUITVDSD_id_list_base</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUITVDSD_LVSections</td>
+    <td><p>@property (nonatomic, strong) NSArray * sections;</p>
+    <p>&nbsp;</p>
+    <p>See JXUIModel_LVSection</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Cookbook</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>how to use custom cell</td>
+    <td>self.vcb_tvdsd.tvdsd.classForCellReuseId =<br />
+@{@&quot;Cell-Creation&quot;: @&quot;SHCCUITVCell_Creation&quot;};<br />
+<br />
+self.vcb_tvdsd.tvdsd.block_cellReuseIdForItemAtIndexPath =<br />
+^id (id indexPath){<br />
+return @&quot;Cell-Creation&quot;;<br />
+};</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>how to decorate cell</p>
+    <p>weather to use custom cell or not, decorating cell at times means to pass the data to cell.</p></td>
+    <td>JXBlock_ObjectObject block_decorateCellForItem =<br />
+^(id cell, id item){<br />
+<br />
+UITableViewCell * c = cell;<br />
+<br />
+[cell performSelector: @selector(setObject:) withObject: item];<br />
+<br />
+//            if ([item isKindOfClass: [NSDictionary class]]) {<br />
+//                NSDictionary * dict = item;<br />
+// <br />
+//                c.textLabel.text = dict[@&quot;text&quot;];<br />
+//                c.detailTextLabel.text = [dict[@&quot;createdDate&quot;] description];<br />
+// <br />
+// <br />
+// <br />
+//                c.detailTextLabel.textColor = [UIColor blueColor];<br />
+//            }else {<br />
+//                c.textLabel.text = [item description];<br />
+//            }<br />
+// <br />
+<br />
+};<br />
+<br />
+self.vcb_tvdsd.tvdsd.block_decorateCellForItem = block_decorateCellForItem;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>JXUITVDSDBridge</h3>
+<p>@interface JXUITVDSDBridge : NSObject</p>
+<p>+ (void) bridgeView: (UIView*) view dsd: (JXUITVDSD_base*) dsd;</p>
+<p>&nbsp;</p>
+<h2>Examples</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>data </td>
+    <td>dsd</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>@property (nonatomic, strong) JXBlock_Object block_itemSelection;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><br />
+      @implementation JXUIVC_ALAssetsLibrary<br />
+      {<br />
+      UITableView * _tableView;<br />
+      JXUITVDSD_id_list__ro *_tvdsd;<br />
+  <br />
+      ALAssetsLibrary * al;<br />
+      NSMutableArray * _assetsGroup_;<br />
+      }<br />
+    </p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil<br />
+{<br />
+self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];<br />
+if (self) {<br />
+// Custom initialization<br />
+<br />
+_tvdsd = [[JXUITVDSD_id_list__ro alloc] init];<br />
+<br />
+[self fetchData_storeInIvar];<br />
+<br />
+_tvdsd.block_decorateCellForItem =<br />
+^(id _cell, id item) {<br />
+ALAssetsGroup * group = item;<br />
+<br />
+UITableViewCell * cell = _cell;<br />
+<br />
+<br />
+NSString * name = [group valueForProperty: ALAssetsGroupPropertyName];<br />
+NSString * type = [group typeName];<br />
+NSLog(@&quot;group name %@ (%i)&quot;, name, [group numberOfAssets]);<br />
+NSString * txt = [NSString stringWithFormat:@&quot;%@ [%@] (%i)&quot;, name, type, [group numberOfAssets]];<br />
+cell.textLabel.text =   txt;<br />
+cell.imageView.image = [UIImage imageWithCGImage:[group posterImage]];<br />
+<br />
+cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;<br />
+<br />
+<br />
+};<br />
+<br />
+}<br />
+return self;<br />
+}</td>
+    <td>launch/start data loading</td>
+    <td><p>init ,</p>
+    <p>config it with block_decorateCellForItem</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (void) fetchData_storeInIvar {<br />
+_assetsGroup_ = [NSMutableArray array];<br />
+<br />
+al = [[ALAssetsLibrary alloc] init];<br />
+<br />
+ALAssetsLibraryGroupsEnumerationResultsBlock resultsBlock =<br />
+^(ALAssetsGroup* group, BOOL * stop){<br />
+<br />
+NSLog(@&quot;gggg %@&quot;, group);<br />
+<br />
+if (group) {<br />
+[_assetsGroup_ addObject: group];<br />
+<br />
+}else{<br />
+_tvdsd.array = _assetsGroup_;<br />
+[_tableView reloadData];<br />
+}<br />
+<br />
+<br />
+};<br />
+<br />
+ALAssetsLibraryAccessFailureBlock failureBlock =<br />
+^(NSError * error) {<br />
+NSLog(@&quot;-- %@&quot;, error);<br />
+};<br />
+<br />
+[al enumerateGroupsWithTypes: ALAssetsGroupAll<br />
+usingBlock:resultsBlock<br />
+failureBlock:failureBlock];<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>assign data</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>- (void)viewDidLoad<br />
+      {<br />
+      [super viewDidLoad];<br />
+      // Do any additional setup after loading the view.<br />
+  <br />
+  <br />
+      _tableView = [[UITableView alloc]initWithFrame: self.view.bounds style:(UITableViewStylePlain)];<br />
+      _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;<br />
+      [self.view addSubview:_tableView];<br />
+    </p>
+      <p> <br />
+        <br />
+  <br />
+  <br />
+  <br />
+    }</p></td>
+    <td>&nbsp;</td>
+    <td><p>view</p>
+    <p>view-dsd bridging</p>
+    <p>&nbsp;</p>
+    <p>[JXUITVDSDBridge bridgeView: _tableView dsd: _tvdsd];</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>- (void) setBlock_itemSelection:(JXBlock_Object)block_itemSelection {<br />
+_tvdsd.block_itemSelection = block_itemSelection;<br />
+<br />
+}</td>
+    <td>forward block_feedback.</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>JXUIModel_LVSection</p>
+<p>&nbsp;</p>
+<ul>
+  <li>NSObject
+    <ul>
+      <li>JXUIModel_LVSection
+        <ul>
+          <li>JXUIModel_LVSection_Object
+            <ul>
+              <li>JXUIModel_LVSection_ObjectPropertyList
+                <ul>
+                  <li>JXUIModel_LVSection_ObjectActionList</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIModel_LVSection</td>
+    <td><p>@property (nonatomic, strong) id object;</p>
+      <p>@property (nonatomic, strong) JXBlock_Object block_itemSelection;<br />
+        @property (nonatomic, strong) JXBlock_ObjectIndex block_itemIndexSelection;</p>
+      <p>- (void) selectItem: (id) item ;</p>
+      <p>//- (void) decorateCell: (UITableViewCell*) cell forItem: (id) item;<br />
+        - (void) decorateCell: (UITableViewCell*) cell forItem: (id) item atIndex: (NSInteger) index;</p>
+      <p>- (void) decorateCell: (UITableViewCell*) cell atIndex: (NSInteger) index;<br />
+      </p>
+      <p>@property (nonatomic, strong) JXBlock_ObjectObject block_decorateCellForItem;<br />
+        @property (nonatomic, strong) JXBlock_Object_id block_createHeaderView;</p>
+      <p>- (NSInteger) numberOfItems ;<br />
+        - (id) itemAtIndex: (NSInteger) index ;</p>
+    <p>@property (nonatomic, strong) NSString * titleForHeader;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIModel_LVSection_Object</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIModel_LVSection_ObjectPropertyList</td>
+    <td><p>@property (nonatomic, strong) NSArray * propertyList;</p>
+    <p>@property (nonatomic, strong) NSString * accessByKeyMethodName;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIModel_LVSection_ObjectActionList</td>
+    <td><p>@property (nonatomic, strong) NSArray * actionList; // of JXUIModel_ObjectAction</p>
+    <p>JXUIModel_ObjectAction</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>@property (nonatomic, strong) id object;<br />
+@property (nonatomic, strong) NSString * title;</p>
+<p>@property (nonatomic, strong) NSString * methodSelectorName; // selectorName_method</p>
+<p>@property (nonatomic, strong) JXBlock_Object_id block_executeObject;</p>
+<p>&nbsp;</p>
+<p>- (void) execute; </p>
+<p>&nbsp;</p>
+</body>
+</html>
