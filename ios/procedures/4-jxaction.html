@@ -6,12 +6,9 @@
 </head>
 
 <body>
-<p>3-jxaction</p>
 <p>4-jxaction</p>
 <h1>JXAction</h1>
 <p>&nbsp;</p>
-<p>- (BOOL) canPerform;</p>
-<p>- (void) perform ;</p>
 <h3>Action is one-head classs</h3>
 <p>&nbsp;</p>
 <h3>Action and UseCase</h3>
@@ -19,10 +16,8 @@
 <h3>Action and WF Activity</h3>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>JXUIAction and JXUIVCAction</h2>
+<h2>JXAction, JXUIAction and JXUIVCAction</h2>
 <p>JXUIAction family is descendant of this JXAction</p>
-<p>&nbsp;</p>
-<p>JXAction and JXUIVCAction</p>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
@@ -73,10 +68,99 @@
 </table>
 <p>&nbsp;</p>
 <ul>
-  <li></li>
+  <li>NSObject 
+    <ul>
+      <li>JXAction_base
+        <ul>
+          <li>JXActionList_base</li>
+          <li>JXUIVCAction_base &lt;UIAlertViewDelegate&gt;
+            (for confirmation of destructive action)
+            <ul>
+              <li>JXUIVCActionList_base </li>
+              <li>JXUIVCAction_UIImage_Print &lt;UIPrintInteractionControllerDelegate&gt;</li>
+              <li></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>subclassing</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXAction_base</td>
+    <td><p>@property (nonatomic, strong) id object;<br />
+    @property (nonatomic, readonly) NSMutableDictionary * context;</p>
+    <p>@property (nonatomic, strong) NSString * title;<br />
+    @property (nonatomic, strong) JXBlock_Object_Bool block_action;</p>
+    <p>- (BOOL) canPerform;<br />
+    - (BOOL) perform: (NSError*__autoreleasing*) error;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>JXUIVCAction_base</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIVCAction_base</td>
+    <td><p>@property (nonatomic, strong) UIViewController * viewController;</p>
+      <p>&nbsp;</p>
+    <p>@property (nonatomic, strong) UIBarButtonItem * buttonItem;</p>
+    <p>@property (nonatomic, strong) JXAction_base * underlyingAction;<br />
+    </p>
+    <p>@property (nonatomic, assign) BOOL destructive;</p></td>
+    <td>&nbsp;</td>
+    <td>- (UIBarButtonItem*) generate_buttonItem ;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIVCActionList_base</td>
+    <td><p>// list of actions. for each action, object and context are nil.<br />
+      // they will use the same object and context as list's one.</p>
+    <p>@property (nonatomic, strong) NSArray * items;</p></td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p></td>
+    <td><p>@property (nonatomic, strong) NSArray * actionTitles;<br />
+    </p>
+    <p>- (BOOL) handleActionAtIndex: (NSInteger) index ;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+  <ul>
+    <ul>
+      <ul>
+        <ul>
+        </ul>
+      </ul>
+    </ul>
+  </ul>
 </ul>
 <p>Old Design</p>
 <p>VCAction requires a VC as a resource to perform VCA's task. It can serve different kind of VCs.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
