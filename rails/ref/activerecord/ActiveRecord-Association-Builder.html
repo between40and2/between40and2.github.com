@@ -6,8 +6,9 @@
 </head>
 
 <body>
-<p>ActiveRecord-Association-Builder</p>
+<h1>ActiveRecord-Association-Builder (<a href="https://github.com/rails/rails/tree/master/activerecord/lib/active_record/associations/builder">Github</a>)</h1>
 <p>&nbsp;</p>
+<p>module ActiveRecord::Associations::Builder</p>
 <ul>
   <li>Association
     <ul>
@@ -19,7 +20,7 @@
       </li>
       <li>CollectionAssociation
         <ul>
-          <li></li>
+          <li>HasMany</li>
         </ul>
       </li>
     </ul>
@@ -28,6 +29,12 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>class methods</td>
+    <td>instance methods</td>
+  </tr>
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -41,16 +48,24 @@
     <p>options</p>
     <p>reflection</p></td>
     <td><p>mixin</p>
-    <p>build</p>
-    <p>macro</p>
-    <p>valid_options</p>
-    <p>validate_options</p>
-    <p>define_accessors</p>
-    <p>define_readers</p>
-    <p>define_writers</p>
-    <p>configure_dependency</p>
-    <p>valid_dependent_options</p></td>
+      <p>self.create_builder(model, name, scope, options, &amp;block)</p>
+    <p>self.build(model, name, scope, options, &amp;block)</p>
+    <p>self.define_callbacks(model, reflection)</p>
+<p>self.define_accessors(model, reflection)</p>
+    <p>self.define_readers(mixin, name)</p>
+    <p>self.define_writers(mixin, name)</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td><p>initialize(model, name, scope, options)</p>
+      <p>build(model)</p>
+      <p>valid_options</p>
+    <p>validate_options</p></td>
+  </tr>
+  <tr>
     <td>&nbsp;</td>
+    <td>NotImplementedError</td>
+    <td>self.valid_dependent_options</td>
+    <td>macro</td>
   </tr>
   <tr>
     <td>SingularAssocation</td>
@@ -103,10 +118,10 @@
   <tr>
     <td>HasMany</td>
     <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+<p>valid_dependent_options</p></td>
     <td><p>macro</p>
-    <p>valid_options</p>
-    <p>valid_dependent_options</p></td>
-    <td>&nbsp;</td>
+    <p>valid_options</p></td>
   </tr>
   <tr>
     <td>HasAndBelongsToMany</td>
