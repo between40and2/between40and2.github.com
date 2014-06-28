@@ -39,7 +39,7 @@
     <p>Following line is added into ~/.bash_profile during installation</p>
     <pre>[[ -s &quot;$HOME/.rvm/scripts/rvm&quot; ]] &amp;&amp; source &quot;$HOME/.rvm/scripts/rvm&quot; 
 # Load RVM into a shell session *as a function*</pre></td>
-    <td>&nbsp;</td>
+    <td>See <a href="http://stackoverflow.com/questions/8663936/how-do-i-change-my-ruby-version-using-rvm">How do I change my Ruby version using RVM?</a></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -52,5 +52,10 @@
   </tr>
 </table>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Warning! PATH is not properly set up, '/Users/****/.rvm/gems/ruby-1.9.3-p362/bin' is not at first place,<br />
+usually this is caused by shell initialization files - check them for 'PATH=...' entries,<br />
+it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',<br />
+to fix temporarily in this shell session run: 'rvm use ruby-1.9.3-p362'.</p>
 </body>
 </html>

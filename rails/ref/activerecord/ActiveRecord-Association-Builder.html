@@ -53,9 +53,7 @@
     <p>self.define_callbacks(model, reflection)</p>
 <p>self.define_accessors(model, reflection)</p>
     <p>self.define_readers(mixin, name)</p>
-    <p>self.define_writers(mixin, name)</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p></td>
+    <p>self.define_writers(mixin, name)</p></td>
     <td><p>initialize(model, name, scope, options)</p>
       <p>build(model)</p>
       <p>valid_options</p>
@@ -80,58 +78,53 @@
   <tr>
     <td>BelongsTo</td>
     <td>&nbsp;</td>
-    <td><p>macro</p>
-    <p>valid_options</p>
-    <p>constructable?</p>
-    <p>build</p>
+    <td><p>constructable?</p>
+<p>build</p>
     <p>add_counter_cache_callbacks(reflection)</p>
     <p>add_touch_callbacks(reflection)</p>
     <p>valid_dependent_options</p></td>
-    <td>&nbsp;</td>
+    <td><p>macro</p>
+    <p>valid_options</p></td>
   </tr>
   <tr>
     <td>HasOne</td>
     <td>&nbsp;</td>
-    <td><p>macro</p>
-    <p>valid_options</p>
-    <p>constructable?</p>
-    <p>configure_dependency</p>
+    <td><p>constructable?</p>
+<p>configure_dependency</p>
     <p>valid_dependent_options</p></td>
-    <td>&nbsp;</td>
+    <td><p>macro</p>
+    <p>valid_options</p></td>
   </tr>
   <tr>
     <td>CollectionAssocation</td>
     <td><p>CALLBACKS</p>
     <p>block_extension</p>
     <p>extension_module</p></td>
-    <td><p>valid_options</p>
-    <p>build</p>
-    <p>writable?</p>
-    <p>show_deprecation_warnings</p>
+    <td><p>writable?</p>
+<p>show_deprecation_warnings</p>
     <p>wrap_block_extension</p>
     <p>extension_module_name</p>
     <p>define_callback(callback_name)</p>
     <p>define_readers</p>
     <p>define_writers</p></td>
-    <td>&nbsp;</td>
+    <td><p>valid_options</p>
+    <p>build</p></td>
   </tr>
   <tr>
     <td>HasMany</td>
     <td>&nbsp;</td>
-    <td><p>&nbsp;</p>
-<p>valid_dependent_options</p></td>
+    <td><p>valid_dependent_options</p></td>
     <td><p>macro</p>
     <p>valid_options</p></td>
   </tr>
   <tr>
     <td>HasAndBelongsToMany</td>
     <td>&nbsp;</td>
-    <td><p>macro</p>
-    <p>valid_options </p>
-    <p>build</p>
-    <p>show_deprecation_warnings</p>
+    <td><p>build</p>
+<p>show_deprecation_warnings</p>
     <p>define_destroy_hook</p></td>
-    <td>&nbsp;</td>
+    <td><p>macro</p>
+    <p>valid_options </p></td>
   </tr>
 </table>
 <p>&nbsp;</p>
