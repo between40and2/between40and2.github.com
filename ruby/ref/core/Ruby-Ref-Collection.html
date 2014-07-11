@@ -24,20 +24,63 @@
       <p>#member?</p>
     <p>#none?<br />
 #one?</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><p><br />
+      #chunk<br />
+  <br />
+  <br />
+      #count<br />
+      #cycle<br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+    </p>
+    <p></p></td>
+    <td>#inject<br />
+#map<br />
+#max<br />
+#max_by<br />
+<br />
+#min<br />
+#min_by<br />
+#minmax<br />
+#minmax_by</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>#partition<br />
+#reduce<br />
+#reject<br />
+#reverse_each<br />
+#select<br />
+#slice_before</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>#each_cons<br />
+#each_entry<br />
+#each_slice<br />
+#each_with_index<br />
+#each_with_object</td>
+    <td>#entries<br />
+#find<br />
+#find_all<br />
+#find_index<br />
+#first<br />
+#flat_map<br />
+#grep<br />
+#group_by<br />
+<br /></td>
+    <td>#sort<br />
+#sort_by<br />
+#take<br />
+#take_while<br />
+#to_a<br />
+#zip</td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -81,54 +124,10 @@
   </tr>
 </table>
 <p>&nbsp;</p>
-<p><br />
-  #chunk<br />
-  <br />
-  <br />
-  #count<br />
-  #cycle<br />
-  <br />
-  <br />
-  #each_cons<br />
-  #each_entry<br />
-  #each_slice<br />
-  #each_with_index<br />
-  #each_with_object<br />
-  #entries<br />
-  #find<br />
-  #find_all<br />
-  #find_index<br />
-  #first<br />
-  #flat_map<br />
-  #grep<br />
-  #group_by<br />
-  <br />
-  #inject<br />
-  #map<br />
-  #max<br />
-  #max_by<br />
-  <br />
-  #min<br />
-  #min_by<br />
-  #minmax<br />
-  #minmax_by<br />
-  <br />
-  #partition<br />
-  #reduce<br />
-  #reject<br />
-  #reverse_each<br />
-  #select<br />
-  #slice_before<br />
-  #sort<br />
-  #sort_by<br />
-  #take<br />
-  #take_while<br />
-  #to_a<br />
-#zip</p>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td><p><a href="http://www.ruby-doc.org/core-1.9.3/Array.html">Array</a></p>
       <p>&nbsp;</p>
@@ -137,6 +136,14 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>literal</td>
+    <td>&nbsp;</td>
+    <td>%w[hello world]</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>::[]<br />
 ::new<br />
@@ -148,15 +155,18 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>#&amp;<br />
-#*<br />
-#+<br />
-#-<br />
-<br />
-#&lt;=&gt;<br />
-#==<br />
-#[]<br />
-#[]=</td>
+    <td>&nbsp;</td>
+    <td><p><br />
+      #*<br />
+      #+<br />
+      #-<br />
+  <br />
+      #&lt;=&gt;<br />
+      #==<br />
+      #[] #at</p>
+      <p>#slice<br />
+#slice!<br />
+    #[]=</p></td>
     <td><br />
 #==<br />
 #[]<br />
@@ -164,15 +174,55 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>#first</li>
+      <li>#last</li>
+      <li>#length</li>
+      <li>#size</li>
+      <li>#empty?</li>
+    </ul></td>
+    <td><ul>
+      <li>#length</li>
+      <li>#size</li>
+      <li>empty? → true or false</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>#include?</td>
+    <td><ul>
+      <li>has_key?(key) → true or false</li>
+      <li>key?(key) → true or false</li>
+      <li>include?(key) → true or false</li>
+      <li>has_value?(value) → true or false</li>
+      <li>#member?</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>#collect<br />
+    #collect!</p>
+    <p>#map<br />
+#map!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td><br />
       <br />
       #assoc<br />
-      #at<br />
+      <br />
       #clear<br />
-      #collect<br />
-      #collect!<br />
-      #combination<br />
+      <br />
+      <br />
       #compact<br />
       #compact!<br />
       #concat<br />
@@ -183,27 +233,24 @@
       #drop_while<br />
       #each<br />
       #each_index<br />
-      #empty?<br />
+      <br />
       #eql?<br />
       #fetch<br />
       #fill<br />
       #find_index<br />
-      #first<br />
+      <br />
       #flatten<br />
       #flatten!<br />
       #frozen?<br />
       #hash<br />
-      #include?<br />
-      #index<br />
+      <br />
+      #index #rindex<br />
       #initialize_copy<br />
       #insert<br />
       #inspect<br />
-      #join<br />
-      #keep_if<br />
-      #last<br />
-      #length<br />
-      #map<br />
-      #map!<br /></td>
+      <br />
+      <br />
+      <br />      <br /></td>
     <td><br />
       #assoc<br />
       #clear<br />
@@ -213,87 +260,89 @@
       #default=<br />
       #default_proc<br />
       #default_proc=<br />
-      #delete<br />
-      #delete_if<br />
+      <br />
       #each<br />
       #each_key<br />
       #each_pair<br />
       #each_value<br />
-      #empty?<br />
+      <br />
       #eql?<br />
       #fetch<br />
       #flatten<br />
       #has_key?<br />
       #has_value?<br />
       #hash<br />
-      #include?<br />
+      <br />
       #initialize_copy<br />
       #inspect<br />
       #invert<br />
-      #keep_if<br />
+      <br />
       #key<br />
-      #key?<br />
       #keys<br />
-      #length<br />
-      #member?<br />
+      <br />
+      <br />
       #merge<br />
       #merge!<br /></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>filtering</td>
     <td>&nbsp;</td>
-    <td>#pack<br />
-#permutation<br />
-#pop<br />
-#product<br />
-#push<br />
-#rassoc<br />
-#reject<br />
-#reject!<br />
-#repeated_combination<br />
-#repeated_permutation<br />
+    <td><p>#keep_if</p>
+    <p>#select<br />
+#select!</p>
+    <p>reject {|item| block } → new_ary</p>
+    <p>#reject<br />
+#reject!</p></td>
+    <td><p>#keep_if</p>
+    <p>#select<br />
+#select!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>#rassoc<br />
+      <br />
 #replace<br />
 #reverse<br />
 #reverse!<br />
 #reverse_each<br />
-#rindex<br />
+<br />
 #rotate<br />
 #rotate!<br />
 #sample<br />
-#select<br />
-#select!<br />
-#shift<br />
+<br />
+<br />
 #shuffle<br />
 #shuffle!<br />
-#size<br />
-#slice<br />
-#slice!<br />
+<br />
 #sort<br />
 #sort!<br />
 #sort_by!<br />
 #take<br />
-#take_while<br />
-#to_a<br />
+#take_while<br /></td>
+    <td>#rassoc<br />
+#rehash<br />
+<br />
+#replace<br />
+<br />
+<br />
+#store<br /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>#to_a<br />
 #to_ary<br />
 #to_s<br />
 #transpose<br />
-#uniq<br />
-#uniq!<br />
-#unshift<br />
+<br />
+<br />
 #values_at<br />
-#zip<br />
-#|</td>
-    <td>#rassoc<br />
-#rehash<br />
-#reject<br />
-#reject!<br />
-#replace<br />
-#select<br />
-#select!<br />
-#shift<br />
-#size<br />
-#store<br />
-#to_a<br />
+#zip<br /></td>
+    <td>#to_a<br />
 #to_hash<br />
 #to_s<br />
 #update<br />
@@ -304,21 +353,73 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>#&lt;&lt;</td>
+    <td>&nbsp;</td>
+    <td><p>#&lt;&lt;</p>
+    <p>#push</p>
+    <p>#unshift</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>#delete<br />
-#delete_at<br />
-#delete_if</td>
+    <td>&nbsp;</td>
+    <td><p>#delete<br />
+      #delete_at<br />
+    #delete_if</p>
+    <p>#shift</p>
+    <p>#pop</p>
+    <p>#uniq<br />
+#uniq!</p></td>
+    <td><p>#delete<br />
+    #delete_if</p>
+    <p>#reject<br />
+#reject!<br />
+#shift</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Array &lt;-&gt; String</p>
+<p>#join<br />
+#pack</p>
+<p>Math in Array</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Set</td>
+    <td><p>#&amp;</p>
+    <p>#|</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>#combination</p>
+      <p>#permutation<br />
+        <br />
+    #product</p>
+    <p>#repeated_combination<br />
+#repeated_permutation</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><a href="http://www.ruby-doc.org/core-1.9.3/Struct.html">Struct</a></p>

@@ -65,7 +65,11 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><p>@property (nonatomic, readonly) JXObjectAgent * agent_tvdsd;</p>
+      <p>@property (nonatomic, readonly) JXUITVDSD_base * tvdsd;<br />
+      </p>
+      <p>&nbsp;</p>
+    <p>- (UITableView*) tableView;</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -94,7 +98,14 @@
             <ul>
               <li>JXUIVC_NSArray__vcb_tvdsd
                 <ul>
+                  <li>JXUIVC_id__vcb_tvdsd__primaryRelationship
+                    <ul>
+                      <li>SHCCUIVC_Topic__primaryRelationship --- finally deprecated.... </li>
+                    </ul>
+                  </li>
                   <li>JXUIVC_ALAssetsLibrary</li>
+                  <li></li>
+                  <li></li>
                 </ul>
               </li>
               <li>JXUIVC_id__vcb_tvdsd_lvsections
@@ -140,14 +151,40 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>JXUIVC_NSArray__vcb_tvdsd</td>
+    <td>JXUIVC_NSArray<br />
+    __vcb_tvdsd</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>JXUIVC_id__vcb_tvdsd_lvsections</td>
+    <td>JXUIVC_id<br />
+    __vcb_tvdsd_lvsections</td>
     <td>@property (nonatomic, readonly) JXUITVDSD_LVSections * tvdsd;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>JXUIVC_id<br />
+    __vcb_tvdsd<br />
+    __primaryRelationship</p></td>
+    <td><p>@property (nonatomic, strong) NSString * relationshipKeyPath;</p>
+      <p>@property (nonatomic, readonly) JXObjectAgent * agent_vca_rel_list_addNew;<br />
+      </p>
+      <p>@property (nonatomic, strong) JXBlock_Object_id block_newObject_inRelationship ;</p>
+      <p>@property (nonatomic, strong) JXBlock_ObjectObjectObject_id block_object_addItem_onRelationship;<br />
+      </p>
+      <p>// when a new object is added. 4 things happen<br />
+        // - update internal _marray<br />
+        // - notice client, if block_newObject_inRelationship is defined.<br />
+        // - update UI, via self.vcb_tvdsd.tvdsd.object = _marray;<br />
+        // - set it back to object(itself)</p>
+      <p>// notice client, is the chance for DA.. <br />
+      </p>
+      <p>// 2013-10-31<br />
+        @property (nonatomic, strong) JXBlock_Object block_decorateVCA_list_addNew;<br />
+      </p>
+    <p>@property (nonatomic, strong) JXBlock_ObjectObjectObject block_object_removeItem_onRelationship;</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>

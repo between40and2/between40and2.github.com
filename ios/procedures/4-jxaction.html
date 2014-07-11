@@ -78,7 +78,11 @@
             <ul>
               <li>JXUIVCActionList_base </li>
               <li>JXUIVCAction_UIImage_Print &lt;UIPrintInteractionControllerDelegate&gt;</li>
-              <li></li>
+              <li>JXUIVCAction_UIImage_Pick_base 
+                <ul>
+                  <li>JXUIVCAction_UIImage_Pick &lt;UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate &gt;</li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -103,7 +107,8 @@
     @property (nonatomic, strong) JXBlock_Object_Bool block_action;</p>
     <p>- (BOOL) canPerform;<br />
     - (BOOL) perform: (NSError*__autoreleasing*) error;</p></td>
-    <td>&nbsp;</td>
+    <td><p>JXBlock_Object block_result; </p>
+    <p>JXBLock_Error block_error; </p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -123,7 +128,8 @@
     </p>
     <p>@property (nonatomic, assign) BOOL destructive;</p></td>
     <td>&nbsp;</td>
-    <td>- (UIBarButtonItem*) generate_buttonItem ;</td>
+    <td><p>- (UIBarButtonItem*) generate_buttonItem ;</p>
+    <p>No need to think of caching (the generated buttonItem) here. superclass would do. </p></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -147,21 +153,229 @@
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<ul>
-  <ul>
-    <ul>
-      <ul>
-        <ul>
-        </ul>
-      </ul>
-    </ul>
-  </ul>
-</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>JXUIVCAction_UIImage_Pick_base</td>
+    <td><p>@property(nonatomic, strong) JXBlock_Object block_decorateIPC;</p>
+    <p>- (UIImagePickerController*) ipc;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>JXUIVCAction_UIImage_Pick</p>
+    <p>&lt;UIImagePickerControllerDelegate,<br />
+      UINavigationControllerDelegate,</p>
+    <p>UIPopoverControllerDelegate<br />
+    &gt;</p></td>
+    <td><p>@property (nonatomic, strong)JXBlock_Object resultBlock;<br />
+    @property (nonatomic, strong)JXBlock_Error errorBlock;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>_vca_list = [[JXUIVCAction_list_base alloc] init ]; // initWithViewController: self];<br />
+      <br />
+_vca_list.actionClassNames =<br />
+@[<br />
+@&quot;JXUIVCAction_UIImage_SaveToAlbum&quot;,<br />
+@&quot;JXUIVCAction_UIImage_Mail&quot;,<br />
+@&quot;JXUIVCAction_UIImage_Print&quot;<br />
+<br />
+];</td>
+    <td>&nbsp;</td>
+    <td rowspan="2"><br />
+_vca_list.viewController = self;<br />
+<br />
+_vca_list.buttonItem.enabled = NO;<br />
+<br />
+self.navigationItem.rightBarButtonItem = _vca_list.buttonItem;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>NSString * name = @&quot;JXUIVCAction_UIImage__list__config&quot;;<br />
+      <br />
+JXClassFactory * cf = [[JXClassFactory alloc] init];<br />
+_vca_list = [cf objectForClassName_uivcationlist: name];</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>ActionList</h2>
+<p>Action list is a container, containing an array of working actions.. UIActionSheet is usually the UI device for action list. </p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Action_list_base</td>
+    <td>actionClassNames</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ActionList_base</td>
+    <td>items (array of JXAction instances)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>Old Design</p>
 <p>VCAction requires a VC as a resource to perform VCA's task. It can serve different kind of VCs.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<h2>buttonItem enabling</h2>
+<p>to prevent an action is triggered second time before the previous have not finished executing, buttonItem is disabled by default. You can enable the buttonItem again, after action finishes executing. </p>
 <p>&nbsp;</p>
+<p>self.block_action =<br />
+^BOOL(id object){<br />
+NSLog(@&quot;------ %@&quot;, object);<br />
+<br />
+self.buttonItem.enabled = YES;<br />
+return YES;<br />
+};</p>
 <p>&nbsp;</p>
 </body>
 </html>

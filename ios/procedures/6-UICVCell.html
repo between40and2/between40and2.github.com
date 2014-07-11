@@ -11,16 +11,19 @@
 <ul>
   <li>UICollectionViewCell
     <ul>
+      <li>JXUICVCell_id__base</li>
+      <li></li>
       <li>JXUICVCell_UIImage
         <ul>
           <li>JXALCVCell_ALAsset</li>
         </ul>
       </li>
+      <li>JXUICVCell_UILabel</li>
     </ul>
   </li>
 </ul>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+<h2>Design (*.h files)</h2>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
@@ -29,8 +32,15 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>JXUICVCell_id__base</td>
+    <td><p>@property (nonatomic, strong)   id object;</p>
+      <p>@property (nonatomic, readonly) UIImageView * imageView;<br />
+        @property (nonatomic, strong)   UIImageView * cornerTag;<br />
+        @property (nonatomic, readonly) UILabel * label ;<br />
+        @property (nonatomic, readonly) UILabel * detailLabel;<br />
+        @property (nonatomic, readonly) UIImageView * imageView_topRightCorner;</p>
+      <p>// to be overriden<br />
+    - (CGRect) frameForSubviewID: (NSInteger) subviewID;</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -42,14 +52,14 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
+    <td>JXALCVCell_ALAsset</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>JXUICVCell_UILabel</td>
+    <td>@property (readonly, strong, nonatomic) UILabel* label;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -73,7 +83,7 @@
   </tr>
 </table>
 <p>&nbsp;</p>
-<h2>Implementation Guide</h2>
+<h2>Implementation Guide (*.m files)</h2>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

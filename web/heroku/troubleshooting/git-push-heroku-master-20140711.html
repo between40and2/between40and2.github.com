@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>git-push-heroku-master-20140711</title>
+</head>
+
+<body>
+<p>git-push-heroku-master-20140711</p>
+<p>&nbsp;</p>
+<h2>Permission denied (publickey).</h2>
+<p>$ git push heroku master<br />
+  Permission denied (publickey).<br />
+fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br />
+  and the repository exists.</p>
+<h3>Solutions</h3>
+<p>$ ssh-keygen -t rsa<br />
+  Generating public/private rsa key pair.<br />
+  Enter file in which to save the key (/Users/juguang/.ssh/id_rsa): <br />
+  Enter passphrase (empty for no passphrase): <br />
+  Enter same passphrase again: <br />
+  Your identification has been saved in /Users/juguang/.ssh/id_rsa.<br />
+  Your public key has been saved in /Users/juguang/.ssh/id_rsa.pub.<br />
+  The key fingerprint is:<br />
+  74:d7:8f:71:fa:2b:e1:e9:3d:07:08:8c:dd:6a:d8:5f juguang@jMac2012Late.local<br />
+The key's randomart image is:</p>
+<pre>
+   +--[ RSA 2048]----+
+   |                 |
+   |             .   |
+   |        .+... o .|
+   |       ...+..  * |
+   |        So o .o .|
+   |        . + ..E. |
+   |         . ...o..|
+   |            .+..o|
+   |            ...oo|
+   +-----------------+</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>add key</p>
+<p>$ heroku keys:add </p>
+<p>If you have more than one public keys, you are prompted to choose one. </p>
+<p>&nbsp;</p>
+<h3>refs</h3>
+<ul>
+  <li><a href="http://stackoverflow.com/questions/14342553/git-push-heroku-master-permission-denied">http://stackoverflow.com/questions/14342553/git-push-heroku-master-permission-denied</a></li>
+  <li><a href="https://devcenter.heroku.com/articles/keys">https://devcenter.heroku.com/articles/keys</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>If specifying ruby version in Gemfile</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>-----&gt; Ruby app detected<br />
+      -----&gt; Compiling Ruby/Rails<br />
+      !<br />
+      !     Command: 'set -o pipefail; curl --fail --retry 3 --retry-delay 1 --connect-timeout 3 --max-time 30 https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/cedar/in----------de-ployment-to-heroku-ruby-2.0.0.tgz -s -o - | tar zxf -' failed unexpectedly:<br />
+      ! <br />
+      !     gzip: stdin: unexpected end of file<br />
+      !     tar: Child returned status 1<br />
+      !     tar: Exiting with failure status due to previous errors<br />
+      !</p>
+      <p> !     Push rejected, failed to compile Ruby app</p>
+      <p>To git@heroku.com:shcc.git<br />
+        ! [remote rejected] master -&gt; master (pre-receive hook declined)<br />
+    error: failed to push some refs to 'git@heroku.com:shcc.git'</p></td>
+    <td><p>comment out, or do not write the line to specify ruby version</p>
+    <p># ruby &quot;1.9.3&quot;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

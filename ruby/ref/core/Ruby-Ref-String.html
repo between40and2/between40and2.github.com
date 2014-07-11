@@ -8,7 +8,39 @@
 <body>
 <h1>Ruby-Ref-String</h1>
 <h2><a href="http://ruby-doc.org/core-1.9.3/String.html">String</a></h2>
-<p>&nbsp;</p>
+<p>Case</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>capitalize =&gt; new_str</p>
+      <p>capitalize! =&gt; str or nil</p>
+      <p>downcase =&gt; new_str</p>
+      <p>downcase! =&gt; str or nil</p>
+      <p>upcase =&gt; new_str</p>
+      <p>upcase! =&gt; str or nil</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>casecmp(other_str) =&gt; -1, 0, +1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>swapcase =&gt; new_str</p>
+      <p>swapcase! =&gt; str or nil</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <table width="100%" border="1">
@@ -19,122 +51,79 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>str % arg =&gt; new_str</td>
     <td>&nbsp;</td>
+    <td>str % arg =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&quot;%05d&quot; % 123                       #=&gt; &quot;00123&quot;<br />
     &quot;%-5s: %08x&quot; % [ &quot;ID&quot;, self.id ]   #=&gt; &quot;ID   : 200e14d6&quot;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str * integer =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str + other_str =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>str &lt;&lt; fixnum =&gt; str <br />
-      concat(fixnum) =&gt; str<br />
-      str &lt;&lt; obj =&gt; str<br />
-    concat(obj) =&gt; str</td>
     <td>&nbsp;</td>
+    <td>str &lt;&lt; fixnum =&gt; str <br />
+concat(fixnum) =&gt; str<br />
+str &lt;&lt; obj =&gt; str<br />
+concat(obj) =&gt; str</td>
     <td>&nbsp;</td>
     <td>a = &quot;hello &quot;<br />
       a &lt;&lt; &quot;world&quot;   #=&gt; &quot;hello world&quot;<br />
     a.concat(33)   #=&gt; &quot;hello world!&quot;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str &lt;=&gt; other_str =&gt; -1, 0, +1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str == obj =&gt; true or false</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str =~ obj =&gt; fixnum or nil</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td>str[fixnum] =&gt; fixnum or nil <br />
-      str[fixnum, fixnum] =&gt; new_str or nil<br />
-      str[range] =&gt; new_str or nil<br />
-      str[regexp] =&gt; new_str or nil<br />
-      str[regexp, fixnum] =&gt; new_str or nil<br />
-      str[other_str] =&gt; new_str or nil<br />
-      slice(fixnum) =&gt; fixnum or nil<br />
-      slice(fixnum, fixnum) =&gt; new_str or nil<br />
-      slice(range) =&gt; new_str or nil<br />
-      slice(regexp) =&gt; new_str or nil<br />
-      slice(regexp, fixnum) =&gt; new_str or nil<br />
-    slice(other_str) =&gt; new_str or nil</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><p>str[fixnum] = fixnum <br />
-      str[fixnum] = new_str<br />
-      str[fixnum, fixnum] = new_str<br />
-      str[range] = aString<br />
-      str[regexp] = new_str<br />
-      str[regexp, fixnum] = new_str<br />
-    str[other_str] = new_str</p></td>
-    <td>&nbsp;</td>
+str[fixnum, fixnum] =&gt; new_str or nil<br />
+str[range] =&gt; new_str or nil<br />
+str[regexp] =&gt; new_str or nil<br />
+str[regexp, fixnum] =&gt; new_str or nil<br />
+str[other_str] =&gt; new_str or nil<br />
+slice(fixnum) =&gt; fixnum or nil<br />
+slice(fixnum, fixnum) =&gt; new_str or nil<br />
+slice(range) =&gt; new_str or nil<br />
+slice(regexp) =&gt; new_str or nil<br />
+slice(regexp, fixnum) =&gt; new_str or nil<br />
+slice(other_str) =&gt; new_str or nil</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>bytes =&gt; anEnumerator <br />
-    bytes {|fixnum| block } =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>length =&gt; integer</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><p>capitalize =&gt; new_str</p>
-    <p>capitalize! =&gt; str or nil</p>
-    <p>downcase =&gt; new_str</p>
-    <p>downcase! =&gt; str or nil</p>
-    <p>upcase =&gt; new_str</p>
-    <p>upcase! =&gt; str or nil</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>casecmp(other_str) =&gt; -1, 0, +1</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>center(integer, padstr) =&gt; new_str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>chars =&gt; anEnumerator<br />
-    chars {|substr| block } =&gt; str</td>
+    <td><p>&nbsp;</p></td>
+    <td>str[fixnum] = fixnum <br />
+str[fixnum] = new_str<br />
+str[fixnum, fixnum] = new_str<br />
+str[range] = aString<br />
+str[regexp] = new_str<br />
+str[regexp, fixnum] = new_str<br />
+str[other_str] = new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -185,20 +174,6 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>each_byte {|fixnum| block } =&gt; str</td>
-    <td>&nbsp;</td>
-    <td><p>&quot;hello&quot;.each_byte {|c| print c, ' ' }</p>
-    <p>104 101 108 108 111</p></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>each_char {|cstr| block } =&gt; str</td>
-    <td>&nbsp;</td>
-    <td><p>&quot;hello&quot;.each_char {|c| print c, ' ' }</p>
-    <p>h e l l o</p></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td>empty? =&gt; true or false</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -236,13 +211,6 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><p>hex =&gt; integer</p>
-    <p>oct =&gt; integer</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td>include? other_str =&gt; true or false <br />
     include? fixnum =&gt; true or false</td>
     <td>&nbsp;</td>
@@ -275,7 +243,7 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>inspect =&gt; string</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -299,23 +267,13 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>lines(separator=$/) =&gt; anEnumerator click to toggle source<br />
-    lines(separator=$/) {|substr| block } =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>ljust(integer, padstr=' ') =&gt; new_str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td><p>lstrip =&gt; new_str</p>
-    <p>lstrip! =&gt; self or nil</p></td>
+    <p>lstrip! =&gt; self or nil</p>
+    <p>rstrip =&gt; new_str</p>
+    <p>rstrip! =&gt; self or nil</p></td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><p>strip =&gt; new_str</p>
+    <p>strip! =&gt; str or nil</p></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -326,17 +284,18 @@
   <tr>
     <td>&nbsp;</td>
     <td><p>succ =&gt; new_str <br />
-    next =&gt; new_str</p>
-    <p>succ! =&gt; str <br />
-    next! =&gt; str</p></td>
+    next =&gt; new_str</p></td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>succ! =&gt; str <br />
+next! =&gt; str</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>partition(sep) =&gt; [head, sep, tail]</td>
+    <td><p>partition(sep) =&gt; [head, sep, tail]</p>
+    <p>rpartition(sep) =&gt; [head, sep, tail]</p></td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&quot;hello&quot;.rpartition(&quot;l&quot;)         #=&gt; [&quot;hel&quot;, &quot;l&quot;, &quot;o&quot;]<br />
+&quot;hello&quot;.rpartition(&quot;x&quot;)         #=&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -361,26 +320,6 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>rjust(integer, padstr=' ') =&gt; new_str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>rpartition(sep) =&gt; [head, sep, tail]</td>
-    <td>&nbsp;</td>
-    <td>&quot;hello&quot;.rpartition(&quot;l&quot;)         #=&gt; [&quot;hel&quot;, &quot;l&quot;, &quot;o&quot;]<br />
-    &quot;hello&quot;.rpartition(&quot;x&quot;)         #=&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><p>rstrip =&gt; new_str</p>
-    <p>rstrip! =&gt; self or nil</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td>scan(pattern) =&gt; array <br />
     scan(pattern) {|match, ...| block } =&gt; str</td>
     <td>&nbsp;</td>
@@ -398,31 +337,8 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>split(pattern=$;, [limit]) =&gt; anArray</td>
-    <td>&nbsp;</td>
-    <td><p>&quot; now's  the time&quot;.split        #=&gt; [&quot;now's&quot;, &quot;the&quot;, &quot;time&quot;]<br />
-      &quot; now's  the time&quot;.split(' ')   #=&gt; [&quot;now's&quot;, &quot;the&quot;, &quot;time&quot;]<br />
-      &quot; now's  the time&quot;.split(/ /)   #=&gt; [&quot;&quot;, &quot;now's&quot;, &quot;&quot;, &quot;the&quot;, &quot;time&quot;]<br />
-      &quot;1, 2.34,56, 7&quot;.split(%r{,\s*}) #=&gt; [&quot;1&quot;, &quot;2.34&quot;, &quot;56&quot;, &quot;7&quot;]<br />
-      &quot;hello&quot;.split(//)               #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]<br />
-      &quot;hello&quot;.split(//, 3)            #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;llo&quot;]<br />
-      &quot;hi mom&quot;.split(%r{\s*})         #=&gt; [&quot;h&quot;, &quot;i&quot;, &quot;m&quot;, &quot;o&quot;, &quot;m&quot;]</p>
-      <p>&quot;mellow yellow&quot;.split(&quot;ello&quot;)   #=&gt; [&quot;m&quot;, &quot;w y&quot;, &quot;w&quot;]<br />
-        &quot;1,2,,3,4,,&quot;.split(',')         #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;]<br />
-        &quot;1,2,,3,4,,&quot;.split(',', 4)      #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3,4,,&quot;]<br />
-    &quot;1,2,,3,4,,&quot;.split(',', -4)     #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;, &quot;&quot;, &quot;&quot;]</p></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td><p>squeeze([other_str]*) =&gt; new_str</p>
     <p>squeeze!([other_str]*) =&gt; str or nil</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><p>strip =&gt; new_str</p>
-    <p>strip! =&gt; str or nil</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -443,23 +359,9 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><p>swapcase =&gt; new_str</p>
-    <p>swapcase! =&gt; str or nil</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><p>to_f =&gt; float</p>
-    <p>to_i(base=10) =&gt; integer</p>
-    <p>&nbsp;</p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>to_s =&gt; str <br />
-    to_str =&gt; str</td>
+    <td><p>to_s =&gt; str <br />
+    to_str =&gt; str</p>
+    <p>inspect =&gt; string</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -505,256 +407,99 @@ print s, ' '<br />
 end</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-<h2><a href="http://ruby-doc.org/core-1.9.3/Regexp.html">Regexp</a></h2>
-<p>A Regexp holds a regular expression, used to match a pattern against strings. Regexps are created using the /.../ and %r{...} literals, and by the Regexp::new constructor.</p>
-<h3>Constants</h3>
-<ul>
-  <li>EXTENDED</li>
-  <li>IGNORECASE</li>
-  <li>MULTILINE</li>
-</ul>
-<h3>Public Class Methods</h3>
+<p>Split up</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
+    <td><p>bytes =&gt; anEnumerator <br />
+      bytes {|fixnum| block } =&gt; str</p>
+      <p>chars =&gt; anEnumerator<br />
+        chars {|substr| block } =&gt; str</p>
+      <p>lines(separator=$/) =&gt; anEnumerator <br />
+        lines(separator=$/) {|substr| block } =&gt; str</p></td>
     <td>&nbsp;</td>
+    <td rowspan="2"><p>&quot; now's  the time&quot;.split        #=&gt; [&quot;now's&quot;, &quot;the&quot;, &quot;time&quot;]<br />
+      &quot; now's  the time&quot;.split(' ')   #=&gt; [&quot;now's&quot;, &quot;the&quot;, &quot;time&quot;]<br />
+      &quot; now's  the time&quot;.split(/ /)   #=&gt; [&quot;&quot;, &quot;now's&quot;, &quot;&quot;, &quot;the&quot;, &quot;time&quot;]<br />
+      &quot;1, 2.34,56, 7&quot;.split(%r{,\s*}) #=&gt; [&quot;1&quot;, &quot;2.34&quot;, &quot;56&quot;, &quot;7&quot;]<br />
+      &quot;hello&quot;.split(//)               #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]<br />
+      &quot;hello&quot;.split(//, 3)            #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;llo&quot;]<br />
+      &quot;hi mom&quot;.split(%r{\s*})         #=&gt; [&quot;h&quot;, &quot;i&quot;, &quot;m&quot;, &quot;o&quot;, &quot;m&quot;]</p>
+      <p>&quot;mellow yellow&quot;.split(&quot;ello&quot;)   #=&gt; [&quot;m&quot;, &quot;w y&quot;, &quot;w&quot;]<br />
+        &quot;1,2,,3,4,,&quot;.split(',')         #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;]<br />
+        &quot;1,2,,3,4,,&quot;.split(',', 4)      #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3,4,,&quot;]<br />
+    &quot;1,2,,3,4,,&quot;.split(',', -4)     #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;, &quot;&quot;, &quot;&quot;]</p></td>
+  </tr>
+  <tr>
     <td>&nbsp;</td>
+    <td>split(pattern=$;, [limit]) =&gt; anArray</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>escape(str) =&gt; a_str <br />
-    quote(str) =&gt; a_str</td>
     <td>&nbsp;</td>
+    <td>each_byte {|fixnum| block } =&gt; str</td>
     <td>&nbsp;</td>
-    <td>Regexp.escape('\*?{}.')   #=&gt; \\\\\*\?\{\}\.</td>
+    <td><p>&quot;hello&quot;.each_byte {|c| print c, ' ' } # 104 101 108 108 111</p></td>
   </tr>
   <tr>
-    <td>last_match =&gt; matchdata <br />
-    last_match(fixnum) =&gt; str</td>
     <td>&nbsp;</td>
+    <td>each_char {|cstr| block } =&gt; str</td>
     <td>&nbsp;</td>
-    <td><p>/c(.)t/ =~ 'cat'       #=&gt; 0<br />
-      Regexp.last_match      #=&gt; #&lt;MatchData:0x401b3d30&gt;<br />
-      Regexp.last_match(0)   #=&gt; &quot;cat&quot;<br />
-      Regexp.last_match(1)   #=&gt; &quot;a&quot;<br />
-    Regexp.last_match(2)   #=&gt; nil</p></td>
+    <td><p>&quot;hello&quot;.each_char {|c| print c, ' ' } # h e l l o</p></td>
   </tr>
   <tr>
-    <td>new(string [, options [, lang]]) =&gt; regexp <br />
-      new(regexp) =&gt; regexp<br />
-      compile(string [, options [, lang]]) =&gt; regexp<br />
-    compile(regexp) =&gt; regexp</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td><p>r1 = Regexp.new('^a-z+:\s+\w+')           #=&gt; /^a-z+:\s+\w+/<br />
-      r2 = Regexp.new('cat', true)               #=&gt; /cat/i<br />
-      r3 = Regexp.new('dog', Regexp::EXTENDED)   #=&gt; /dog/x<br />
-    r4 = Regexp.new(r2)                        #=&gt; /cat/i</p></td>
-  </tr>
-  <tr>
-    <td>union(pat1, pat2, ...) =&gt; new_regexp <br />
-    union(pats_ary) =&gt; new_regexp</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>Regexp.union                         #=&gt; /(?!)/<br />
-      Regexp.union(&quot;penzance&quot;)             #=&gt; /penzance/<br />
-      Regexp.union(&quot;a+b*c&quot;)                #=&gt; /a\+b\*c/<br />
-      Regexp.union(&quot;skiing&quot;, &quot;sledding&quot;)   #=&gt; /skiing|sledding/<br />
-      Regexp.union([&quot;skiing&quot;, &quot;sledding&quot;]) #=&gt; /skiing|sledding/<br />
-    Regexp.union(/dogs/, /cats/)        #=&gt; /(?-mix:dogs)|(?i-mx:cats)/</td>
   </tr>
 </table>
-<h3>Public Instance Methods</h3>
+<p>Number</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>rxp == other_rxp =&gt; true or false<br />
-    eql?(other_rxp) =&gt; true or false</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>/abc/  == /abc/   #=&gt; false<br />
-      /abc/  == /abc/   #=&gt; false<br />
-    /abc/ == /abc/   #=&gt; false</td>
-  </tr>
-  <tr>
-    <td>rxp === str =&gt; true or false</td>
-    <td>&nbsp;</td>
+    <td><p>hex =&gt; integer</p>
+      <p>oct =&gt; integer</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><p>#=~</p>
-      <p>match(str) =&gt; matchdata or nil</p>
-    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td><p>to_f =&gt; float</p>
+      <p>to_i(base=10) =&gt; integer</p></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>/(.)(.)(.)/.match(&quot;abc&quot;)[2]   #=&gt; &quot;b&quot;</td>
-  </tr>
-  <tr>
-    <td>casefold? =&gt; true or false</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>hash =&gt; fixnum</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>inspect =&gt; string</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>kcode =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>options =&gt; fixnum</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td><p>Regexp::IGNORECASE                  #=&gt; 1<br />
-      Regexp::EXTENDED                    #=&gt; 2<br />
-      Regexp::MULTILINE                   #=&gt; 4</p>
-      <p>/cat/.options                       #=&gt; 128<br />
-        /cat/x.options                     #=&gt; 131<br />
-        Regexp.new('cat', true).options     #=&gt; 129<br />
-        Regexp.new('cat', 0, 's').options   #=&gt; 384</p>
-      <p>r = /cat/x<br />
-    Regexp.new(r.source, r.options)     #=&gt; /cat/ix</p></td>
-  </tr>
-  <tr>
-    <td>source =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>/ab+c/x.source   #=&gt; &quot;ab+c&quot;</td>
-  </tr>
-  <tr>
-    <td>to_s =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>~ rxp =&gt; integer or nil</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>$_ = &quot;input data&quot;<br />
-    ~ /at/   #=&gt; 7</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2><a href="http://ruby-doc.org/core-1.8.7/MatchData.html">MatchData</a></h2>
-<p>&nbsp;</p>
+<p>Formatting</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>mtch[i] =&gt; obj <br />
-      mtch[start, length] =&gt; array<br />
-    mtch[range] =&gt; array</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td><p>m = /(.)(.)(\d+)(\d)/.match(&quot;THX1138.&quot;)<br />
-      m[0]       #=&gt; &quot;HX1138&quot;<br />
-      m[1, 2]    #=&gt; [&quot;H&quot;, &quot;X&quot;]<br />
-      m[1..3]    #=&gt; [&quot;H&quot;, &quot;X&quot;, &quot;113&quot;]<br />
-    m[-3, 2]   #=&gt; [&quot;X&quot;, &quot;113&quot;]</p></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>begin(n) =&gt; integer</td>
-    <td>&nbsp;</td>
-    <td>m = /(.)(.)(\d+)(\d)/.match(&quot;THX1138.&quot;)<br />
-      m.begin(0)   #=&gt; 1<br />
-    m.begin(2)   #=&gt; 2</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>end(n) =&gt; integer</td>
-    <td>&nbsp;</td>
-    <td>m = /(.)(.)(\d+)(\d)/.match(&quot;THX1138.&quot;)<br />
-      m.end(0)   #=&gt; 7<br />
-    m.end(2)   #=&gt; 3</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>captures =&gt; array</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>inspect =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>length =&gt; integer <br />
-    size =&gt; integer</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>offset(n) =&gt; array</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>post_match =&gt; str</td>
-    <td>pre_match =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>select{|obj| block} =&gt; array</td>
-    <td>&nbsp;</td>
+    <td>center(integer, padstr) =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>string =&gt; str</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>to_a =&gt; anArray</td>
-    <td>&nbsp;</td>
+    <td>rjust(integer, padstr=' ') =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>to_s =&gt; str</td>
+    <td>ljust(integer, padstr=' ') =&gt; new_str</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>values_at([index]*) =&gt; array</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
 </table>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Also See <a href="Regexp.html">Regexp</a></p>
 </body>
 </html>
