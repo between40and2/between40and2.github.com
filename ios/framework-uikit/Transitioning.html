@@ -8,9 +8,58 @@
 <body>
 <h1>Transitioning</h1>
 <p>&nbsp;</p>
-<p>2013-218 Custom Transitions Using View Controllers</p>
+<p>WWDC 2013-218 Custom Transitions Using View Controllers</p>
 <p>&nbsp;</p>
-<h2>UIViewControllerAnimatedTransitioning</h2>
+<h2>Tutorials &amp; Sample Code</h2>
+<ul>
+  <li><a href="http://www.appdesignvault.com/custom-transition-ios-7/">iOS 7 Custom Transitions: An Opportunity to Set Your App Apart From the Competition</a> (Register required, but trust me, the source code is worthy)</li>
+  <li><a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/">Custom UIViewController Transitions</a> (Explanation is good, but source code is buggy with iOS8 and Simulator)</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>UIViewControllerTransitioningDelegate</h2>
+<p>&nbsp;</p>
+<p>An object that implements the UIViewControllerTransitioningDelegate protocol vends the objects used to manage a fixed-length or interactive transition between view controllers. When you want to present a view controller using a custom modal presentation type, set its modalTransitionStyle property to UIModalPresentationCustom and assign an object that conforms to this protocol to its transitioningDelegate property. When you present that view controller, UIKit queries your transitioning delegate for the objects to use when animating the view controller into position.</p>
+<p>When implementing your transitioning delegate object, you can return different animator objects depending on whether a view controller is being presented or dismissed. All transitions use a transition animator object—an object that conforms to the UIViewControllerAnimatedTransitioning protocol—to implement the basic animations. A transition animator object performs a set of animations over a finite period of time. If you want to use touch input or other user interactions to control the timing of the animation, you can also provide an interactive animator object—an object that conforms to the UIViewControllerInteractiveTransitioning protocol—to update the progress of the animations. You can provide separate animator objects for presenting and dismissing the view controller.</p>
+<p>For custom modal transition styles, you can provide a UIPresentationController object in addition to the animator objects. The system creates your presentation controller before presenting the view controller and keeps a reference to that object until the view controller is dismissed. Because its existence extends beyond the lifespan of either animator object, you can use the presentation controller to coordinate aspects of the presentation or dismissal process that would be difficult to do otherwise. For example, if your custom transition style involves displaying a separate shadow view as a backdrop to the view controller's content, the presentation controller can create the shadow view and show it and hide it at the appropriate times.</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the Transition Animator Objects</td>
+    <td><ul>
+      <li>@optional func animationControllerForPresentedController(_ presented: UIViewController!,<br />
+        presentingController presenting: UIViewController!,<br />
+        sourceController source: UIViewController!) -&gt; UIViewControllerAnimatedTransitioning!</li>
+      <li>@optional func animationControllerForDismissedController(_ dismissed: UIViewController!) -&gt; UIViewControllerAnimatedTransitioning!</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the Interactive Animator Objects</td>
+    <td><ul>
+      <li>@optional func interactionControllerForPresentation(_ animator: UIViewControllerAnimatedTransitioning!) -&gt; UIViewControllerInteractiveTransitioning!</li>
+      <li>@optional func interactionControllerForDismissal(_ animator: UIViewControllerAnimatedTransitioning!) -&gt; UIViewControllerInteractiveTransitioning!</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the Custom Presentation Controller</td>
+    <td><ul>
+      <li>@optional func presentationControllerForPresentedViewController(_ presented: UIViewController!,<br />
+        presentingViewController presenting: UIViewController!,<br />
+        sourceViewController source: UIViewController!) -&gt; UIPresentationController!</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p></p>
+<h2><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/index.html#//apple_ref/doc/uid/TP40013387">UIViewControllerAnimatedTransitioning</a></h2>
 <p>Adopt the UIViewControllerAnimatedTransitioning protocol in objects that implement the animations for a custom view controller transition. The methods in this protocol let you define an animator object, which creates the animations for transitioning a view controller on or off screen in a fixed amount of time. The animations you create using this protocol must not be interactive. To create interactive transitions, you must combine your animator object with another object that controls the timing of your animations.</p>
 <p>In your animator object, implement the transitionDuration: method to specify the duration of your transition and implement the animateTransition: method to create the animations themselves. Information about the objects involved in the transition is passed to your animateTransition: method in the form of a context object. Use the information provided by that object to move the target view controller's view on or off screen over the specified duration.</p>
 <p>Create your animator object from a transitioning delegate—an object that conforms to the UIViewControllerTransitioningDelegate protocol. When presenting a view controller, st the presentation style to UIModalPresentationCustom and assign your transitioning delegate to the view controller's transitioningDelegate property. The view controller retrieves your animator object from the transitioning delegate and uses it to perform the animations. You can provide separate animator objects for presenting and dismissing the view controller.</p>
@@ -23,45 +72,17 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>func animateTransition(_ transitionContext: UIViewControllerContextTransitioning!)</td>
-    <td>- (void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>UIViewControllerInteractiveTransitioning</h2>
-<p>To enable an object (such as a navigation controller) to drive a view controller transition, configure a custom class to adopt the UIViewControllerInteractiveTransitioning protocol. An object that supports this protocol is called an interactive transition delegate.</p>
-<p>An interactive transition delegate can respond to touch events, or to time-varying programmatic input, by speeding up, slowing down, or even reversing the progress of a view controller transition. For example, an interactive transition on a navigation controller could respond to a swipe gesture by moving a view controller onto or off of the navigation stack.</p>
-<p>To support an interactive view controller transition, you must also provide a transition animator delegate, which is a custom object that adopts the UIViewControllerAnimatedTransitioning protocol. The transition delegate and the transition animator can, if you wish, be defined within a single custom class, but the class must adopt both protocols.</p>
-<p>If you instead want to provide a fixed-duration animated view controller transition—one that does not support user interaction—use a transition animator delegate on its own. Refer to UIViewControllerAnimatedTransitioning Protocol Reference.</p>
-<p>For the methods you can call to retrieve view transition context information from within your startInteractiveTransition: method, refer to UIViewControllerContextTransitioning Protocol Reference.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Starting an Interactive Transition</td>
+    <td>Performing a Transition</td>
     <td><ul>
-      <li>func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning!)</li>
+      <li>func animateTransition(_ transitionContext: UIViewControllerContextTransitioning!)</li>
+      <li>@optional func animationEnded(_ transitionCompleted: Bool)</li>
     </ul></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Providing a Transition's Completion Characteristics</td>
+    <td>Reporting Transition Duration</td>
     <td><ul>
-      <li>@optional func completionCurve() -&gt; UIViewAnimationCurve</li>
-      <li>@optional func completionSpeed() -&gt; CGFloat<br />
-        OBJECTIVE-C</li>
+      <li>func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning!) -&gt; NSTimeInterval</li>
     </ul></td>
     <td>&nbsp;</td>
   </tr>
@@ -126,55 +147,15 @@
   <tr>
     <td>&nbsp;</td>
     <td><p>var UITransitionContextFromViewControllerKey: NSString!<br />
-    var UITransitionContextToViewControllerKey: NSString!</p>
-    <p>var UITransitionContextFromViewKey: NSString!<br />
-    var UITransitionContextToViewKey: NSString!</p></td>
+      var UITransitionContextToViewControllerKey: NSString!</p>
+      <p>var UITransitionContextFromViewKey: NSString!<br />
+        var UITransitionContextToViewKey: NSString!</p></td>
     <td>&nbsp;</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>UIViewControllerTransitioningDelegate</h2>
-<p>&nbsp;</p>
-<p>An object that implements the UIViewControllerTransitioningDelegate protocol vends the objects used to manage a fixed-length or interactive transition between view controllers. When you want to present a view controller using a custom modal presentation type, set its modalTransitionStyle property to UIModalPresentationCustom and assign an object that conforms to this protocol to its transitioningDelegate property. When you present that view controller, UIKit queries your transitioning delegate for the objects to use when animating the view controller into position.</p>
-<p>When implementing your transitioning delegate object, you can return different animator objects depending on whether a view controller is being presented or dismissed. All transitions use a transition animator object—an object that conforms to the UIViewControllerAnimatedTransitioning protocol—to implement the basic animations. A transition animator object performs a set of animations over a finite period of time. If you want to use touch input or other user interactions to control the timing of the animation, you can also provide an interactive animator object—an object that conforms to the UIViewControllerInteractiveTransitioning protocol—to update the progress of the animations. You can provide separate animator objects for presenting and dismissing the view controller.</p>
-<p>For custom modal transition styles, you can provide a UIPresentationController object in addition to the animator objects. The system creates your presentation controller before presenting the view controller and keeps a reference to that object until the view controller is dismissed. Because its existence extends beyond the lifespan of either animator object, you can use the presentation controller to coordinate aspects of the presentation or dismissal process that would be difficult to do otherwise. For example, if your custom transition style involves displaying a separate shadow view as a backdrop to the view controller's content, the presentation controller can create the shadow view and show it and hide it at the appropriate times.</p>
-<p>&nbsp;</p>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Getting the Transition Animator Objects</td>
-    <td><ul>
-      <li>@optional func animationControllerForPresentedController(_ presented: UIViewController!,<br />
-presentingController presenting: UIViewController!,<br />
-sourceController source: UIViewController!) -&gt; UIViewControllerAnimatedTransitioning!</li>
-      <li>@optional func animationControllerForDismissedController(_ dismissed: UIViewController!) -&gt; UIViewControllerAnimatedTransitioning!</li>
-    </ul></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Getting the Interactive Animator Objects</td>
-    <td><ul>
-      <li>@optional func interactionControllerForPresentation(_ animator: UIViewControllerAnimatedTransitioning!) -&gt; UIViewControllerInteractiveTransitioning!</li>
-      <li>@optional func interactionControllerForDismissal(_ animator: UIViewControllerAnimatedTransitioning!) -&gt; UIViewControllerInteractiveTransitioning!</li>
-    </ul></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Getting the Custom Presentation Controller</td>
-    <td><ul>
-      <li>@optional func presentationControllerForPresentedViewController(_ presented: UIViewController!,<br />
-presentingViewController presenting: UIViewController!,<br />
-sourceViewController source: UIViewController!) -&gt; UIPresentationController!</li>
-    </ul></td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<p>&nbsp;</p>
+<p></p>
+<p></p>
+<h2>&nbsp;</h2>
 <p>&nbsp;</p>
 <h2>UIViewControllerTransitionCoordinator &lt; UIViewControllerTransitionCoordinatorContext</h2>
 <p>&nbsp;</p>
@@ -185,7 +166,7 @@ sourceViewController source: UIViewController!) -&gt; UIPresentationController!<
   <li>Run a custom animation—including an interactive animation—inside the animation block of an in-progress view controller transition</li>
   <li>Register a completion handler that is called after a view controller transition completes, such as to return state to what it was prior to the transition</li>
 </ul>
-<p>&nbsp;</p>
+<p>Responding to View Controller Transition Progress</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
@@ -193,20 +174,21 @@ sourceViewController source: UIViewController!) -&gt; UIPresentationController!<
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Responding to View Controller Transition Progress</td>
-    <td><ul>
-      <li>func animateAlongsideTransition(_ animation: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!,<br />
-        completion completion: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!) -&gt; Bool</li>
-      <li>func animateAlongsideTransitionInView(_ view: UIView!,<br />
-animation animation: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!,<br />
-completion completion: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!) -&gt; Bool</li>
-      <li>func notifyWhenInteractionEndsUsingBlock(_ handler: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!)</li>
-    </ul></td>
-    <td>&nbsp;</td>
+    <td>func animateAlongsideTransition</td>
+    <td><p>(_ animation: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!,<br />
+    completion completion: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!)</p></td>
+    <td> -&gt; Bool</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>func animateAlongsideTransitionInView</td>
+    <td>(_ view: UIView!,<br />
+animation animation: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!,<br />
+completion completion: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!)</td>
+    <td> -&gt; Bool</td>
+  </tr>
+  <tr>
+    <td>func notifyWhenInteractionEndsUsingBlock</td>
+    <td>(_ handler: ((UIViewControllerTransitionCoordinatorContext!) -&gt; Void)!)</td>
     <td>&nbsp;</td>
   </tr>
 </table>

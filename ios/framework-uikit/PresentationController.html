@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PresentationController</title>
+</head>
+
+<body>
+<h1>PresentationController</h1>
+<p>&nbsp;</p>
+<p>2014-228 A Look Inside Presentation Controllers</p>
+<h2>Sample</h2>
+<p>LookInsight</p>
+<p>&nbsp;</p>
+<h3>Code snipplet </h3>
+<p>vc_content.modalPresentationStyle = UIModalPresentationPopover</p>
+<p>UIPopoverPresentationController * popPC = vc_content.popoverPresentationController;</p>
+<p>popPC.barButtonItem = item;</p>
+<p>popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; </p>
+<p>[self presentVC: vc_content]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>UIPresentationController</h2>
+<p>&nbsp;</p>
+<p>init(presentingViewController presentingViewController: UIViewController!,<br />
+presentedViewController presentedViewController: UIViewController!)</p>
+<p>&nbsp;</p>
+<p>Getting the Presentation Objects</p>
+<p>&nbsp;</p>
+<ul>
+  <li>var presentingViewController: UIViewController! { get }</li>
+  <li>var presentedViewController: UIViewController! { get }</li>
+  <li>var containerView: UIView! { get }</li>
+  <li>func presentedView() -&gt; UIView!</li>
+</ul>
+<p>Adjusting the Size and Layout of the Presentation</p>
+<p>&nbsp;</p>
+<ul>
+  <li>func frameOfPresentedViewInContainerView() -&gt; CGRect</li>
+  <li>var overrideTraitCollection: UITraitCollection!</li>
+  <li>func containerViewWillLayoutSubviews()</li>
+  <li>func containerViewDidLayoutSubviews()</li>
+</ul>
+<p>Tracking the Transition's Start and End</p>
+<ul>
+  <li>func presentationTransitionWillBegin()</li>
+  <li>func presentationTransitionDidEnd(_ completed: Bool)</li>
+  <li>func dismissalTransitionWillBegin()</li>
+  <li>func dismissalTransitionDidEnd(_ completed: Bool)</li>
+</ul>
+<p>Getting the Presentation Attributes</p>
+<ul>
+  <li>var presentationStyle: UIModalPresentationStyle { get }</li>
+  <li>func adaptivePresentationStyle() -&gt; UIModalPresentationStyle</li>
+  <li>func shouldPresentInFullscreen() -&gt; Bool</li>
+  <li>func shouldRemovePresentersView() -&gt; Bool</li>
+</ul>
+<p>Accessing the Delegate</p>
+<ul>
+  <li>var delegate: UIAdaptivePresentationControllerDelegate!</li>
+</ul>
+<p>&nbsp;</p>
+<h2>UIPopoverPresentationController</h2>
+<p>Configuring the Popover Appearance</p>
+<p>&nbsp;</p>
+<ul>
+  <li>var popoverContentSize: CGSize</li>
+  <li>var popoverLayoutMargins: UIEdgeInsets</li>
+  <li>var backgroundColor: UIColor!</li>
+  <li>var passthroughViews: AnyObject[]!</li>
+  <li>var popoverBackgroundViewClass: AnyObject.Type!</li>
+</ul>
+<p>Specifying the Popover's Anchor Point</p>
+<ul>
+  <li>var barButtonItem: UIBarButtonItem!</li>
+  <li>var sourceView: UIView!</li>
+  <li>var sourceRect: CGRect</li>
+</ul>
+<p>Accessing the Delegate</p>
+<ul>
+  <li>var delegate: UIPopoverPresentationControllerDelegate!</li>
+</ul>
+<p>Configuring the Popover Arrows</p>
+<ul>
+  <li>var permittedArrowDirections: UIPopoverArrowDirection</li>
+  <li>var arrowDirection: UIPopoverArrowDirection { get }</li>
+</ul>
+<p>&nbsp;</p>
+<h2>UIAlertController</h2>
+<p>&nbsp;</p>
+<p>convenience init(title title: String!,<br />
+message message: String!,<br />
+preferredStyle preferredStyle: UIAlertControllerStyle)</p>
+<h3>Configuring the Alert</h3>
+<ul>
+  <li>var title: String!</li>
+  <li>var message: String!</li>
+  <li>var preferredStyle: UIAlertControllerStyle { get }</li>
+</ul>
+<p>Configuring the User Actions</p>
+<ul>
+  <li>func addAction(_ action: UIAlertAction!)</li>
+  <li>var actions: AnyObject[]! { get }</li>
+</ul>
+<p>Configuring Text Fields</p>
+<ul>
+  <li>func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField!) -&gt; Void)!)</li>
+  <li>var textFields: AnyObject[]! { get }</li>
+</ul>
+<p>Constants</p>
+<p>enum UIAlertControllerStyle : Int {<br />
+case ActionSheet<br />
+case Alert<br />
+}</p>
+<p>&nbsp;</p>
+<h2>UIAlertAction</h2>
+<p>convenience init(title title: String!,<br />
+style style: UIAlertActionStyle,<br />
+handler handler: ((UIAlertAction!) -&gt; Void)!)</p>
+<p>&nbsp;</p>
+<p>enum UIAlertActionStyle : Int {<br />
+case Default<br />
+case Cancel<br />
+case Destructive<br />
+}</p>
+</body>
+</html>

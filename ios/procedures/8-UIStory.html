@@ -8,6 +8,15 @@
 <body>
 <h1>8-UIStory</h1>
 <p>&nbsp;</p>
+<p>Design Goals (2014)</p>
+<ul>
+  <li>zero data/object/config allowed. code would not crash for that, unless NSAssert as teaching the client how to use the framework.</li>
+  <li>Supporting UINavigationController, as chrome VC, of content VC, when outer VC is UITBC, or UISVC. </li>
+  <li>Initially the main objective is to create rootVC with configs. Now it supports that the rootVC is given, so that the management around rootVC (such as push/pop for UINC, tabSelect for UITBC) are reused. </li>
+  <li>Root VC, Chrome VC, Content VC</li>
+  <li>Supports callback for afterCreate_rootVC, afterCreate_contentVC, etc. </li>
+</ul>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>Why UIStory</h2>
 <table width="100%" border="1">
