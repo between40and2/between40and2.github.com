@@ -10,8 +10,10 @@
 <p>&nbsp;</p>
 <h2>UIViewController</h2>
 <p>&nbsp;</p>
-<p>var transitioningDelegate: UIViewControllerTransitioningDelegate!</p>
-<p>func transitionCoordinator() -&gt; UIViewControllerTransitionCoordinator!</p>
+<ul>
+  <li>var transitioningDelegate: UIViewControllerTransitioningDelegate!</li>
+  <li>func transitionCoordinator() -&gt; UIViewControllerTransitionCoordinator!</li>
+</ul>
 <p>&nbsp;</p>
 <h2><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intf/UINavigationControllerDelegate">UINavigationControllerDelegate</a></h2>
 <p>&nbsp;</p>
@@ -35,6 +37,9 @@ toViewController toVC: UIViewController!) </td>
     interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning!)</p></td>
     <td> -&gt; UIViewControllerInteractiveTransitioning!</td>
   </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="1">
   <tr>
     <td>@optional func navigationControllerPreferredInterfaceOrientationForPresentation</td>
     <td><p>(_ navigationController: UINavigationController!)</p></td>
@@ -49,13 +54,28 @@ toViewController toVC: UIViewController!) </td>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>UITabBarControllerDelegate</h2>
-<p>@optional func tabBarController(_ tabBarController: UITabBarController!,<br />
-  animationControllerForTransitionFromViewController fromVC: UIViewController!,<br />
-toViewController toVC: UIViewController!) -&gt; UIViewControllerAnimatedTransitioning!</p>
-<p>&nbsp;</p>
-<p> @optional func tabBarController(_ tabBarController: UITabBarController!,<br />
-  interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning!) -&gt; UIViewControllerInteractiveTransitioning!<br />
-OBJECTIVE-C</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>@optional func tabBarController</td>
+    <td><ul>
+      <li>(_ tabBarController: UITabBarController!,<br />
+        animationControllerForTransitionFromViewController fromVC: UIViewController!,<br />
+        toViewController toVC: UIViewController!) </li>
+    </ul></td>
+    <td>-&gt; UIViewControllerAnimatedTransitioning!</td>
+  </tr>
+  <tr>
+    <td>@optional func tabBarController</td>
+    <td>(_ tabBarController: UITabBarController!,<br />
+interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning!)</td>
+    <td> -&gt; UIViewControllerInteractiveTransitioning!</td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 </body>
 </html>

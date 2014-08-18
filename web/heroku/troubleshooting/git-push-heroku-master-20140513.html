@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>git-push-heroku-master</title>
+</head>
+
+<body>
+<h1>git-push-heroku-master</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>$ git push heroku master</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+      The authenticity of host 'heroku.com (50.19.85.132)' can't be established.<br />
+      RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.<br />
+      Are you sure you want to continue connecting (yes/no)? </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>The authenticity of host 'heroku.com (50.19.85.132)' can't be established.<br />
+      RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.<br />
+      Are you sure you want to continue connecting (yes/no)? yes<br />
+      Warning: Permanently added 'heroku.com,50.19.85.132' (RSA) to the list of known hosts.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+      Initializing repository, done.<br />
+      Counting objects: 85, done.<br />
+      Delta compression using up to 8 threads.<br />
+      Compressing objects: 100% (77/77), done.<br />
+      Writing objects: 100% (85/85), 19.71 KiB | 0 bytes/s, done.<br />
+      Total 85 (delta 2), reused 0 (delta 0)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>-----&gt; Ruby app detected<br />
+      -----&gt; Compiling Ruby/Rails<br />
+      -----&gt; Using Ruby version: ruby-2.0.0<br />
+      -----&gt; Installing dependencies using 1.5.2<br />
+      Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment<br />
+      Fetching gem metadata from https://rubygems.org/..........<br />
+      Fetching additional metadata from https://rubygems.org/..<br />
+      Installing minitest (4.7.5)<br />
+      Installing multi_json (1.10.0)<br />
+      Installing i18n (0.6.9)<br />
+      Installing rake (10.3.1)<br />
+      Installing thread_safe (0.3.3)<br />
+      Installing builder (3.1.4)<br />
+      Installing tzinfo (0.3.39)<br />
+      Installing rack (1.5.2)<br />
+      Installing mime-types (1.25.1)<br />
+      Installing erubis (2.7.0)<br />
+      Installing polyglot (0.3.4)<br />
+      Installing coffee-script-source (1.7.0)<br />
+      Installing activerecord-deprecated_finders (1.0.3)<br />
+      Installing arel (4.0.2)<br />
+      Installing execjs (2.0.2)<br />
+      Installing hike (1.2.3)<br />
+      Using bundler (1.5.2)<br />
+      Installing thor (0.19.1)<br />
+      Installing tilt (1.4.1)<br />
+      Installing sass (3.2.19)<br />
+      Installing activesupport (4.0.1)<br />
+      Installing rack-test (0.6.2)<br />
+      Installing coffee-script (2.2.0)<br />
+      Installing treetop (1.4.15)<br />
+      Installing sprockets (2.11.0)<br />
+      Installing activemodel (4.0.1)<br />
+      Installing json (1.8.1)<br />
+      Installing jbuilder (1.5.3)<br />
+      Installing mail (2.5.4)<br />
+      Installing actionpack (4.0.1)<br />
+      Installing activerecord (4.0.1)<br />
+      Installing uglifier (2.5.0)<br />
+      Installing actionmailer (4.0.1)<br />
+      Installing sprockets-rails (2.0.1)<br />
+      Installing rdoc (4.1.1)<br />
+      Installing railties (4.0.1)<br />
+      Installing coffee-rails (4.0.1)<br />
+      Installing sdoc (0.4.0)<br />
+      Installing jquery-rails (3.1.0)<br />
+      Installing turbolinks (2.2.2)<br />
+      Installing sass-rails (4.0.3)<br />
+      Installing rails (4.0.1)<br />
+      Installing pg (0.17.1)<br />
+      Your bundle is complete!<br />
+      Gems in the groups development and test were not installed.<br />
+      It was installed into ./vendor/bundle<br />
+      Post-install message from rdoc:<br />
+      Depending on your version of ruby, you may need to install ruby rdoc/ri data:<br />
+      &lt;= 1.8.6 : unsupported<br />
+      = 1.8.7 : gem install rdoc-data; rdoc-data --install<br />
+      = 1.9.1 : gem install rdoc-data; rdoc-data --install<br />
+      &gt;= 1.9.2 : nothing to do! Yay!<br />
+      Bundle completed (30.73s)<br />
+      Cleaning up the bundler cache.<br />
+      -----&gt; Writing config/database.yml to read from DATABASE_URL<br />
+      -----&gt; Preparing app for Rails asset pipeline</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>Running: rake assets:precompile<br />
+      I, [2014-05-13T09:07:19.515040 #1097]  INFO -- : Writing /tmp/build_2f57e77c-0085-4a38-a2bc-4e31eef71718/public/assets/application-54565ebdb4874c88807e837e3b243137.js<br />
+      I, [2014-05-13T09:07:19.568703 #1097]  INFO -- : Writing /tmp/build_2f57e77c-0085-4a38-a2bc-4e31eef71718/public/assets/application-8a207ac03ffb312395f89c5044da2bc5.css<br />
+      Asset precompilation completed (7.21s)<br />
+      Cleaning assets<br />
+    </p>
+      <p>Running: rake assets:clean<br />
+        -----&gt; WARNINGS:<br />
+        Include 'rails_12factor' gem to enable all platform features<br />
+        See https://devcenter.heroku.com/articles/rails-integration-gems for more information.</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><br />
+      You have not declared a Ruby version in your Gemfile.<br />
+      To set your Ruby version add this line to your Gemfile:<br />
+      ruby '2.0.0'<br />
+      # See https://devcenter.heroku.com/articles/ruby-versions for more information.<br />
+      <br />
+      No Procfile detected, using the default web server (webrick)<br />
+      https://devcenter.heroku.com/articles/ruby-default-web-server<br />
+      -----&gt; Discovering process types<br />
+      Procfile declares types -&gt; (none)<br />
+      Default types for Ruby  -&gt; console, rake, web, worker</p>
+      <p>-----&gt; Compressing... done, 21.4MB<br />
+        -----&gt; Launching... done, v6<br />
+        http://fast-fortress-2001.herokuapp.com/ deployed to Heroku</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>To git@heroku.com:fast-fortress-2001.git<br />
+      * [new branch]      master -&gt; master</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p></p>
+<h2>After changing app name, change git config too !!!</h2>
+<p></p>
+<ul>
+  <li> <a href="http://stackoverflow.com/questions/5338551/how-does-git-push-heroku-master-know-where-to-push-to-and-how-to-push-to-a-dif">how-does-git-push-heroku-master-know-where-to-push-to-and-how-to-push-to-a-dif</a></li>
+</ul>
+<p></p>
+<h2>Forgot to run on development before pushing to master/production</h2>
+<p></p>
+<p> Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment<br />
+You are trying to install in deployment mode after changing<br />
+your Gemfile. Run `bundle install` elsewhere and add the<br />
+updated Gemfile.lock to version control.<br />
+You have added to the Gemfile:<br />
+* rails_12factor<br />
+Bundler Output: You are trying to install in deployment mode after changing<br />
+your Gemfile. Run `bundle install` elsewhere and add the<br />
+updated Gemfile.lock to version control.<br />
+<br />
+You have added to the Gemfile:<br />
+* rails_12factor<br />
+!<br />
+!     Failed to install gems via Bundler.<br />
+!</p>
+<p> !     Push rejected, failed to compile Ruby app</p>
+<p>To git@heroku.com:j201405.git<br />
+  ! [remote rejected] master -&gt; master (pre-receive hook declined)<br />
+  error: failed to push some refs to 'git@heroku.com:j201405.git'</p>
+<p></p>
+</body>
+</html>

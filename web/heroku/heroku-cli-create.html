@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>heroku-cli-create</title>
+</head>
+
+<body>
+<h1>heroku-cli-create</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> heroku create --help<br />
+  Alias: create redirects to apps:create<br />
+Usage: heroku apps:create [NAME]</p>
+<p> create a new app</p>
+<p> --addons ADDONS        # a comma-delimited list of addons to install<br />
+  -b, --buildpack BUILDPACK  # a buildpack url to use for this app<br />
+  -n, --no-remote            # don't create a git remote<br />
+  -r, --remote REMOTE        # the git remote to create, default &quot;heroku&quot;<br />
+  -s, --stack STACK          # the stack on which to create the app<br />
+  --region REGION        # specify region for this app to run in<br />
+  -l, --locked               # lock the app</p>
+<p>Examples:</p>
+<p> $ heroku apps:create<br />
+  Creating floating-dragon-42... done, stack is cedar<br />
+  http://floating-dragon-42.heroku.com/ | git@heroku.com:floating-dragon-42.git</p>
+<p> $ heroku apps:create -s bamboo<br />
+  Creating floating-dragon-42... done, stack is bamboo-mri-1.9.2<br />
+  http://floating-dragon-42.herokuapp.com/ | git@heroku.com:floating-dragon-42.git</p>
+<p> # specify a name<br />
+  $ heroku apps:create example<br />
+  Creating example... done, stack is cedar<br />
+  http://example.heroku.com/ | git@heroku.com:example.git</p>
+<p> # create a staging app<br />
+  $ heroku apps:create example-staging --remote staging</p>
+<p> # create an app in the eu region<br />
+  $ heroku apps:create --region eu</p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>heroku-git</title>
+</head>
+
+<body>
+<h1>heroku-git</h1>
+<p>&nbsp;</p>
+<h2>heroku help git</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku help git</td>
+    <td><p>Additional commands, type &quot;heroku help COMMAND&quot; for more details:</p>
+      <p> git:clone APP [DIRECTORY]  #  clones a heroku app to your local machine at DIRECTORY (defaults to app name)<br />
+    git:remote [OPTIONS]       #  adds a git remote to an app repo</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku help git:remote</td>
+    <td><p>Usage: heroku git:remote [OPTIONS]</p>
+      <p> adds a git remote to an app repo</p>
+      <p> if OPTIONS are specified they will be passed to git remote add</p>
+      <p> -r, --remote REMOTE        # the git remote to create, default &quot;heroku&quot;</p>
+      <p>Examples:</p>
+      <p> $ heroku git:remote -a example<br />
+        Git remote heroku added</p>
+      <p> $ heroku git:remote -a example<br />
+    !    Git remote heroku already exists</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>heroku help git:clone</td>
+    <td><p>Usage: heroku git:clone APP [DIRECTORY]</p>
+      <p> clones a heroku app to your local machine at DIRECTORY (defaults to app name)</p>
+      <p> -r, --remote REMOTE  # the git remote to create, default &quot;heroku&quot;</p>
+      <p>Examples:</p>
+      <p> $ heroku git:clone example<br />
+        Cloning from app 'example'...<br />
+        Cloning into 'example'...<br />
+        remote: Counting objects: 42, done.<br />
+    ...</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>My experience</h2>
+<p>&nbsp;</p>
+<p>$ heroku git:remote<br />
+!    No app specified.<br />
+!    Run this command from an app folder or specify which app to use with --app APP.<br />
+</p>
+<p>$ heroku git:remote --app shcc<br />
+Git remote heroku added</p>
+<p>&nbsp;</p>
+<pre>[core]<br />        repositoryformatversion = 0<br />        filemode = true<br />        bare = false<br />        logallrefupdates = true<br />        ignorecase = true<br />        precomposeunicode = false<br />[remote &quot;heroku&quot;]<br />        url = git@heroku.com:shcc.git<br />        fetch = +refs/heads/*:refs/remotes/heroku/*</pre>
+<p>&nbsp;</p>
+<p>But compare with git clone * -o heroku, this still misses</p>
+<pre>[branch &quot;master&quot;]<br />        remote = heroku<br />        merge = refs/heads/master</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><br />
+</p>
+</body>
+</html>

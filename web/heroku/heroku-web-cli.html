@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>heroku-web-cli</title>
+</head>
+
+<body>
+<h1>heroku-web-cli</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>login</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>web</td>
+    <td>cli</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://dashboard.heroku.com/apps">https://dashboard.heroku.com/apps</a></td>
+    <td><p><a href="https://toolbelt.heroku.com">Heroku Toolbelt</a></p>
+    <p>docs</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>$ heroku login</p>
+      <p><br />
+        Enter your Heroku credentials.<br />
+        Email: juguang@gmail.com<br />
+        Password (typing will be hidden): <br />
+    Authentication successful.</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>git ready</p>
+<p>&nbsp;</p>
+<p>git init</p>
+<p>git add . </p>
+<p>git commit -m first</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>create</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>web</td>
+    <td>cli</td>
+  </tr>
+  <tr>
+    <td>precondition</td>
+    <td>&nbsp;</td>
+    <td><p>make sure your git is ready!!!!!</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>git remote -v</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>git config is created</td>
+    <td><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>add git into your project</p>
+    <p>git@heroku.com:quiet-wildwood-8175.git</p></td>
+    <td> $ heroku create<br />
+      Creating fast-fortress-2001... done, stack is cedar<br />
+      http://fast-fortress-2001.herokuapp.com/ | git@heroku.com:fast-fortress-2001.git<br />
+      Git remote heroku added<br /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>$ git remote -v<br />
+heroku	git@heroku.com:fast-fortress-2001.git (fetch)<br />
+heroku	git@heroku.com:fast-fortress-2001.git (push)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+<h2>git push heroku master</h2>
+<p>This is both exciting and annoying part</p>
+<p>&nbsp;</p>
+<p>For details, please see <a href="git-push-heroku-master.html">git-push-heroku-master</a></p>
+<p>&nbsp;</p>
+<p><br />
+</p>
+<h2>heroku run rake db:migrate<br />
+</h2>
+<p>heroku run rake db:migrate<br />
+  Running `rake db:migrate` attached to terminal... up, run.8317<br />
+  ==  CreateTopics: migrating ===================================================<br />
+  -- create_table(:topics)<br />
+-&gt; 0.0740s<br />
+==  CreateTopics: migrated (0.0776s) ==========================================<br />
+</p>
+<p>&nbsp;</p>
+<h2>$ heroku ps</h2>
+<p>=== web (1X): `bin/rails server -p $PORT -e $RAILS_ENV`<br />
+  web.1: up 2014/05/13 17:07:38 (~ 2m ago)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>heroku open </h2>
+<p>http://fast-fortress-2001.herokuapp.com</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>The page you were looking for doesn't exist.</td>
+    <td>you did not define root route</td>
+    <td><p>config/route.rb</p>
+    <p>root </p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="https://devcenter.heroku.com/articles/getting-started-with-rails4">https://devcenter.heroku.com/articles/getting-started-with-rails4</a></p>
+</body>
+</html>
