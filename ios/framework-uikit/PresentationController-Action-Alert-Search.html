@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PresentationController-Action-Alert-Search</title>
+</head>
+
+<body>
+<h1>PresentationController-Action-Alert-Search</h1>
+<p>&nbsp;</p>
+<p>WWDC 2014 228 A Look Inside Presentation Controllers</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>UIAlertController</h2>
+<p>&nbsp;</p>
+<p>convenience init(title title: String!,<br />
+  message message: String!,<br />
+  preferredStyle preferredStyle: UIAlertControllerStyle)</p>
+<h3>Configuring the Alert</h3>
+<ul>
+  <li>var title: String!</li>
+  <li>var message: String!</li>
+  <li>var preferredStyle: UIAlertControllerStyle { get }</li>
+</ul>
+<p>Configuring the User Actions</p>
+<ul>
+  <li>func addAction(_ action: UIAlertAction!)</li>
+  <li>var actions: AnyObject[]! { get }</li>
+</ul>
+<p>Configuring Text Fields</p>
+<ul>
+  <li>func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField!) -&gt; Void)!)</li>
+  <li>var textFields: AnyObject[]! { get }</li>
+</ul>
+<p>Constants</p>
+<p>enum UIAlertControllerStyle : Int {<br />
+  case ActionSheet<br />
+  case Alert<br />
+  }</p>
+<p>&nbsp;</p>
+<h2>UIAlertAction</h2>
+<p>convenience init(title title: String!,<br />
+  style style: UIAlertActionStyle,<br />
+  handler handler: ((UIAlertAction!) -&gt; Void)!)</p>
+<p>&nbsp;</p>
+<p>enum UIAlertActionStyle : Int {<br />
+  case Default<br />
+  case Cancel<br />
+  case Destructive<br />
+  }</p>
+</body>
+</html>

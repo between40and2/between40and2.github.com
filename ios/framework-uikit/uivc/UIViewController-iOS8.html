@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UIViewController-iOS8</title>
+</head>
+
+<body>
+<h1>UIViewController-iOS8</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>和UISplitViewController有关</p>
+<ul>
+  <li>func showViewController(_ vc: UIViewController!,<br />
+    sender sender: AnyObject!)</li>
+  <li>func showDetailViewController(_ vc: UIViewController!,<br />
+sender sender: AnyObject!)</li>
+  <li>func targetViewControllerForAction(_ action: Selector,<br />
+  sender sender: AnyObject!) -&gt; UIViewController!</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Adapting to Environment Changes</h2>
+<ul>
+  <li>func collapseSecondaryViewController(_ secondaryViewController: UIViewController!,<br />
+  forSplitViewController splitViewController: UISplitViewController!)</li>
+  <li>func separateSecondaryViewControllerForSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!<br />
+  </li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+  <li>func setOverrideTraitCollection(_ collection: UITraitCollection!,<br />
+forChildViewController childViewController: UIViewController!)</li>
+  <li>func overrideTraitCollectionForChildViewController(_ childViewController: UIViewController!) -&gt; UITraitCollection!</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Getting Other Related View Controllers</h2>
+<ul>
+  <li>var popoverPresentationController: UIPopoverPresentationController! { get }</li>
+  <li>var presentationController: UIPresentationController! { get }</li>
+</ul>
+<h2>Supporting App Extensions</h2>
+<ul>
+  <li>var extensionContext: NSExtensionContext! { get }</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

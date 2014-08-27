@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UISplitViewController</title>
+</head>
+
+<body>
+<p>UISplitViewController</p>
+<p>&nbsp;</p>
+<p>Big leap in iOS 8. See WWDC 2014-214 View Controller Advancements in iOS 8</p>
+<p>&nbsp;</p>
+<h1><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/doc/uid/TP40009277">UISplitViewController</a></h1>
+<p>&nbsp;</p>
+<ul>
+  <li>var viewControllers: [AnyObject]!</li>
+  <li>var presentsWithGesture: Bool</li>
+  <li>unowned(unsafe) var delegate: UISplitViewControllerDelegate!</li>
+</ul>
+<p>Managing the Display Mode</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var preferredDisplayMode: UISplitViewControllerDisplayMode</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var displayMode: UISplitViewControllerDisplayMode { get }</td>
+    <td>enum UISplitViewControllerDisplayMode : Int {<br />
+case Automatic<br />
+case PrimaryHidden<br />
+case AllVisible<br />
+case PrimaryOverlay<br />
+}</td>
+  </tr>
+  <tr>
+    <td>func displayModeButtonItem() -&gt; UIBarButtonItem!</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Getting the Split View Configuration</p>
+<ul>
+  <li>var collapsed: Bool { get }</li>
+  <li>var preferredPrimaryColumnWidthFraction: CGFloat</li>
+  <li>var primaryColumnWidth: CGFloat { get }</li>
+  <li>var minimumPrimaryColumnWidth: CGFloat</li>
+  <li>var maximumPrimaryColumnWidth: CGFloat</li>
+</ul>
+<p>Action Methods for Displaying View Controllers</p>
+<ul>
+  <li>func showDetailViewController(_ vc: UIViewController!,<br />
+sender sender: AnyObject!)</li>
+  <li>func showViewController(_ vc: UIViewController!,<br />
+sender sender: AnyObject!)</li>
+</ul>
+<p>&nbsp;</p>
+<h1>UISplitViewControllerDelegate</h1>
+<h3>Responding to Display Mode Changes</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func splitViewController(_ svc: UISplitViewController!,<br />
+willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func targetDisplayModeForActionInSplitViewController(_ svc: UISplitViewController!) -&gt; UISplitViewControllerDisplayMode</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Collapsing and Expanding the Interface</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func primaryViewControllerForCollapsingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+collapseSecondaryViewController secondaryViewController: UIViewController!,<br />
+ontoPrimaryViewController primaryViewController: UIViewController!) -&gt; Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>optional func primaryViewControllerForExpandingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</p>
+    <p></p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+      separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController!) -&gt; UIViewController!
+    </p>
+    <p></p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Overriding the Presentation Behavior</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+showViewController vc: UIViewController!,<br />
+sender sender: AnyObject!) -&gt; Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+showDetailViewController vc: UIViewController!,<br />
+sender sender: AnyObject!) -&gt; Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

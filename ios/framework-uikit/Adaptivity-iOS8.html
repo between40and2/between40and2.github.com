@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Adaptivity-iOS8</title>
+</head>
+
+<body>
+<h1>Adaptivity-iOS8</h1>
+<p>&nbsp;</p>
+<p>WWDC 2014 202 What's New in Cocoa Touch</p>
+<p>&nbsp;</p>
+<h1>UITraitCollection</h1>
+<h2>Creating a New Trait Collection</h2>
+<ul>
+  <li>init(displayScale scale: CGFloat) -&gt; UITraitCollection</li>
+  <li>init(userInterfaceIdiom idiom: UIUserInterfaceIdiom) -&gt; UITraitCollection</li>
+  <li>init(horizontalSizeClass horizontalSizeClass: UIUserInterfaceSizeClass) -&gt; UITraitCollection</li>
+  <li>init(verticalSizeClass verticalSizeClass: UIUserInterfaceSizeClass) -&gt; UITraitCollection</li>
+  <li>init(traitsFromCollections traitCollections: [AnyObject]!) -&gt; UITraitCollection</li>
+</ul>
+<h2>Retrieving Trait Information</h2>
+<ul>
+  <li>var horizontalSizeClass: UIUserInterfaceSizeClass { get }</li>
+  <li>var verticalSizeClass: UIUserInterfaceSizeClass { get }</li>
+  <li>var userInterfaceIdiom: UIUserInterfaceIdiom { get }</li>
+  <li>var displayScale: CGFloat { get }</li>
+</ul>
+<h2>Checking for Specific Traits</h2>
+<ul>
+  <li>func containsTraitsInCollection(_ trait: UITraitCollection!) -&gt; Bool</li>
+</ul>
+<p>&nbsp;</p>
+<h1>UIContentContainer</h1>
+<h2>Responding to Environment Changes</h2>
+<ul>
+  <li>func viewWillTransitionToSize(_ size: CGSize,<br />
+withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!)</li>
+  <li>func willTransitionToTraitCollection(_ newCollection: UITraitCollection!,<br />
+    withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!)</li>
+</ul>
+<h2>Responding to Changes in Child View Controllers</h2>
+<ul>
+  <li>func sizeForChildContentContainer(_ container: UIContentContainer!,<br />
+withParentContainerSize parentSize: CGSize) -&gt; CGSize</li>
+  <li>func preferredContentSizeDidChangeForChildContentContainer(_ container: UIContentContainer!)</li>
+  <li>func systemLayoutFittingSizeDidChangeForChildContentContainer(_ container: UIContentContainer!)</li>
+  <li>var preferredContentSize: CGSize { get }</li>
+</ul>
+<p>&nbsp;</p>
+<h1>UITraitEnvironment</h1>
+<p>&nbsp;</p>
+<ul>
+  <li>var traitCollection: UITraitCollection! { get }</li>
+  <li>func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection!)</li>
+</ul>
+</body>
+</html>
