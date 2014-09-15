@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UIKitDynamics</title>
+</head>
+
+<body>
+<h1>UIKitDynamics</h1>
+<p>&nbsp;</p>
+<p>WWDC 2013 </p>
+<ul>
+  <li>Session 206 Getting Started with UIKit Dynamics - by Olivier Gutknecht </li>
+  <li>Session 221 Advanced Techniques with UIKit Dynamics</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Party membership</h2>
+<ul>
+  <li>Animator</li>
+  <li>Reference View</li>
+  <li>Behaviors</li>
+  <li>(Dynamic) Items</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+  <li>
+    NSObject<br />
+    <ul>
+      <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/Reference/Reference.html#//apple_ref/doc/c_ref/UIDynamicAnimator">UIDynamicAnimator</a> - <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimatorDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intf/UIDynamicAnimatorDelegate">UIDynamicAnimatorDelegate</a></li>
+      <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UIDynamicBehavior">UIDynamicBehavior</a>
+        <ul>
+          <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAttachmentBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UIAttachmentBehavior">UIAttachmentBehavior</a></li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UICollisionBehavior">UICollisionBehavior</a></li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UIGravityBehavior">UIGravityBehavior</a> </li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UIDynamicItemBehavior">UIDynamicItemBehavior</a></li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/Reference/Reference.html#//apple_ref/occ/cl/UIPushBehavior">UIPushBehavior</a></li>
+          <li>UISnapBehavior</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/Reference/Reference.html#//apple_ref/doc/c_ref/UIDynamicAnimator">UIDynamicAnimator</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimatorDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intf/UIDynamicAnimatorDelegate">UIDynamicAnimatorDelegate</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Provider the overall context</p>
+    <p>Define the coordinate system</p>
+    <p>Control the engine</p>
+    <p>Keep track of behavior</p></td>
+    <td>Initializing and Managing a Dynamic Animator<br />
+– initWithReferenceView:<br />
+– initWithCollectionViewLayout:<br />
+– itemsInRect:<br />
+– addBehavior:<br />
+– removeBehavior:<br />
+– removeAllBehaviors</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><br />
+      Accessing a Dynamic Animator's State<br />
+      – elapsedTime<br />
+running  property<br />
+behaviors  property<br />
+referenceView  property<br />
+delegate  property<br />
+– updateItemUsingCurrentState:<br /></td>
+    <td>Responding to Animation Pausing and Resumption<br />
+      – dynamicAnimatorDidPause:  required method<br />
+    – dynamicAnimatorWillResume:  required method</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Collection View Additions</td>
+    <td>– layoutAttributesForCellAtIndexPath:<br />
+– layoutAttributesForDecorationViewOfKind:atIndexPath:<br />
+– layoutAttributesForSupplementaryViewOfKind:atIndexPath:</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<ul>
+  <li>Declarative </li>
+  <li>Describe &quot;influnces&quot; on views</li>
+  <li>Added and removed at any time</li>
+  <li>Composable</li>
+  <li>Subclassable</li>
+</ul>
+<p>&nbsp;</p>
+<p>Behavior inviduals</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Don't Expect the Impossible </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Dynamic Items</h2>
+<p>&nbsp;</p>
+<p>protocol UIDynamicItem (new in iOS 7)</p>
+<ul>
+  <li>@property(nonatomic, readonly) CGRect bounds</li>
+  <li>@property(nonatomic, readwrite) CGPoint center</li>
+  <li>@property(nonatomic, readwrite) CGAffineTransform transform</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Cookbook: </p>
+<p>http://www.teehanlax.com/blog/introduction-to-uikit-dynamics/</p>
+<p>http://www.teehanlax.com/blog/implementing-a-bouncy-uicollectionviewlayout-with-uikit-dynamics/</p>
+<h2>Revisions</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>0.1</p></td>
+    <td>2013-12-31</td>
+    <td>init</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
