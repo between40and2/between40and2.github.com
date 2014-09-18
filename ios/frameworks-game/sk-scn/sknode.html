@@ -31,6 +31,9 @@
   </li>
 </ul>
 <p>&nbsp;</p>
+<p>New in iOS 8</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <h2><a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/Reference/Reference.html">SKNode</a></h2>
 <p>&nbsp;</p>
 <table width="100%" border="1">
@@ -150,12 +153,8 @@ userData  property</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -164,8 +163,6 @@ userData  property</td>
     <td>Enabling Filter Effects<br /><br /></td>
     <td>shouldEnableEffects  property<br /></td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Configuring the Filter</td>
@@ -173,37 +170,17 @@ userData  property</td>
 filter  property<br />
 shouldCenterFilter  property</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>Blending the Results to the Framebuffer<br />
+    <td>Blending the Results to the Framebuffer</td>
+    <td><br />
 blendMode  property</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>Caching the Filter Results<br />
+    <td>Caching the Filter Results</td>
+    <td><br />
 shouldRasterize  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
 </table>
@@ -229,44 +206,41 @@ shouldRasterize  property</td>
   <tr>
     <td>Determining What Portion of the Scene Is Visible in the View</td>
     <td><br />
-anchorPoint  property<br />
-size  property<br />
+anchorPoint<br />
+size<br />
 – didChangeSize:<br />
-scaleMode  property</td>
+scaleMode SKSceneScaleMode</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Setting the Background Color of a Scene</td>
-    <td>backgroundColor  property<br /></td>
+    <td>backgroundColor</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Converting Between View and Scene Coordinates</td>
-    <td><br />
-– convertPointFromView:<br />
+    <td>– convertPointFromView:<br />
 – convertPointToView:</td>
-    <td>&nbsp;</td>
+    <td>window between 2 worlds</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Presenting a Scene</td>
-    <td><br />
-– willMoveFromView:<br />
+    <td>– willMoveFromView:<br />
 – didMoveToView:<br />
 view  property<br /></td>
-    <td>&nbsp;</td>
+    <td>reusable</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Executing the Animation Loop</td>
-    <td><br />
-– update:<br />
+    <td>– update:<br />
 – didEvaluateActions<br />
 – didSimulatePhysics</td>
     <td>&nbsp;</td>
@@ -275,8 +249,7 @@ view  property<br /></td>
   </tr>
   <tr>
     <td>Working With Physics in the Scene</td>
-    <td><br />
-physicsWorld  property</td>
+    <td>physicsWorld  </td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -308,71 +281,73 @@ physicsWorld  property</td>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/Reference/Reference.html">SKLabelNode</a></h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Creating a New Label Node</td>
+    <td>– initWithFontNamed:<br />
+      + labelNodeWithFontNamed:</td>
+  </tr>
+  <tr>
+    <td>Configuring the Label Message</td>
+    <td>text  property</td>
+  </tr>
+  <tr>
+    <td>Configuring the Label Font</td>
+    <td>fontColor  property<br />
+      fontName  property<br />
+      fontSize  property<br /></td>
+  </tr>
+  <tr>
+    <td>Configuring the Label's Position</td>
+    <td>verticalAlignmentMode  property<br />
+      horizontalAlignmentMode  property</td>
+  </tr>
+  <tr>
+    <td>Performing Color Blending</td>
+    <td>color  property<br />
+      colorBlendFactor  property</td>
+  </tr>
+  <tr>
+    <td>Blending the Label Into the Framebuffer</td>
+    <td>blendMode  property</td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;</p>
 <h2><a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/Reference/Reference.html">SKShapeNode</a></h2>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Defining the Shape Path</td>
-    <td><br />
-path  property<br />
-<br /><br /></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>path  <br /></td>
   </tr>
   <tr>
     <td>Setting the Fill Properties</td>
-    <td><br />
-fillColor  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>fillColor  property</td>
   </tr>
   <tr>
     <td>Setting the Stroke Properties</td>
-    <td><br />
-strokeColor  property<br />
-lineWidth  property<br />
-glowWidth  property<br />
-antialiased  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>strokeColor  property<br />
+      lineWidth  property<br />
+      glowWidth  property<br />
+    antialiased  property</td>
   </tr>
   <tr>
     <td>Blending the Shape With the Framebuffer</td>
-    <td><br />
-blendMode  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>blendMode  property</td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -552,80 +527,6 @@ particleAction  property</td>
   </tr>
 </table>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2><a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/Reference/Reference.html">SKLabelNode</a></h2>
-<p>&nbsp;</p>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Creating a New Label Node<br />
-– initWithFontNamed:<br />
-+ labelNodeWithFontNamed:</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Configuring the Label Message<br />
-text  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><br />
-      <br />
-Configuring the Label Font<br />
-fontColor  property<br />
-fontName  property<br />
-fontSize  property<br /><br /></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Configuring the Label's Position<br />
-verticalAlignmentMode  property<br />
-horizontalAlignmentMode  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Performing Color Blending<br />
-color  property<br />
-colorBlendFactor  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>Blending the Label Into the Framebuffer<br />
-blendMode  property</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
 <p>&nbsp;</p>
 </body>
 </html>

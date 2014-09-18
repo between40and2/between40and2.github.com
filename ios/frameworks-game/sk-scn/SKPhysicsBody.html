@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SKPhysicsBody</title>
+</head>
+
+<body>
+<h1><a href="https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html">SKPhysicsBody</a></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Volumn-based vs Edge-based</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>volume-based</td>
+    <td>edge-based</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>mass and volume</li>
+      <li>is affected by gravity, friction, collisions with other objects, and forces or impulses you directly apply to the object.</li>
+    </ul></td>
+    <td><ul>
+      <li>does not have mass or volume and </li>
+      <li>is unaffected by forces or impulses</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>init(circleOfRadius r: CGFloat) -&gt; SKPhysicsBody</li>
+      <li>init(circleOfRadius r: CGFloat,<br />
+center center: CGPoint) -&gt; SKPhysicsBody</li>
+      <li>init(rectangleOfSize s: CGSize) -&gt; SKPhysicsBody</li>
+      <li>init(rectangleOfSize s: CGSize,<br />
+center center: CGPoint) -&gt; SKPhysicsBody</li>
+      <li>init(bodies bodies: [AnyObject]) -&gt; SKPhysicsBody</li>
+      <li>init(polygonFromPath path: CGPath!) -&gt; SKPhysicsBody</li>
+    </ul></td>
+    <td><ul>
+      <li>init(edgeLoopFromRect rect: CGRect) -&gt; SKPhysicsBody</li>
+      <li>init(edgeFromPoint p1: CGPoint,<br />
+toPoint p2: CGPoint) -&gt; SKPhysicsBody</li>
+      <li>init(edgeLoopFromPath path: CGPath!) -&gt; SKPhysicsBody</li>
+      <li>init(edgeChainFromPath path: CGPath!) -&gt; SKPhysicsBody</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>New in iOS 8</td>
+    <td><ul>
+      <li>init(texture texture: SKTexture!,<br />
+        size size: CGSize) -&gt; SKPhysicsBody</li>
+      <li>init(texture texture: SKTexture!,<br />
+        alphaThreshold alphaThreshold: Float,<br />
+size size: CGSize) -&gt; SKPhysicsBody</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Defining How Forces Affect a Physics Body</td>
+    <td><ul>
+      <li>var affectedByGravity: Bool</li>
+      <li>var allowsRotation: Bool</li>
+      <li>var dynamic: Bool</li>
+    </ul></td>
+    <td>ignored on edge-based bodies</td>
+  </tr>
+  <tr>
+    <td>Defining a Body's Physical Properties</td>
+    <td><ul>
+      <li>var mass: CGFloat</li>
+      <li>var density: CGFloat</li>
+      <li>var area: CGFloat { get }</li>
+      <li>var friction: CGFloat</li>
+      <li>var restitution: CGFloat</li>
+      <li>var linearDamping: CGFloat</li>
+      <li>var angularDamping: CGFloat</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Working with Collisions and Contacts</td>
+    <td><ul>
+      <li>var categoryBitMask: UInt32</li>
+      <li>var collisionBitMask: UInt32</li>
+      <li>var usesPreciseCollisionDetection: Bool</li>
+      <li>var contactTestBitMask: UInt32</li>
+      <li>func allContactedBodies() -&gt; [AnyObject]</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Applying Forces and Impulses to a Physics Body</td>
+    <td><ul>
+      <li>func applyForce(_ force: CGVector)</li>
+      <li>func applyTorque(_ torque: CGFloat)</li>
+      <li>func applyForce(_ force: CGVector,<br />
+atPoint point: CGPoint)</li>
+      <li>func applyImpulse(_ impulse: CGVector)</li>
+      <li>func applyAngularImpulse(_ impulse: CGFloat)</li>
+      <li>func applyImpulse(_ impulse: CGVector,<br />
+atPoint point: CGPoint)</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Inspecting the Physics Body's Position and Velocity</td>
+    <td><ul>
+      <li>var velocity: CGVector</li>
+      <li>var angularVelocity: CGFloat</li>
+      <li>var resting: Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Reading the Physics Body's Node</td>
+    <td><ul>
+      <li>weak var node: SKNode? { get }</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Determining Which Joints Are Connected to a Physics Body</td>
+    <td><ul>
+      <li>var joints: [AnyObject] { get }</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Interacting with Physics Fields</td>
+    <td><ul>
+      <li>var fieldBitMask: UInt32</li>
+      <li>var charge: CGFloat</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Pinning a Physics Body to the Node's Parent</td>
+    <td><ul>
+      <li>var pinned: Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
