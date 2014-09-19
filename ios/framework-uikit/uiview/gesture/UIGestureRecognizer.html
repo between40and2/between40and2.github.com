@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UIGestureRecognizer</title>
+</head>
+
+<body>
+<h1>UIGestureRecognizer</h1>
+<p>&nbsp;</p>
+<p>discrete vs continuous</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>discrete</td>
+    <td>continouos</td>
+  </tr>
+  <tr>
+    <td>states</td>
+    <td>Recognized</td>
+    <td>Began, Changed, Ended, Cancelled</td>
+  </tr>
+  <tr>
+    <td>recognizers</td>
+    <td>Tap</td>
+    <td>Pinch, Rotation, Swipe, Pan, ScreenEdgePan, LongPress</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="99%" border="1" cellspacing="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html">UIGestureRecognizer</a></td>
+    <td><h3>Initializing a Gesture Recognizer</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/initWithTarget:action:">– initWithTarget:action:</a> <span data-abstract="Initializes an allocated gesture-recognizer object with a target and an action selector."> </span></li>
+      </ul>
+      <h3>Adding and Removing Targets and Actions</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/addTarget:action:">– addTarget:action:</a> <span data-abstract="Adds a target and an action to a gesture-recognizer object. "> </span> </li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/removeTarget:action:">– removeTarget:action:</a></span></li>
+      </ul>
+      <h3>Specifying Dependencies Between Gesture Recognizers</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/requireGestureRecognizerToFail:">– requireGestureRecognizerToFail:</a> <span data-abstract="Creates a dependency relationship between the receiver and another gesture recognizer."> </span></span></li>
+      </ul>
+      <h3>Setting and Getting the Delegate</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">  delegate</a>  property</li>
+    </ul></td>
+    <td><h3>Getting the Touches and Location of a Gesture</h3>
+      <ul>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/locationInView:">– locationInView:</a> <span data-abstract="Returns the point computed as the location in a given view of the gesture represented by the receiver."> </span></span></li>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/locationOfTouch:inView:">– locationOfTouch:inView:</a> <span data-abstract="Returns the location of one of the gesture’s touches in the local coordinate system of a given view. "> </span></span></li>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIGestureRecognizer/numberOfTouches">– numberOfTouches</a> <span data-abstract="Returns the number of touches involved in the gesture represented by the receiver."> </span></span></li>
+      </ul>
+      <h3>Canceling and Delaying Touches</h3>
+      <ul>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/cancelsTouchesInView">  cancelsTouchesInView</a>  property <span data-abstract="A Boolean value affecting whether touches are delivered to a view when a gesture is recognized. "> </span></span></li>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesBegan">  delaysTouchesBegan</a>  property <span data-abstract="A Boolean value determining whether the receiver delays sending touches in a begin phase to its view."> </span></span></li>
+        <li><span id="span"> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesEnded">  delaysTouchesEnded</a>  property</span></li>
+      </ul>
+      <h3>Getting the Recognizer’s State and View</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/state">  state</a>  property <span data-abstract="The current state of the gesture recognizer. (read-only)"> </span> </li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/view">  view</a>  property <span data-abstract="The view the gesture recognizer is attached to. (read-only)"> </span> </li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIGestureRecognizer/enabled">  enabled</a>  property <span data-abstract="A Boolean property that indicates whether the gesture recognizer is enabled."> </span> </span></li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UITapGestureRecognizer_Class/Reference/Reference.html">UITapGestureRecognizer</a></p></td>
+    <td><h3>Configuring the Gesture</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTapsRequired">  numberOfTapsRequired</a>  property <span data-abstract="The number of taps for the gesture to be recognized."> </span> </span></li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTouchesRequired">  numberOfTouchesRequired</a><span id="">  property</span></li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/Reference/Reference.html">UIPinchGestureRecognizer</a></p></td>
+    <td><h3>&nbsp;</h3>
+    </td>
+    <td><h3>Interpreting the Pinching Gesture</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIPinchGestureRecognizer/scale">  scale</a><span id="">  property</span> <span data-abstract="The scale factor relative to the points of the two touches in screen coordinates."> </span> </li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIPinchGestureRecognizer/velocity">  velocity</a><span id="">  property</span></span></li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/Reference/Reference.html">UIRotationGestureRecognizer</a></p></td>
+    <td><h3>&nbsp;</h3>
+    </td>
+    <td><h3>Interpreting the Gesture</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRotateGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIRotationGestureRecognizer/rotation">  rotation</a>  property <span data-abstract="The rotation of the gesture in radians since its last change."> </span> </span></li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRotateGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIRotationGestureRecognizer/velocity">  velocity</a><span id="">  property</span></li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/Reference/Reference.html">UISwipeGestureRecognizer</a></p></td>
+    <td><h3>Configuring the Gesture</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/direction">  direction</a>  property <span data-abstract="The permitted directions of the swipe."> </span> </span></li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/numberOfTouchesRequired">  numberOfTouchesRequired</a><span id="">  property</span></span></li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html">UIPanGestureRecognizer</a></p></td>
+    <td><h3>Configuring the Gesture Recognizer</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIPanGestureRecognizer/maximumNumberOfTouches">  maximumNumberOfTouches</a>  property <span data-abstract="The maximum number of fingers that can be touching the view for this gesture to be recognized."> </span> </span></li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UIPanGestureRecognizer/minimumNumberOfTouches">  minimumNumberOfTouches</a>  property <span data-abstract="The minimum number of fingers that can be touching the view for this gesture to be recognized."> </span></span></li>
+      </ul>
+      </td>
+    <td><h3>Tracking the Location and Velocity of the Gesture</h3>
+      <ul>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIPanGestureRecognizer/translationInView:">– translationInView:</a> <span data-abstract="The translation of the pan gesture in the coordinate system of the specified view."> </span> </span></li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIPanGestureRecognizer/setTranslation:inView:">– setTranslation:inView:</a> <span data-abstract="Sets the translation value in the coordinate system of the specified view."> </span> </span></li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instm/UIPanGestureRecognizer/velocityInView:">– velocityInView:</a></li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenEdgePanGestureRecognizer_class/index.html">UIScreenEdgePanGestureRecognizer</a></p>
+    <p>iOS 7</p></td>
+    <td><ul>
+      <li>var edges: UIRectEdge</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+    <p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/Reference/Reference.html">UILongPressGestureRecognizer</a></p></td>
+    <td><h3>Configuring the Gesture Recognizer</h3>
+      <ul>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/minimumPressDuration">  minimumPressDuration</a>  property <span data-abstract="The minimum period fingers must press on the view for the gesture to be recognized."> </span> </li>
+        <li><span id=""> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTouchesRequired">  numberOfTouchesRequired</a>  property <span data-abstract="The number of fingers that must be pressed on the view for the gesture to be recognized."> </span> </span></li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTapsRequired">  numberOfTapsRequired</a>  property <span data-abstract="The number of taps on the view required for the gesture to be recognized."> </span> </li>
+        <li> <a href="http://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/Reference/Reference.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/allowableMovement">  allowableMovement</a>  property</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Usage</h2>
+<p>let gr = UILongPressGestureRecognizer()</p>
+<p>&nbsp;</p>
+<p>Actions on each state</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>with SKNode</td>
+  </tr>
+  <tr>
+    <td>Began</td>
+    <td>record the initial value</td>
+    <td>initial_scale = node.xScale</td>
+  </tr>
+  <tr>
+    <td>Changed</td>
+    <td>update accordingly </td>
+    <td>let value = initial_scale * gr.scale<br />
+println(&quot;scale: \(gr.scale)&quot;)<br />
+node.xScale =  value<br />
+<br />
+node.yScale = value</td>
+  </tr>
+  <tr>
+    <td>Ended</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Advanced: Subclassing</h3>
+<p>– touchesBegan:withEvent:<br />
+  – touchesMoved:withEvent:<br />
+  – touchesEnded:withEvent:<br />
+  – touchesCancelled:withEvent:<br />
+  – reset<br />
+  – ignoreTouch:forEvent:<br />
+  – canBePreventedByGestureRecognizer:<br />
+– canPreventGestureRecognizer:</p>
+<p>&nbsp;</p>
+<p><a href="http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/Reference/Reference.html">UIGestureRecognizerDelegate</a></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Regulating Gesture Recognition</td>
+    <td><ul>
+      <li>optional func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -&gt; Bool</li>
+      <li>optional func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,<br />
+shouldReceiveTouch touch: UITouch) -&gt; Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Controlling Simultaneous Gesture Recognition</td>
+    <td><ul>
+      <li>optional func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,<br />
+        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -&gt; Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Setting Up Failure Requirements</td>
+    <td><ul>
+      <li>optional func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,<br />
+        shouldRequireFailureOfGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -&gt; Bool</li>
+      <li>optional func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,<br />
+        shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -&gt; Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
