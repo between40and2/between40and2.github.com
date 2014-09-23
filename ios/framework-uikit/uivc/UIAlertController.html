@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UIAlertController</title>
+</head>
+
+<body>
+<h1>UIAlertController</h1>
+<p>&nbsp;</p>
+<p>WWDC 2014 228 A Look Inside Presentation Controllers</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html">UIAlertController</a> (New in iOS 8.0)</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>convenience init(title title: String!,<br />
+      message message: String!,<br />
+      preferredStyle preferredStyle: UIAlertControllerStyle)</p>
+      <h3>Configuring the Alert</h3>
+      <ul>
+        <li>var title: String!</li>
+        <li>var message: String!</li>
+        <li>var preferredStyle: UIAlertControllerStyle { get }      </li>
+      </ul>
+      <p>Constants</p>
+      <p>enum UIAlertControllerStyle : Int {<br />
+        case ActionSheet<br />
+        case Alert<br />
+    }</p></td>
+    <td>UIAlertController * alert = [UIAlertController alertControllerWithTitle:@&quot;Add a graph&quot; message: @&quot;give it a name&quot; preferredStyle:UIAlertControllerStyleAlert];<br />
+      <br />
+      <br />
+<br />
+<br /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Configuring the User Actions</p>
+      <ul>
+        <li>func addAction(_ action: UIAlertAction!)</li>
+        <li>var actions: AnyObject[]! { get }</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h2><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html">UIAlertAction</a> (New in iOS 8.0)</h2>
+    <p>convenience init(title title: String!,<br />
+      style style: UIAlertActionStyle,<br />
+      handler handler: ((UIAlertAction!) -&gt; Void)!)</p>
+    <p>&nbsp;</p>
+    <p>enum UIAlertActionStyle : Int {<br />
+      case Default<br />
+      case Cancel<br />
+      case Destructive<br />
+      }</p>
+    <p>&nbsp;</p></td>
+    <td>UIAlertAction * action_cancel = [UIAlertAction actionWithTitle: @&quot;Cancel&quot; style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {<br />
+      <br />
+[self dismissViewControllerAnimated: YES<br />
+completion:^{<br />
+<br />
+}];<br />
+}];<br />
+<br />
+UIAlertAction * action_ok = [UIAlertAction actionWithTitle: @&quot;Create&quot; style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {<br />
+<br />
+UITextField * tf =        alert.textFields[0];<br />
+NSLog(@&quot;output: %@&quot;, tf.text);<br />
+[self dismissViewControllerAnimated: YES<br />
+completion:^{<br />
+<br />
+}];<br />
+}];<br />
+<br />
+<br />
+[alert addAction: action_cancel];<br />
+[alert addAction: action_ok];</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Configuring Text Fields</p>
+      <ul>
+        <li>func addTextFieldWithConfigurationHandler(_ configurationHandler: ((UITextField!) -&gt; Void)!)</li>
+        <li>var textFields: AnyObject[]! { get }</li>
+    </ul></td>
+    <td>[alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {<br />
+textField.placeholder = @&quot;Name&quot;;<br />
+}];</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>[self presentViewController: alert animated: YES completion:^{<br />
+      <br />
+}];</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
