@@ -2,16 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Untitled Document</title>
+<title>Core Image</title>
 </head>
 
 <body>
-<p>coreimage
-</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h1>Core Image</h1>
 <p>&nbsp;</p>
 <ul>
   <li>2010
@@ -27,6 +22,7 @@
   <li>2012
     <ul>
       <li>510 Getting Started with Core Image </li>
+      <li>511 Core Image Techniques</li>
     </ul>
   </li>
   <li>2013
@@ -41,6 +37,113 @@
     </ul>
   </li>
 </ul>
+<p>Sample Code</p>
+<ul>
+  <li>CIFunHouse</li>
+  <li>StacheCam</li>
+</ul>
+<p>&nbsp;</p>
+<h2>2011 422 Using Core Image on iOS &amp; Mac OS X</h2>
+<p>Introducing Core Image on iOS 5</p>
+<ul>
+  <li>Key concepts</li>
+  <li>Basic architecture</li>
+  <li>Classes and API</li>
+  <li>Platform specifics</li>
+</ul>
+<p>Using Core Image in iOS</p>
+<ul>
+  <li>Initaliing a CIImage</li>
+  <li>Filtering a CIImage</li>
+  <li>Rendering throught a CIContext</li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>let ctx = CIContext(options: nil)<br />
+    </p>
+      <p>let cgImage = ctx.createCIImage(ciImage, fromRect: ciImage.extent) // CIImage</p>
+    <p>let img = UIImage(CGImage: cgImage)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Image analysis</p>
+<ul>
+  <li>Face Detection</li>
+</ul>
+<h3>Core Image Auto Enhance</h3>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CIRedEyeCorrection</td>
+    <td>Repair red/amber/white eye from camera flash</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CIFaceBalance</td>
+    <td>Adjust color of image to give pleasing skin tones</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CIVibrance</td>
+    <td>Increase saturation without distorting skin tones</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CIToneCurve</td>
+    <td>Adjust image contract</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CIHighlightShadowAdjust</td>
+    <td>Adjust shadow details</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>CIImage</p>
+<p>Getting Autoadjustment Filters</p>
+<p>func autoAdjustmentFilters() -&gt; [AnyObject]!</p>
+<p>func autoAdjustmentFiltersWithOptions(_ options: [NSObject : AnyObject]!) -&gt; [AnyObject]!</p>
 <p>&nbsp;</p>
 </body>
 </html>
