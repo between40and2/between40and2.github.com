@@ -16,23 +16,90 @@
 </ul>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p>edit - new </p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>content</td>
+    <td>action</td>
+    <td>choices of UI/form</td>
+  </tr>
+  <tr>
+    <td>edit</td>
+    <td>&nbsp;</td>
+    <td>save, cancel</td>
+    <td><ul>
+      <li>UIAlertController</li>
+      <li>UIVC edit-dedicated</li>
+      <li>UIVC editable </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>list</td>
+    <td><ul>
+      <li>collection/list/array driven</li>
+      <li>CoreData NSFetchedResultsController driven</li>
+    </ul></td>
+    <td>edit, add</td>
+    <td><ul>
+      <li>UITableViewController</li>
+      <li>UICollecitonViewController</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>item</td>
+    <td>&nbsp;</td>
+    <td>back, actions</td>
+    <td><ul>
+      <li>tableView based</li>
+      <li>Auto Layout based </li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>edit - new </h2>
 <ul>
-  <li>UIAlertController</li>
-  <li>UIVC edit-dedicated</li>
-  <li>UIVC editable </li>
+  <li></li>
 </ul>
 <p>&nbsp;</p>
-<p>list </p>
+<h2>list </h2>
 <ul>
-  <li>collection/list/array driven</li>
-  <li>CoreData NSFetchedResultsController driven</li>
+  <li></li>
 </ul>
 <p>&nbsp;</p>
-<p>item </p>
+<h2>item </h2>
 <ul>
-  <li>tableView based</li>
-  <li>Auto Layout based </li>
+  <li></li>
+</ul>
+<p>&nbsp;</p>
+<h2>Flows between elements</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>from</td>
+    <td>to</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>list, add item button</td>
+    <td>edit -new</td>
+    <td>present</td>
+  </tr>
+  <tr>
+    <td>list, cell selection</td>
+    <td>item</td>
+    <td>showDetail , was push</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>container controller</h2>
+<ul>
+  <li>UISplitViewController</li>
+  <li>UINavigationController</li>
 </ul>
 </body>
 </html>
