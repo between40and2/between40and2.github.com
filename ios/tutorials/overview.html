@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>sharing-20140905-ios-dev--overview-xcode-ib</title>
+</head>
+
+<body>
+<h1>sharing-20140905-ios-dev--overview-xcode-ib</h1>
+<p>&nbsp;</p>
+<h2>Intro - what to develop. Goals</h2>
+<p>real app vs demo app; whole process or partial</p>
+<p>use ios 8 SplitVC. list-item pattern</p>
+<h2>Requirements</h2>
+<ul>
+  <li>record a W4 (creating)</li>
+  <li>list all W4 for the past</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Create New Project</h2>
+<p>Master-Detail, swift, Universal , use Core Data</p>
+<h2>Example template-generated files</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>main.m ?</td>
+    <td>C-entry</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>AppDelegate.swift</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>MasterViewController.swift</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>DetailViewController.swift</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Main.storyboard</td>
+    <td>IB-editing file, visually design</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Images.xcassets</td>
+    <td>a directory (or package)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>W4.xcdatamodel</td>
+    <td>datamodel, visually design</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Info.plist</td>
+    <td>config. connect between app and iOS system.</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Comprehensive arch. </p>
+<h3>Other files in project</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>W4.xcodeproj</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>W4Tests</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Update Info.plist</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>add</td>
+    <td>NSLocationWhenInUseUsageDescription</td>
+    <td>需要你的位置，来记录你的行动</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>Main storyboard file base name</td>
+    <td>id_trinity</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Update Model (not only in cxdatamodel, but also in VC) </h2>
+<p>&nbsp;</p>
+<p>core-data-model</p>
+<h2>Touch &quot;Master&quot; VC - by subclassing </h2>
+<p>Don't change it internally, especially when you don't master it. </p>
+<p>Do things externally: such as subclassing and minimizing the change on existing files. </p>
+<h2>Edit 'Detail' - in Storyboard</h2>
+<p>See <a href="../../../../../快盘/iOS8/ios-dev/interface-builder">interface-builder</a></p>
+<p>Creating a scene in IB first, or Creating a VC in code first? it is up to you. They are loosely coupling anyway. </p>
+<p>&nbsp;</p>
+<h2>Look forward</h2>
+<p>Standard set of tech used.:</p>
+<p>core data; UIVIew auto layout; storyboard, nib.</p>
+<h2>revisions - 2014</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>0905</td>
+    <td><p>initial</p>
+    <p>sharing-20140905-ios-dev--overview-xcode-ib</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>0924</td>
+    <td>renamed as tutorials/overview</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
