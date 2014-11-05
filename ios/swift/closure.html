@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>closure</title>
+</head>
+
+<body>
+<h1>Closures</h1>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>Example of sorted</p>
+    <p>reversed = sorted(names, ?)</p></td>
+  </tr>
+  <tr>
+    <td>Closure Expression Syntax</td>
+    <td>&nbsp;</td>
+    <td> { (s1: String, s2: String) -&gt; Bool in<br />
+return s1 &gt; s2<br />
+}</td>
+  </tr>
+  <tr>
+    <td>Inferring Type From Context</td>
+    <td>&nbsp;</td>
+    <td>{ s1, s2 in return s1 &gt; s2 }</td>
+  </tr>
+  <tr>
+    <td>Implicit Returns from Single-Expression Closures</td>
+    <td>&nbsp;</td>
+    <td>{ s1, s2 in s1 &gt; s2 } </td>
+  </tr>
+  <tr>
+    <td>Shorthand Argument Names</td>
+    <td>&nbsp;</td>
+    <td>{ $0 &gt; $1 }</td>
+  </tr>
+  <tr>
+    <td>Operator Functions</td>
+    <td>&nbsp;</td>
+    <td>&gt;</td>
+  </tr>
+</table>
+<h2>Trailing Closures</h2>
+<p>sorted(names) { $0 &gt; $1 }</p>
+<h2>Capturing Values</h2>
+<p>&nbsp;</p>
+<h2>Closures Are Reference Types</h2>
+<p>&nbsp;</p>
+<h2>refs</h2>
+<p>The Swift Programming Language &gt; Language Guide &gt; <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-XID_152">Closures</a></p>
+</body>
+</html>

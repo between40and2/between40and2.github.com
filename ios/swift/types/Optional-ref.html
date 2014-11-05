@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Optional-ref</title>
+</head>
+
+<body>
+<h1>Optional-ref
+</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>enum Optional&lt;T&gt;</td>
+    <td>enum ImplicitlyUnwrappedOptional&lt;T&gt;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><p> case None<br />
+      case Some(T)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>/// Construct a `nil` instance.<br />
+      init()</p>
+      <p> /// Construct a non-\ `nil` instance that stores `some`.<br />
+    init(_ some: T)</p></td>
+    <td><p> /// Construct a `nil` instance.<br />
+      init()</p>
+      <p> /// Construct a non-\ `nil` instance that stores `some`.<br />
+        init(_ some: T)</p>
+      <p> /// Construct an instance from an explicitly unwrapped optional<br />
+        /// (`T?`).<br />
+    init(_ v: T?)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// If `self == nil`, returns `nil`.  Otherwise, returns `f(self!)`.<br />
+func map&lt;U&gt;(f: (T) -&gt; U) -&gt; U?</td>
+    <td>/// If `self == nil`, returns `nil`.  Otherwise, returns `f(self!)`.<br />
+    func map&lt;U&gt;(f: (T) -&gt; U) -&gt; U!</td>
+  </tr>
+  <tr>
+    <td>Reflectable</td>
+    <td colspan="2">/// Returns a mirror that reflects `self`.<br />
+    func getMirror() -&gt; MirrorType</td>
+  </tr>
+  <tr>
+    <td>NilLiteralConvertible</td>
+    <td colspan="2">/// Create an instance initialized with `nil`.<br />
+    init(nilLiteral: ())</td>
+  </tr>
+  <tr>
+    <td>DebugPrintable</td>
+    <td>/// A textual representation of `self`, suitable for debugging.<br />
+var debugDescription: String { get }</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td>Printable</td>
+    <td>NA</td>
+    <td>/// A textual representation of `self`.<br />
+var description: String { get }</td>
+  </tr>
+  <tr>
+    <td>_ObjectiveCBridgeable</td>
+    <td>NA</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
