@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>swift-reflection</title>
+</head>
+
+<body>
+<h1>swift-reflection</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Class/Type (no Object yet)</h2>
+<p>&nbsp;</p>
+<p>NSClassFromString ()</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p> class func swiftClassFromString(className: String) -&gt; AnyClass! {<br />
+      //method1<br />
+      // get the project name NSClassFromString 在Swift中已经 no effect<br />
+      if  var appName: String? = NSBundle.mainBundle().objectForInfoDictionaryKey(&quot;CFBundleName&quot;) as String? {<br />
+      // generate the full name of your class (take a look into your &quot;SHCC-swift.h&quot; file)<br />
+      let classStringName = &quot;_TtC\(appName!.utf16Count)\(appName!)\(countElements(className))\(className)&quot;<br />
+      var  cls: AnyClass?  = NSClassFromString(classStringName)<br />
+      //  method2<br />
+      //            cls = NSClassFromString(&quot;\(appName).\(className)&quot;)<br />
+      assert(cls != nil, &quot;class notfound,please check className&quot;)<br />
+      return cls</p>
+      <p> }<br />
+        return nil;<br />
+    }</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>let personClass: AnyClass = NSClassFromString(&quot;MyApp.Person&quot;)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>@objc</td>
+    <td><ul>
+      <li><a href="http://stackoverflow.com/questions/24049673/swift-class-introspection-generics">link 1</a></li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>从AnyClass生成对象</h3>
+<p>typealias AnyClass = AnyObject.Type</p>
+<p>let a : AnyClass , 不能 a()</p>
+<p>let a: NSObject.Type ,能 a()</p>
+<p>&nbsp;</p>
+<h3>继承NSObject</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>class A {}</p>
+<p>class B : NSObject {} - KVC </p>
+<p>&nbsp;</p>
+<p>Calling Class methods</p>
+<p>self.dynamicType.reuseIdentifier_fromCellStyle(s)</p>
+<p>&nbsp;</p>
+<h2>Object -&gt; Class -&gt; ClassName</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>method</td>
+    <td>value type</td>
+    <td>value, example</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>let cls = self.dynamicType</td>
+    <td>Metatype</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>let className = NSStringFromClass(cls)</td>
+    <td>String</td>
+    <td>Demo_XSD_Schema.XSDModel_Form </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>let a = className.componentsSeparatedByString(&quot;.&quot;).last<br /></td>
+    <td>&nbsp;</td>
+    <td>XSDModel_Form </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>let b = a?.componentsSeparatedByString(&quot;_&quot;).last</td>
+    <td>&nbsp;</td>
+    <td>Form </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Object -&gt; Inside key values. By func reflect</h3>
+<p>func reflect&lt;T&gt;(x: T) -&gt; MirrorType</p>
+<p>protocol MirrorType</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><br />
+        var value: Any { get }</p>
+      <p> /// Identical to `value.dynamicType`<br />
+      var valueType: Any.Type { get }    </p></td>
+    <td>mt.valueType == String.Type</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// A unique identifier for `value` if it is a class instance; `nil`<br />
+/// otherwise.<br />
+var objectIdentifier: ObjectIdentifier? { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// The count of `value`\ 's logical children <br />
+var count: Int { get }<br />
+subscript (i: Int) -&gt; (String, MirrorType) { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>/// A string description of `value`.<br />
+      var summary: String { get }</p>
+      <p> /// A rich representation of `value` for an IDE, or `nil` if none is supplied.<br />
+        var quickLookObject: QuickLookObject? { get }</p>
+      <p> /// How `value` should be presented in an IDE.<br />
+    var disposition: MirrorDisposition { get }</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>根据func名，调用一个对象中的对应方法，包括带参数和不带参数。</p>
+<p>&nbsp;</p>
+<p>[objc performSelector ]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>po prop</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> {<br />
+0 = &quot;section_&quot;<br />
+1 = {<br />
+payload_data_0 = 0x0000000170036500 -&gt; 0x00000001004eb8b0 direct type metadata for Swift._IndirectArrayBuffer + 16<br />
+payload_data_1 = 0x00000001937a9530 (void *)0x000001a5937a9581<br />
+payload_data_2 = 0x9364b6e82069fcff<br />
+instance_type = 0x000000013cd59df8<br />
+protocol_witness_0 = 0x00000001004d96a0 libswiftCore.dylib`protocol witness table for Swift._OptionalMirror : Swift.MirrorType<br />
+}<br />
+}</td>
+  </tr>
+  <tr>
+    <td>po prop.0</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&quot;section_&quot;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>po prop.1.count</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>po prop.1[0]</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> {<br />
+0 = &quot;Some&quot;<br />
+1 = {<br />
+payload_data_0 = 0x0000000170036500 -&gt; 0x00000001004eb8b0 direct type metadata for Swift._IndirectArrayBuffer + 16<br />
+payload_data_1 = 0x95d11c2080785dc6<br />
+payload_data_2 = 0x11e5c56a00000001<br />
+instance_type = 0x000000013ce46cb8<br />
+protocol_witness_0 = 0x00000001004d6128 libswiftCore.dylib`protocol witness table for Swift._ArrayTypeMirror : Swift.MirrorType<br />
+}<br />
+}</td>
+  </tr>
+  <tr>
+    <td>po prop.1.valueType</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Swift.Optional</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>po prop.1[0].1.valueType</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Swift.Array</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>po prop.1[0].1[0].1.valueType</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Demo_XSD_Schema.XSDModel_FormSection</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>refs</p>
+<ul>
+  <li><a href="http://stackoverflow.com/questions/24006165/how-do-i-print-the-type-or-class-of-a-variable-in-swift">How do I print the type or class of a variable in Swift?</a></li>
+</ul>
+<p>&nbsp;</p>
+</body>
+</html>
