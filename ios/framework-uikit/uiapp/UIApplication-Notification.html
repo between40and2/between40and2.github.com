@@ -8,7 +8,11 @@
 <body>
 <h1>UIApplication-Notification</h1>
 <p>&nbsp;</p>
-<p>Change on iOS Remote Notif in iOS 7, see 2013-204 What's New in Multitasking</p>
+<h2>WWDC</h2>
+<ul>
+  <li>2013-204 What's New in Multitasking -- Change on iOS Remote Notif in iOS 7</li>
+  <li> 2014 713 What's New in iOS Notifications</li>
+</ul>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
@@ -35,19 +39,25 @@
     </ul></td>
   </tr>
   <tr>
-    <td>Remote</td>
+    <td rowspan="2">Remote</td>
+    <td>&nbsp;</td>
+    <td><p>Handling Remote Notifications</p>
+      <ul>
+        <li>optional func application(_ application: UIApplication,<br />
+          didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)</li>
+        <li>optional func application(_ application: UIApplication,<br />
+          didFailToRegisterForRemoteNotificationsWithError error: NSError)</li>
+    </ul></td>
+  </tr>
+  <tr>
     <td><p>Registering for Remote Notifications</p>
       <ul>
         <li>func registerForRemoteNotifications()</li>
         <li>func unregisterForRemoteNotifications()</li>
         <li>func isRegisteredForRemoteNotifications() -&gt; Bool</li>
     </ul></td>
-    <td><p>Handling Remote Notifications</p>
+    <td><p>&nbsp;</p>
       <ul>
-        <li>optional func application(_ application: UIApplication,<br />
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)</li>
-        <li>optional func application(_ application: UIApplication,<br />
-        didFailToRegisterForRemoteNotificationsWithError error: NSError)</li>
         <li>optional func application(_ application: UIApplication,<br />
           didReceiveRemoteNotification userInfo: [NSObject : AnyObject],<br />
           fetchCompletionHandler handler: (UIBackgroundFetchResult) -&gt; Void)</li>
@@ -82,13 +92,37 @@
   </tr>
 </table>
 <h2>Processes</h2>
-<ul>
-  <li>register user notif settings</li>
-  <li>listen to the change on user notif settings by user in Settings</li>
-  <li>register for remote notifs</li>
-  <li>handle incoming remote notifs</li>
-  <li>register local notifs</li>
-</ul>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>setup</td>
+    <td>write</td>
+    <td>proactive read</td>
+    <td>passive read</td>
+  </tr>
+  <tr>
+    <td>user</td>
+    <td>register user notif settings</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>listen to the change on user notif settings by user in Settings</td>
+  </tr>
+  <tr>
+    <td>remote</td>
+    <td>register for remote notifs</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>handle incoming remote notifs</td>
+  </tr>
+  <tr>
+    <td>local</td>
+    <td>register local notifs</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 <h2><a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html">UILocalNotification</a></h2>
 <table width="100%" border="1">
   <tr>
@@ -136,13 +170,38 @@
     <td>&nbsp;</td>
   </tr>
 </table>
-<p>UIUserNotificationSettings</p>
+<p>&nbsp;</p>
+<h2>User Notification Settings - Category - Action</h2>
+<p>&nbsp;</p>
+<h3>UIUserNotificationSettings</h3>
 <p>convenience init(forTypes allowedUserNotificationTypes: UIUserNotificationType,<br />
 categories actionSettings: NSSet?)</p>
 <p>var types: UIUserNotificationType { get }</p>
 <p>@NSCopying var categories: NSSet! { get }</p>
 <p>&nbsp;</p>
+<h3>UIUserNotificationCategory and mutable version</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>UIUserNotificationCategory</td>
+    <td>UIMutableUserNotificationCategory</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>var identifier: String! { get }</li>
+      <li>func actionsForContext(_ context: UIUserNotificationActionContext) -&gt; [AnyObject]!</li>
+    </ul></td>
+    <td><ul>
+      <li>var identifier: String!</li>
+      <li>func setActions(_ actions: [AnyObject]!,<br />
+        forContext context: UIUserNotificationActionContext)</li>
+    </ul></td>
+  </tr>
+</table>
 <p>&nbsp;</p>
+<p></p>
+<h3>UIUserNotificationAction</h3>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
@@ -179,30 +238,6 @@ categories actionSettings: NSSet?)</p>
     <td>&nbsp;</td>
   </tr>
 </table>
-<h2>UIUserNotificationCategory and mutable version</h2>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>UIUserNotificationCategory</td>
-    <td>UIMutableUserNotificationCategory</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><ul>
-      <li>var identifier: String! { get }</li>
-      <li>func actionsForContext(_ context: UIUserNotificationActionContext) -&gt; [AnyObject]!</li>
-    </ul></td>
-    <td><ul>
-      <li>var identifier: String!</li>
-      <li>func setActions(_ actions: [AnyObject]!,<br />
-forContext context: UIUserNotificationActionContext)</li>
-    </ul></td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>WWDC 2014 713 What's New in iOS Notifications</p>
+<h2>&nbsp;</h2>
 </body>
 </html>

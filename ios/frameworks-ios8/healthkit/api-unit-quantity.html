@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-unit-quantity</title>
+</head>
+
+<body>
+<h1>api-unit-quantity</h1>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html">HKUnit</a></h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Working with Units</td>
+    <td><p>convenience init!(fromString string: String!)</p>
+    <p>var unitString: String! { get }</p>
+    <p>func isNull() -&gt; Bool</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Working with Formatter Units</td>
+    <td><p>class func energyFormatterUnitFromUnit(_ unit: HKUnit!) -&gt; NSEnergyFormatterUnit</p>
+    <p>convenience init!(fromEnergyFormatterUnit energyFormatterUnit: NSEnergyFormatterUnit)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSEnergyFormatter_Class/index.html">NSEnergyFormatter</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>class func lengthFormatterUnitFromUnit(_ unit: HKUnit!) -&gt; NSLengthFormatterUnit</p>
+    <p>convenience init!(fromLengthFormatterUnit lengthFormatterUnit: NSLengthFormatterUnit)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html">NSLengthFormatter</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>class func massFormatterUnitFromUnit(_ unit: HKUnit!) -&gt; NSMassFormatterUnit</p>
+    <p>convenience init!(fromMassFormatterUnit massFormatterUnit: NSMassFormatterUnit)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/doc/c_ref/NSMassFormatterUnit">NSMassFormatter</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Performing Unit Math</td>
+    <td><p>func unitMultipliedByUnit(_ unit: HKUnit!) -&gt; HKUnit!</p>
+    <p>func unitDividedByUnit(_ unit: HKUnit!) -&gt; HKUnit!</p>
+    <p>func unitRaisedToPower(_ power: Int) -&gt; HKUnit!</p>
+    <p>func reciprocalUnit() -&gt; HKUnit!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Constructing * Units</h3>
+<table width="100%" border="1">
+  <tr>
+    <td> Mass </td>
+    <td><p>class func gramUnit() -&gt; Self!</p>
+      <p>class func gramUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p>
+      <p>&nbsp;</p></td>
+    <td><p>class func ounceUnit() -&gt; Self!</p>
+      <p>class func poundUnit() -&gt; Self!</p>
+      <p>class func stoneUnit() -&gt; Self!</p>
+      <p>class func moleUnitWithMolarMass(_ gramsPerMole: Double) -&gt; Self!</p>
+      <p>class func moleUnitWithMetricPrefix(_ prefix: HKMetricPrefix,<br />
+    molarMass gramsPerMole: Double) -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Length </td>
+    <td><p>class func meterUnit() -&gt; Self!</p>
+      <p>class func meterUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p>
+      <p>&nbsp;</p></td>
+    <td><p>class func inchUnit() -&gt; Self!</p>
+      <p>class func footUnit() -&gt; Self!</p>
+    <p>class func mileUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Volume </td>
+    <td><p>class func literUnit() -&gt; Self!</p>
+      <p>class func literUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p>
+      <p>&nbsp;</p></td>
+    <td><p>class func fluidOunceUSUnit() -&gt; Self!</p>
+      <p>class func fluidOunceImperialUnit() -&gt; Self!</p>
+      <p>class func pintUSUnit() -&gt; Self!</p>
+    <p>class func pintImperialUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="226"> Pressure</td>
+    <td><p>class func pascalUnit() -&gt; Self!</p>
+      <p>class func pascalUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p></td>
+    <td><p>class func millimeterOfMercuryUnit() -&gt; Self!</p>
+      <p>class func centimeterOfWaterUnit() -&gt; Self!</p>
+    <p>class func atmosphereUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Time </td>
+    <td><p>class func secondUnit() -&gt; Self!</p>
+      <p>class func secondUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p>
+      <p>class func minuteUnit() -&gt; Self!</p>
+      <p>class func hourUnit() -&gt; Self!</p>
+      <p>class func dayUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Energy </td>
+    <td><p>class func jouleUnit() -&gt; Self!</p>
+    <p>class func jouleUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p></td>
+    <td><p>class func calorieUnit() -&gt; Self!</p>
+    <p>class func kilocalorieUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Temperature </td>
+    <td><p>class func degreeCelsiusUnit() -&gt; Self!</p>
+    <p>class func degreeFahrenheitUnit() -&gt; Self!</p>
+    <p>class func kelvinUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Electrical Conductance </td>
+    <td><p>class func siemenUnit() -&gt; Self!</p>
+    <p>class func siemenUnitWithMetricPrefix(_ prefix: HKMetricPrefix) -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> Scalar </td>
+    <td><p>class func countUnit() -&gt; Self!</p>
+    <p>class func percentUnit() -&gt; Self!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantity_Class/index.html">HKQuantity</a></h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Creating Quantities</td>
+    <td>convenience init!(unit unit: HKUnit!,<br />
+doubleValue value: Double)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Working With Units</td>
+    <td><p>func isCompatibleWithUnit(_ unit: HKUnit!) -&gt; Bool</p>
+    <p>func doubleValueForUnit(_ unit: HKUnit!) -&gt; Double</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Comparing Quantities</td>
+    <td><p>func compare(_ quantity: HKQuantity!) -&gt; NSComparisonResult</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

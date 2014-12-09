@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>proc-setup</h1>
+<p>&nbsp;</p>
+<p>Target -&gt; Capacity -&gt; HealthKit</p>
+<p>&nbsp;</p>
+<p><br />
+let allId_nutriention = [HKQuantityTypeIdentifierDietaryBiotin, HKQuantityTypeIdentifierDietaryCaffeine, HKQuantityTypeIdentifierDietaryCalcium, HKQuantityTypeIdentifierDietaryCholesterol, HKQuantityTypeIdentifierDietaryChromium, HKQuantityTypeIdentifierDietaryCopper]<br />
+<br />
+<br />
+<br />
+<br />
+if HKHealthStore.isHealthDataAvailable() {<br />
+let set_write = NSSet(array: allId_nutriention.map{ HKObjectType.quantityTypeForIdentifier( $0) } )<br />
+<br />
+store.requestAuthorizationToShareTypes(set_write, readTypes: nil , completion: { (success: Bool, error: NSError!) -&gt; Void in<br />
+if success {<br />
+println(&quot;done&quot;)<br />
+}else {<br />
+println(error)<br />
+}<br />
+})<br />
+<br />
+}else {<br />
+println(&quot;Not support HealthKit&quot;)<br />
+}</p>
+<h1>proc-write</h1>
+<p>&nbsp;</p>
+<p> let type = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDietaryCalcium)<br />
+let q = HKQuantity(unit: HKUnit.gramUnit(), doubleValue: 0.02)<br />
+let date = NSDate()<br />
+let meta = [HKMetadataKeyFoodType: &quot;No&quot;]<br />
+let sample = HKQuantitySample(type: type , quantity: q, startDate: date, endDate: date, metadata: meta)<br />
+<br />
+store.saveObject(sample, withCompletion: { (success: Bool, error: NSError!) -&gt; Void in<br />
+println(error)<br />
+// Error Domain=com.apple.healthkit Code=4 &quot;Not authorized&quot; UserInfo=0x15655e20 {NSLocalizedDescription=Not authorized}<br />
+})</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

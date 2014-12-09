@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-overview</title>
+</head>
+
+<body>
+<h1>api-overview</h1>
+<p>&nbsp;</p>
+<h2>Model</h2>
+<ul>
+  <li>HKBiologicalSex</li>
+  <li>HKBloodType</li>
+  <li>HKQuantity  </li>
+  <li>HKSource</li>
+  <li>HKStatistics</li>
+  <li>HKStatisticsCollection</li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/cl/HKUnit">HKUnit</a></li>
+</ul>
+<h2>Mechanism</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>HKHealthStore</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Accessing HealthKit</td>
+    <td><p>func authorizationStatusForType(_ type: HKObjectType!) -&gt; HKAuthorizationStatus</p>
+      <p>class func isHealthDataAvailable() -&gt; Bool</p>
+      <p>func requestAuthorizationToShareTypes(_ typesToShare: NSSet!,<br />
+        readTypes typesToRead: NSSet!,<br />
+        completion completion: ((Bool,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Reading Characteristic Data</td>
+    <td><p>func biologicalSexWithError(_ error: NSErrorPointer) -&gt; HKBiologicalSexObject!</p>
+    <p>func bloodTypeWithError(_ error: NSErrorPointer) -&gt; HKBloodTypeObject!</p>
+    <p>func dateOfBirthWithError(_ error: NSErrorPointer) -&gt; NSDate!</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Working with HealthKit Objects</td>
+    <td><p>func deleteObject(_ object: HKObject!,<br />
+      withCompletion completion: ((Bool,<br />
+    NSError!) -&gt; Void)!)</p>
+    <p>func saveObject(_ object: HKObject!,<br />
+withCompletion completion: ((Bool,<br />
+NSError!) -&gt; Void)!)</p>
+    <p>func saveObjects(_ objects: [AnyObject]!,<br />
+withCompletion completion: ((Bool,<br />
+NSError!) -&gt; Void)!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Working with Workouts</td>
+    <td><p>func addSamples(_ samples: [AnyObject]!,<br />
+      toWorkout workout: HKWorkout!,<br />
+      completion completion: ((Bool,<br />
+    NSError!) -&gt; Void)!)</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Querying HealthKit Data</td>
+    <td><p>func executeQuery(_ query: HKQuery!)</p>
+    <p>func stopQuery(_ query: HKQuery!)</p>
+    <p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Managing Background Delivery</td>
+    <td><p>func enableBackgroundDeliveryForType(_ type: HKObjectType!,<br />
+      frequency frequency: HKUpdateFrequency,<br />
+      withCompletion completion: ((Bool,<br />
+    NSError!) -&gt; Void)!)</p>
+    <p>func disableBackgroundDeliveryForType(_ type: HKObjectType!,<br />
+withCompletion completion: ((Bool,<br />
+NSError!) -&gt; Void)!)</p>
+    <p>func disableAllBackgroundDeliveryWithCompletion(_ completion: ((Bool,<br />
+NSError!) -&gt; Void)!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
