@@ -29,7 +29,6 @@
 <h2><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html">HKQuery</a></h2>
 <p>var predicate: NSPredicate! { get }</p>
 <p>var sampleType: HKSampleType! { get }</p>
-<p>&nbsp;</p>
 <h3>Creating * Predicates</h3>
 <table width="100%" border="1">
   <tr>
@@ -177,6 +176,142 @@ NSError!) -&gt; Void)!)</td>
     <td>&nbsp;</td>
   </tr>
 </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html">HKStatistics</a></h2>
+<p>var startDate: NSDate! { get }</p>
+<p>var endDate: NSDate! { get }</p>
+<p>var quantityType: HKQuantityType! { get }</p>
+<p>var sources: [AnyObject]! { get }</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func averageQuantity() -&gt; HKQuantity!</td>
+    <td>func averageQuantityForSource(_ source: HKSource!) -&gt; HKQuantity!</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func maximumQuantity() -&gt; HKQuantity!</td>
+    <td>func maximumQuantityForSource(_ source: HKSource!) -&gt; HKQuantity!</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func minimumQuantity() -&gt; HKQuantity!</td>
+    <td>func minimumQuantityForSource(_ source: HKSource!) -&gt; HKQuantity!</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func sumQuantity() -&gt; HKQuantity!</td>
+    <td>func sumQuantityForSource(_ source: HKSource!) -&gt; HKQuantity!</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>typedef enum : NSUInteger  {<br />
+HKStatisticsOptionNone                       = 0,<br />
+HKStatisticsOptionSeparateBySource           = 1 &lt;&lt; 0,<br />
+HKStatisticsOptionDiscreteAverage            = 1 &lt;&lt; 1,<br />
+HKStatisticsOptionDiscreteMin                = 1 &lt;&lt; 2,<br />
+HKStatisticsOptionDiscreteMax                = 1 &lt;&lt; 3,<br />
+HKStatisticsOptionCumulativeSum              = 1 &lt;&lt; 4,<br />
+} HKStatisticsOptions;</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/swift/cl/HKStatisticsCollection">HKStatisticsCollection</a></h2>
+<p>&nbsp;</p>
+<p>func enumerateStatisticsFromDate(_ startDate: NSDate!,<br />
+toDate endDate: NSDate!,<br />
+withBlock block: ((HKStatistics!,<br />
+UnsafeMutablePointer&lt;ObjCBool&gt;) -&gt; Void)!)</p>
+<p>func statistics() -&gt; [AnyObject]!</p>
+<p>func statisticsForDate(_ date: NSDate!) -&gt; HKStatistics!</p>
+<p>func sources() -&gt; NSSet!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Summary</h1>
+<p>Through comparing Query system of HealthKit, CloudKit and CoreData, we conclude the common for Query</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>HealthKit</td>
+    <td>CloudKit</td>
+    <td>CoreData</td>
+    <td>SQL</td>
+  </tr>
+  <tr>
+    <td>Request/Query</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html">HKQuery</a> and subclasses</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/doc/uid/TP40014043">CKQuery</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchRequest_Class/index.html#//apple_ref/doc/uid/TP40003606">NSFetchRequest</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>HKSampleType</td>
+    <td>RecordType in String</td>
+    <td>NSEntityDescription</td>
+    <td>from</td>
+  </tr>
+  <tr>
+    <td>Predicate</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>where</td>
+  </tr>
+  <tr>
+    <td>Sorts</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>sortDescription</td>
+    <td>order</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>limit, offet</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>select</td>
+  </tr>
+  <tr>
+    <td>Response/Results</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>general</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>specific</td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html">HKStatistics </a></p>
+    <p><a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/swift/cl/HKStatisticsCollection">HKStatisticsCollection</a></p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
 </html>
