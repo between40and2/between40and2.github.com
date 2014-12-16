@@ -2,17 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>UIApplication-Notification</title>
+<title>Untitled Document</title>
 </head>
 
 <body>
-<h1>UIApplication-Notification</h1>
+<h1>API for local-remote-notification</h1>
 <p>&nbsp;</p>
-<h2>WWDC</h2>
-<ul>
-  <li>2013-204 What's New in Multitasking -- Change on iOS Remote Notif in iOS 7</li>
-  <li> 2014 713 What's New in iOS Notifications</li>
-</ul>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
@@ -31,12 +26,12 @@
       <ul>
         <li>func registerUserNotificationSettings(_ notificationSettings: UIUserNotificationSettings)</li>
         <li>func currentUserNotificationSettings() -&gt; UIUserNotificationSettings!</li>
-    </ul></td>
-    <td> <p>Processing the User Notification Settings</p>
+      </ul></td>
+    <td><p>Processing the User Notification Settings</p>
       <ul>
         <li>optional func application(_ application: UIApplication,<br />
           didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings)</li>
-    </ul></td>
+      </ul></td>
   </tr>
   <tr>
     <td rowspan="2">Remote</td>
@@ -47,7 +42,7 @@
           didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)</li>
         <li>optional func application(_ application: UIApplication,<br />
           didFailToRegisterForRemoteNotificationsWithError error: NSError)</li>
-    </ul></td>
+      </ul></td>
   </tr>
   <tr>
     <td><p>Registering for Remote Notifications</p>
@@ -55,7 +50,7 @@
         <li>func registerForRemoteNotifications()</li>
         <li>func unregisterForRemoteNotifications()</li>
         <li>func isRegisteredForRemoteNotifications() -&gt; Bool</li>
-    </ul></td>
+      </ul></td>
     <td><p>&nbsp;</p>
       <ul>
         <li>optional func application(_ application: UIApplication,<br />
@@ -66,9 +61,9 @@
           forRemoteNotification userInfo: [NSObject : AnyObject],<br />
           completionHandler completionHandler: () -&gt; Void)</li>
         <li>optional func application(_ application: UIApplication,<br />
-        didReceiveRemoteNotification userInfo: [NSObject : AnyObject])</li>
+          didReceiveRemoteNotification userInfo: [NSObject : AnyObject])</li>
       </ul>
-    <p>&nbsp;</p></td>
+      <p>&nbsp;</p></td>
   </tr>
   <tr>
     <td>Local</td>
@@ -79,49 +74,20 @@
         <li>func cancelLocalNotification(_ notification: UILocalNotification)</li>
         <li>func cancelAllLocalNotifications()</li>
         <li>var scheduledLocalNotifications: [AnyObject]!</li>
-    </ul></td>
+      </ul></td>
     <td><p>Handling Local Notifications</p>
       <ul>
         <li>optional func application(_ application: UIApplication,<br />
-        didReceiveLocalNotification notification: UILocalNotification)</li>
+          didReceiveLocalNotification notification: UILocalNotification)</li>
         <li>optional func application(_ application: UIApplication,<br />
           handleActionWithIdentifier identifier: String?,<br />
           forLocalNotification notification: UILocalNotification,<br />
           completionHandler completionHandler: () -&gt; Void)</li>
-    </ul></td>
+      </ul></td>
   </tr>
 </table>
-<h2>Processes</h2>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>setup</td>
-    <td>write</td>
-    <td>proactive read</td>
-    <td>passive read</td>
-  </tr>
-  <tr>
-    <td>user</td>
-    <td>register user notif settings</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>listen to the change on user notif settings by user in Settings</td>
-  </tr>
-  <tr>
-    <td>remote</td>
-    <td>register for remote notifs</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>handle incoming remote notifs</td>
-  </tr>
-  <tr>
-    <td>local</td>
-    <td>register local notifs</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2><a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html">UILocalNotification</a></h2>
 <table width="100%" border="1">
@@ -175,7 +141,7 @@
 <p>&nbsp;</p>
 <h3>UIUserNotificationSettings</h3>
 <p>convenience init(forTypes allowedUserNotificationTypes: UIUserNotificationType,<br />
-categories actionSettings: NSSet?)</p>
+  categories actionSettings: NSSet?)</p>
 <p>var types: UIUserNotificationType { get }</p>
 <p>@NSCopying var categories: NSSet! { get }</p>
 <p>&nbsp;</p>
@@ -212,7 +178,7 @@ categories actionSettings: NSSet?)</p>
   <tr>
     <td>Getting the Action Information</td>
     <td><p>var identifier: String! { get }</p>
-    <p>var title: String! { get }</p></td>
+      <p>var title: String! { get }</p></td>
     <td><ul>
       <li>var identifier: String!</li>
       <li>var title: String!</li>
@@ -230,7 +196,7 @@ categories actionSettings: NSSet?)</p>
         <li>var activationMode: UIUserNotificationActivationMode</li>
         <li>var authenticationRequired: Bool</li>
         <li>var destructive: Bool</li>
-    </ul></td>
+      </ul></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -238,6 +204,8 @@ categories actionSettings: NSSet?)</p>
     <td>&nbsp;</td>
   </tr>
 </table>
-<h2>&nbsp;</h2>
+<h2></h2>
+<p></p>
+<p></p>
 </body>
 </html>

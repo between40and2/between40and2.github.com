@@ -8,42 +8,108 @@
 <body>
 <h1>proc-setup</h1>
 <p>&nbsp;</p>
-<p>Target -&gt; Capacity -&gt; HealthKit</p>
+<h2>Member Center</h2>
+<p>NA</p>
+<h2>Xcode </h2>
 <p>&nbsp;</p>
-<p><br />
-let allId_nutriention = [HKQuantityTypeIdentifierDietaryBiotin, HKQuantityTypeIdentifierDietaryCaffeine, HKQuantityTypeIdentifierDietaryCalcium, HKQuantityTypeIdentifierDietaryCholesterol, HKQuantityTypeIdentifierDietaryChromium, HKQuantityTypeIdentifierDietaryCopper]<br />
-<br />
-<br />
-<br />
-<br />
-if HKHealthStore.isHealthDataAvailable() {<br />
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Destination: Bundle</td>
+    <td>Destination: Member Center</td>
+  </tr>
+  <tr>
+    <td>Target -&gt; Capacity -&gt; HealthKit</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Info.plist</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Coding</h2>
+<p>In UIStory, or AppLogic. Not in UIVC or lower. <br />
+  </p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>prepare </td>
+    <td>let allId_nutriention = [HKQuantityTypeIdentifierDietaryBiotin, HKQuantityTypeIdentifierDietaryCaffeine, HKQuantityTypeIdentifierDietaryCalcium, HKQuantityTypeIdentifierDietaryCholesterol, HKQuantityTypeIdentifierDietaryChromium, HKQuantityTypeIdentifierDietaryCopper]<br /></td>
+    <td>I should make them meaningful group </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>interact</p>
+    <p>by iOS and device</p></td>
+    <td>if HKHealthStore.isHealthDataAvailable() {<br />
 let set_write = NSSet(array: allId_nutriention.map{ HKObjectType.quantityTypeForIdentifier( $0) } )<br />
 <br />
-store.requestAuthorizationToShareTypes(set_write, readTypes: nil , completion: { (success: Bool, error: NSError!) -&gt; Void in<br />
+------- <br />
+<br />
+}else {<br />
+println(&quot;Not support HealthKit&quot;)<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>by User</td>
+    <td>store.requestAuthorizationToShareTypes(set_write, readTypes: nil , completion: { (success: Bool, error: NSError!) -&gt; Void in<br />
 if success {<br />
 println(&quot;done&quot;)<br />
 }else {<br />
 println(error)<br />
 }<br />
-})<br />
-<br />
-}else {<br />
-println(&quot;Not support HealthKit&quot;)<br />
-}</p>
-<h1>proc-write</h1>
+})</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><br />
+</p>
+<h2>iTunes Connect</h2>
+<p>NA</p>
+<h2>CloudKit Dashboard</h2>
+<p>NA</p>
 <p>&nbsp;</p>
-<p> let type = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDietaryCalcium)<br />
-let q = HKQuantity(unit: HKUnit.gramUnit(), doubleValue: 0.02)<br />
-let date = NSDate()<br />
-let meta = [HKMetadataKeyFoodType: &quot;No&quot;]<br />
-let sample = HKQuantitySample(type: type , quantity: q, startDate: date, endDate: date, metadata: meta)<br />
-<br />
-store.saveObject(sample, withCompletion: { (success: Bool, error: NSError!) -&gt; Void in<br />
-println(error)<br />
-// Error Domain=com.apple.healthkit Code=4 &quot;Not authorized&quot; UserInfo=0x15655e20 {NSLocalizedDescription=Not authorized}<br />
-})</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<h2>URLs</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Member Center</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iTunes Connect</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CloudKit Dashboard</td>
+    <td><a href="https://icloud.developer.apple.com/dashboard">https://icloud.developer.apple.com/dashboard</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>

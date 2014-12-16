@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>api-request-content</h1>
+<p>&nbsp;</p>
+<p>Fetching Content - Asynchronous </p>
+<ul>
+  <li><a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/cl/PHImageManager">PHImageManager</a> - usage-based API</li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/cl/PHCachingImageManager">PHCachingImageManager</a></li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/cl/PHImageRequestOptions">PHImageRequestOptions</a></li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/swift/cl/PHVideoRequestOptions">PHVideoRequestOptions</a></li>
+</ul>
+<p></p>
+<p>&nbsp;</p>
+<h2>PHImageManager</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the Image Manager</td>
+    <td>class func defaultManager() -&gt; PHImageManager!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Requesting Images</td>
+    <td>func requestImageForAsset(_ asset: PHAsset!,<br />
+      targetSize targetSize: CGSize,<br />
+      contentMode contentMode: PHImageContentMode,<br />
+      options options: PHImageRequestOptions!,<br />
+      resultHandler resultHandler: ((UIImage!,<br />
+      [NSObject : AnyObject]!) -&gt; Void)!) -&gt; PHImageRequestID</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func requestImageDataForAsset(_ asset: PHAsset!,<br />
+      options options: PHImageRequestOptions!,<br />
+      resultHandler resultHandler: ((NSData!,<br />
+      String!,<br />
+      UIImageOrientation,<br />
+      [NSObject : AnyObject]!) -&gt; Void)!) -&gt; PHImageRequestID</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Requesting Video Objects</td>
+    <td><p>func requestPlayerItemForVideo(_ asset: PHAsset!,<br />
+      options options: PHVideoRequestOptions!,<br />
+      resultHandler resultHandler: ((AVPlayerItem!,<br />
+      [NSObject : AnyObject]!) -&gt; Void)!) -&gt; PHImageRequestID</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func requestExportSessionForVideo(_ asset: PHAsset!,<br />
+      options options: PHVideoRequestOptions!,<br />
+      exportPreset exportPreset: String!,<br />
+      resultHandler resultHandler: ((AVAssetExportSession!,<br />
+      [NSObject : AnyObject]!) -&gt; Void)!) -&gt; PHImageRequestID</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func requestAVAssetForVideo(_ asset: PHAsset!,<br />
+      options options: PHVideoRequestOptions!,<br />
+      resultHandler resultHandler: ((AVAsset!,<br />
+      AVAudioMix!,<br />
+      [NSObject : AnyObject]!) -&gt; Void)!) -&gt; PHImageRequestID<br />
+      OBJECTIVE-C</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Canceling a Request</td>
+    <td>func cancelImageRequest(_ requestID: PHImageRequestID)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
