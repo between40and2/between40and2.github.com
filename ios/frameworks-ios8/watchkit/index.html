@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>WatchKit Overview</title>
+</head>
+
+<body>
+<h1>WatchKit Overview</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Lifecycle</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>API</p>
+<ul>
+  <li><a href="api-WKInterfaceController.html">WKInterfaceController and subclass</a></li>
+  <li><a href="api-WKInterfaceObject.html">WKInterfaceObject and subclasses</a></li>
+</ul>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/cl/WKInterfaceDevice">WKInterfaceDevice</a></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the Shared Device Object</td>
+    <td><ul>
+      <li>class func currentDevice() -&gt; WKInterfaceDevice!</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Getting the Screen Information</td>
+    <td><ul>
+      <li>var screenBounds: CGRect { get }</li>
+      <li>var screenScale: CGFloat { get }</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Getting the Device Settings</td>
+    <td><ul>
+      <li>var currentLocale: NSLocale! { get }</li>
+      <li>var preferredContentSizeCategory: String! { get }</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Managing Image Caches on the Device</td>
+    <td><ul>
+      <li>func addCachedImage(_ image: UIImage!,<br />
+name name: String!) -&gt; Bool</li>
+      <li>func addCachedImageWithData(_ imageData: NSData!,<br />
+name name: String!) -&gt; Bool</li>
+      <li>func removeCachedImageWithName(_ name: String!)</li>
+      <li>func removeAllCachedImages()</li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
