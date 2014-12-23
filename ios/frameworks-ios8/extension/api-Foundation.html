@@ -17,5 +17,45 @@
   <li><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionRequestHandling_Protocol/index.html#//apple_ref/occ/intf/NSExtensionRequestHandling">NSExtensionRequestHandling</a></li>
 </ul>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/doc/uid/TP40014340">NSFileProviderExtension</a></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Managing Placeholder URLs</td>
+    <td><ul>
+      <li>class func placeholderURLForURL(_ url: NSURL) -&gt; NSURL</li>
+      <li>class func writePlaceholderAtURL(_ placeholderURL: NSURL,<br />
+        withMetadata metadata: [NSObject : AnyObject],<br />
+        error error: NSErrorPointer) -&gt; Bool</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Configuring the Document Storage</td>
+    <td><ul>
+      <li>func documentStorageURL() -&gt; NSURL</li>
+      <li>func providerIdentifier() -&gt; String</li>
+      <li>func persistentIdentifierForItemAtURL(_ url: NSURL) -&gt; String</li>
+      <li>func URLForItemWithPersistentIdentifier(_ identifier: String) -&gt; NSURL!</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Managing Shared Files</td>
+    <td><ul>
+      <li>func itemChangedAtURL(_ url: NSURL)</li>
+      <li>func providePlaceholderAtURL(_ url: NSURL,<br />
+completionHandler completionHandler: ((NSError!) -&gt; Void)?)</li>
+      <li>func startProvidingItemAtURL(_ url: NSURL,<br />
+completionHandler completionHandler: ((NSError!) -&gt; Void)!)</li>
+      <li>func stopProvidingItemAtURL(_ url: NSURL)</li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 </body>
 </html>
