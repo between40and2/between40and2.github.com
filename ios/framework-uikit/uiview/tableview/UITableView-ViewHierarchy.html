@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UITableView-ViewHierarchy</title>
+</head>
+
+<body>
+<h1>UITableView-ViewHierarchy
+</h1>
+<p>&nbsp;</p>
+<p>As for iOS 8.2 beta2</p>
+<h2>tableView's subviews</h2>
+<p>println(&quot;-----------------&quot;)<br />
+var first = true<br />
+for v in tableView.subviews {<br />
+println(&quot;\t\(v)&quot;)<br />
+if first {<br />
+for vv in v.subviews {<br />
+println(&quot;\t\t\(vv)&quot;)<br />
+}<br />
+<br />
+first = false<br />
+}<br />
+if v is UITableViewHeaderFooterView {<br />
+(v as UITableViewHeaderFooterView).contentView.backgroundColor = UIColor.redColor()<br />
+}<br />
+}</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>frame</td>
+    <td>&nbsp;</td>
+    <td>layer</td>
+  </tr>
+  <tr>
+    <td>UITableViewWrapperView</td>
+    <td>(0 0; 1024 655)</td>
+    <td> gestureRecognizers = &lt;NSArray: 0x17005e3f0&gt;;  =; contentOffset: {0, 0}; contentSize: {1024, 655}</td>
+    <td>&lt;CALayer: 0x17003f760&gt;</td>
+  </tr>
+  <tr>
+    <td>UIImageView</td>
+    <td>(-36 651.5; 36 3.5);</td>
+    <td> alpha = 0; opaque = NO; autoresize = TM; userInteractionEnabled = NO;</td>
+    <td>&lt;CALayer: 0x170226060&gt;</td>
+  </tr>
+  <tr>
+    <td>UITableViewHeaderFooterView</td>
+    <td>(0 0; 1024 74)</td>
+    <td>text = 'xxx'; autoresize = W</td>
+    <td>CALayer</td>
+  </tr>
+  <tr>
+    <td>UITableViewHeaderFooterView</td>
+    <td> (0 311.5; 1024 56.5)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UITableViewHeaderFooterView</td>
+    <td>(0 517.5; 1024 56.5)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UIImageView</td>
+    <td> (1020.5 -36; 3.5 36);</td>
+    <td>alpha = 0; opaque = NO; autoresize = LM; userInteractionEnabled = NO</td>
+    <td>CALayer</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>wrapperView's subviews</h2>
+<p>&lt;RichText.XUITVCell_default: 0x14fe2ea00; baseClass = UITableViewCell; frame = (0 618; 1024 44); text = 'xxx'; autoresize = W; layer = &lt;CALayer: 0x17022a4c0&gt;&gt;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>UITableViewHeaderFooterView's subviews</h2>
+<p>&lt;UITableViewHeaderFooterView: 0x14fd2da50; frame = (0 311.5; 1024 56.5); text = '生理功能'; autoresize = W; layer = &lt;CALayer: 0x17003efc0&gt;&gt;</p>
+<p> &lt;_UITableViewHeaderFooterViewBackground: 0x1701b7760; frame = (0 0; 1024 56.5); autoresize = W+H; layer = &lt;CALayer: 0x17003f000&gt;&gt;</p>
+<p> &lt;_UITableViewHeaderFooterContentView: 0x170186660; frame = (0 0; 1024 56.5); layer = &lt;CALayer: 0x17003efe0&gt;&gt;</p>
+</body>
+</html>
