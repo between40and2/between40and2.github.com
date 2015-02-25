@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-record-read-write</title>
+</head>
+
+<body>
+<h1>api-record-read</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Wholesales (Non incremental) </p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html">CKDatabase</a> way</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabaseOperation_class/index.html">CKDatabaseOperation</a> way</td>
+  </tr>
+  <tr>
+    <td>Fetch By IDs</td>
+    <td>&nbsp;</td>
+    <td><p>func fetchAllRecordZonesWithCompletionHandler(_ completionHandler: (([AnyObject]!,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html">CKFetchRecordsOperation</a></td>
+  </tr>
+  <tr>
+    <td>Query</td>
+    <td><p>CKQuery</p>
+      <ul>
+        <li>init!(recordType recordType: String!,<br />
+          predicate predicate: NSPredicate!)</li>
+        <li>var recordType: String! { get }</li>
+        <li>@NSCopying var predicate: NSPredicate! { get }</li>
+        <li>var sortDescriptors: [AnyObject]!</li>
+    </ul></td>
+    <td><p>func performQuery(_ query: CKQuery!,<br />
+      inZoneWithID zoneID: CKRecordZoneID!,<br />
+      completionHandler completionHandler: (([AnyObject]!,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html">CKQueryOperation</a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html">CKFetchRecordsOperation</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html">CKQueryOperation</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>convenience init!(recordIDs recordIDs: [AnyObject]!)</td>
+    <td><p>convenience init!(query query: CKQuery!)</p>
+    <p>convenience init!(cursor cursor: CKQueryCursor!)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>var recordIDs: [AnyObject]!</p>
+    <p>var desiredKeys: [AnyObject]!</p></td>
+    <td><p>@NSCopying var query: CKQuery!</p>
+      <p>@NSCopying var cursor: CKQueryCursor!</p>
+      <p>@NSCopying var zoneID: CKRecordZoneID!<br />
+      </p>
+      <p>var resultsLimit: Int</p>
+    <p>var desiredKeys: [AnyObject]!</p></td>
+  </tr>
+  <tr>
+    <td>perRecord</td>
+    <td><p>var perRecordProgressBlock: ((CKRecordID!, Double) -&gt; Void)!</p>
+      <p>var perRecordCompletionBlock: ((CKRecord!, CKRecordID!, NSError!) -&gt; Void)!</p>
+    <p>&nbsp;</p></td>
+    <td><p>var recordFetchedBlock: ((CKRecord!) -&gt; Void)!</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>completionBlock</td>
+    <td>var fetchRecordsCompletionBlock: (([NSObject : AnyObject]!, NSError!) -&gt; Void)!</td>
+    <td>var queryCompletionBlock: ((CKQueryCursor!, NSError!) -&gt; Void)!</td>
+  </tr>
+</table>
+<h2>&nbsp;</h2>
+<h2>Errors</h2>
+<p>&nbsp;</p>
+<ul>
+  <li>CKError 0x170243ea0: &quot;Partial Failure&quot; (2/1011); &quot;Failed to fetch some records&quot;; partial errors: {...
+    <ul>
+      <li>userInfo
+        <ul>
+          <li>NSUnderlyingError
+            <ul>
+              <li></li>
+              <li>userInfo
+                <ul>
+                  <li>CKPartialErrorsByItemIDKey</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>NSDebugDescription		CKInternalErrorDomain: 1011</li>
+          <li>CKPartialErrors		{ 
+            <ul>
+              <li>&lt;CKRecordID: 0x1702253c0; xxxxxxxxxx:(_defaultZone:__defaultOwner__)&gt;&quot; = &quot;&lt;CKError 0x1742430c0: \&quot;Service Unavailable\&quot; (6/2022); \&quot;Fetching asset failed\&quot;; Retry after 16.0 seconds&gt;&quot;;</li>
+            </ul>
+          </li>
+          <li>NSLocalizedDescription		Failed to fetch some records</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<h2>Incremential </h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html">CKFetchRecordChangesOperation</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td> init!(recordZoneID recordZoneID: CKRecordZoneID!,<br />
+      previousServerChangeToken previousServerChangeToken: CKServerChangeToken!)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>@NSCopying var recordZoneID: CKRecordZoneID!</p>
+      <p>@NSCopying var previousServerChangeToken: CKServerChangeToken!</p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>var recordChangedBlock: ((CKRecord!) -&gt; Void)!</p>
+      <p>var recordWithIDWasDeletedBlock: ((CKRecordID!) -&gt; Void)!</p>
+      <p>var fetchRecordChangesCompletionBlock: ((CKServerChangeToken!, NSData!, NSError!) -&gt; Void)!</p>
+      <p>var moreComing: Bool { get }</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKServerChangeToken_class/index.html#//apple_ref/swift/cl/CKServerChangeToken">CKServerChangeToken</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-record</title>
+</head>
+
+<body>
+<h1>api-record</h1>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/cl/CKRecord">CKRecord</a></p>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html"></a></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/cl/CKRecord">CKRecord</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html">CKReference</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKAsset_class/index.html">CKAsset</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>init!(recordType recordType: String!)</p>
+      <p>init!(recordType recordType: String!,<br />
+        zoneID zoneID: CKRecordZoneID!)</p>
+      <p>init!(recordType recordType: String!,<br />
+    recordID recordID: CKRecordID!)</p></td>
+    <td><p>init!(recordID recordID: CKRecordID!,<br />
+      action action: CKReferenceAction)</p>
+      <p>convenience init!(record record: CKRecord!,<br />
+    action action: CKReferenceAction)</p></td>
+    <td>init!(fileURL fileURL: NSURL!)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func objectForKey(_ key: String!) -&gt; AnyObject!</p>
+    <p>func setObject(_ obj: CKRecordValue!,<br />
+forKey key: String!)</p>
+    <p>func objectForKeyedSubscript(_ key: String!) -&gt; AnyObject!</p>
+    <p> func setObject(_ obj: CKRecordValue!,<br />
+    forKeyedSubscript key: String!)</p>
+    <p>func allKeys() -&gt; [AnyObject]!</p>
+    <p>func changedKeys() -&gt; [AnyObject]!</p></td>
+    <td><p>var referenceAction: CKReferenceAction { get }</p>
+      <p>@NSCopying var recordID: CKRecordID! { get }</p>
+      <p>enum CKReferenceAction : UInt {<br />
+        case None<br />
+        case DeleteSelf<br />
+        }</p>
+    <p></p></td>
+    <td>@NSCopying var fileURL: NSURL! { get }</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/cl/CKRecord">CKRecord</a></p>
+<p>@NSCopying var recordID: CKRecordID! { get }</p>
+<p>var recordType: String! { get }</p>
+<p>@NSCopying var creationDate: NSDate! { get }</p>
+<p>@NSCopying var creatorUserRecordID: CKRecordID! { get }</p>
+<p>@NSCopying var modificationDate: NSDate! { get }</p>
+<p>@NSCopying var lastModifiedUserRecordID: CKRecordID! { get }</p>
+<p>var recordChangeTag: String! { get }</p>
+<p>func allTokens() -&gt; [AnyObject]!</p>
+<p>func encodeSystemFieldsWithCoder(_ coder: NSCoder!)</p>
+</body>
+</html>

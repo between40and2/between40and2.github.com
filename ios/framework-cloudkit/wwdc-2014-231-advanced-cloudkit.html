@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>wwdc-2014-231-advanced-cloudkit</title>
+</head>
+
+<body>
+<h1>wwdc-2014-231-advanced-cloudkit</h1>
+<p>Jacob Farkas</p>
+<p>231 Advanced CloudKit</p>
+<ul>
+  <li>CloudKit private database</li>
+  <li>Modelling your data [26-
+    <ul>
+      <li>References</li>
+      <li>Delete Self References</li>
+    </ul>
+  </li>
+  <li>Advanced record manipulation </li>
+  <li>Handling notifications [32</li>
+  <li>iCloud Dashboard [37
+    <ul>
+      <li>View data</li>
+      <li>Manage schema</li>
+      <li>Control indexing</li>
+      <li>Move to production</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<h2>NSOperation CloudKit API</h2>
+<p>&nbsp;</p>
+<h2>CloudKit private database [6:55-25]</h2>
+<p>Custom Record Zones. </p>
+<p>atomic commits only happen in custom zone in private database !</p>
+<p>&nbsp;</p>
+<p>delta downloads in private database</p>
+<p>&nbsp; </p>
+<p>change token.</p>
+<p>sync different</p>
+<h3>Zone Subscription [14~]</h3>
+<p>Custom Zones</p>
+<p>Notes on Design</p>
+<ul>
+  <li>compartmentalize data
+    <ul>
+      <li>records cannot be moved between zones</li>
+      <li>no cross-zone relationship</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+<h3>Advanced Record Operations</h3>
+<p>Save policies</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>SaveIfServerUnchanged</td>
+    <td>SaveChangedKeys</td>
+    <td>SaveAllKeys</td>
+  </tr>
+  <tr>
+    <td>Locked</td>
+    <td>YES</td>
+    <td>NO</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td>Data Sent</td>
+    <td>Changed Keys</td>
+    <td>Changed Keys</td>
+    <td>All Keys</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Safest</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Conflict</p>
+<p>&nbsp;</p>
+<h3>Partial Records [25]</h3>
+<p>desiredKeys property on CK*Operation : FetchRecords, Query, FetchRecordChanges</p>
+<h2>CloudKit Data Modeling [26~]</h2>
+<p>&nbsp;</p>
+<h3>Back Reference</h3>
+<p>CKQuery(recordType: &quot;Receipt&quot;, predicate: NSPredicate(format: &quot;owner = %@&quot;, shoebox))</p>
+<h3>Delete Self Reference</h3>
+<p>cascading deletes</p>
+<p>topological sort</p>
+<h3>Why Should I use a reference?</h3>
+<p>CloudKit is transport mechanism </p>
+<p>Convert to/from CloudKit object to save or fetch</p>
+<h2>Handling notifications [32~]</h2>
+<p>Push Notifications are Lossy</p>
+<ul>
+  <li>No guarantees on delivery</li>
+  <li>server stores pushes</li>
+  <li>server only stores the latest push</li>
+</ul>
+<p>&nbsp;</p>
+<p>Dropped Notifications</p>
+<p>&nbsp;</p>
+<h2>iCloud Dashboard [37</h2>
+<h3>View Data</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

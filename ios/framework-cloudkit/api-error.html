@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-error</title>
+</head>
+
+<body>
+<h1>api-error</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>InternalError</p>
+    <p>CloudKit encountered an error. This is a non-recoverable error.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><p>CKErrorPartialFailure</p>
+    <p>Some items failed but the operation succeeded overall.</p></td>
+    <td>&nbsp;</td>
+    <td><p>&lt;CKError 0x17405e570: &quot;Partial Failure&quot; (2/1011); &quot;Failed to modify some records&quot;; uuid = 4A53D411-8DB7-4683-8349-49C21314CB7C; container ID = &quot;iCloud.jx.Nutrition&quot;; partial errors: {</p>
+      <p> aaaa:(_defaultZone:__defaultOwner__) = &lt;CKError 0x1742449e0: &quot;Server Record Changed&quot; (14/2004); server message = &quot;record to insert already exists&quot;&gt;</p>
+      <p> bbbb:(_defaultZone:__defaultOwner__) = &lt;CKError 0x17405aa60: &quot;Server Record Changed&quot; (14/2004); server message = &quot;record to insert already exists&quot;&gt;</p>
+    <p>}&gt;</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><p>NetworkUnavailable</p>
+    <p>The network is not available.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><p>NetworkFailure</p>
+    <p>The network was available but returned an error during access.</p></td>
+    <td>&nbsp;</td>
+    <td><p>&lt;CKError 0x174048040: &quot;Network Failure&quot; (4/-1009)&gt;</p>
+      <ul>
+        <li>NSErrorFailingURLStringKey		https://static.gc.apple.com/sap/setup.crt</li>
+        <li>NSErrorFailingURLKey		https://static.gc.apple.com/sap/setup.crt</li>
+        <li>_kCFStreamErrorDomainKey		1</li>
+        <li>_kCFStreamErrorCodeKey		50</li>
+        <li>NSDebugDescription		NSURLErrorDomain: -1009</li>
+        <li>NSUnderlyingError		Error Domain=NSURLErrorDomain Code=-1009 &quot;The operation couldn't be completed. (NSURLErrorDomain error -1009.)&quot; UserInfo=0x1740eaf80 {NSErrorFailingURLStringKey=https://static.gc.apple.com/sap/setup.crt, NSErrorFailingURLKey=https://static.gc.apple.com/sap/setup.crt, _kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50}</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><p>CKErrorBadContainer</p>
+    <p>The specified container is unknown or unauthorized.</p></td>
+    <td>&nbsp;</td>
+    <td>Couldn't get container configuration from the server for container -- missing prefix iCloud in container identifier?</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td><p>CKErrorServiceUnavailable</p>
+    <p>The CloudKit service is unavailable.</p></td>
+    <td>&nbsp;</td>
+    <td>&lt;CKError 0x17004f5d0: &quot;Service Unavailable&quot; (6/2022); &quot;Fetching asset failed&quot;; Retry after 16.0 seconds&gt;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td><p>RequestRateLimited</p>
+    <p>Transfers to and from the server are being rate limited for the client at this time.</p></td>
+    <td>&nbsp;</td>
+    <td><p>&lt;CKError 0x17424d680: &quot;Request Rate Limited&quot; (7/2008); &quot;This operation has been rate limited&quot;; Retry after 1.0 seconds&gt;</p>
+      <p>7</p>
+      <p>CKErrorDomain</p>
+      <p>Optional([NSUnderlyingError, CKRetryAfter, NSDebugDescription, CKErrorShouldThrottleClient, NSLocalizedDescription])</p>
+      <ul>
+        <li> NSUnderlyingError		&lt;CKError 0x174241350: &quot;Unknown Error&quot; (2008); Retry after 1.0 seconds&gt;</li>
+        <li>CKRetryAfter		1</li>
+        <li>NSDebugDescription		CKInternalErrorDomain: 2008</li>
+        <li>CKErrorShouldThrottleClient		1</li>
+        <li>NSLocalizedDescription		This operation has been rate limited</li>
+      </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><p>MissingEntitlement</p>
+    <p>The app is missing a required entitlement.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><p>NotAuthenticated</p>
+    <p>The current user is not authenticated and no user record was available. This might happen if the user is not logged into iCloud.</p></td>
+    <td>&nbsp;</td>
+    <td><p>&lt;CKError 0x170047830: &quot;Not Authenticated&quot; (9/1002); &quot;CloudKit access was denied by user settings&quot;; Retry after 3.0 seconds&gt;</p>
+      <p>9      </p>
+      <p>Optional([NSUnderlyingError, CKRetryAfter, NSDebugDescription, NSLocalizedDescription])</p>
+      <p> NSUnderlyingError		&lt;CKError 0x1700479e0: &quot;Unknown Error&quot; (1002); Retry after 3.0 seconds&gt;</p>
+      <p> CKRetryAfter		3</p>
+      <p> NSDebugDescription		CKInternalErrorDomain: 1002</p>
+      <p> NSLocalizedDescription		CloudKit access was denied by user settings</p>
+      <p>&lt;CKRecord: 0x17412b4a0; recordType=ArticleDoc, recordID=xxxxxx:(_defaultZone:__defaultOwner__), recordChangeTag=(null), values={</p>
+      <p> filename = &quot;xxxxx.txt&quot;;</p>
+    <p>}&gt;</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td><p>PermissionFailure</p>
+    <p>The user did not have permission to perform the specified save or fetch operation.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td><p>UnknownItem</p>
+    <p>The specified record does not exist.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td><p>InvalidArguments</p>
+    <p>The specified request contained bad information, perhaps because of a bad record graph or a malformed predicate.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td><p>ResultsTruncated</p>
+    <p>Query results were truncated by the server.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td><p>ServerRecordChanged</p>
+    <p>The record was rejected because the version on the server was different.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td><p>ServerRejectedRequest</p>
+    <p>The server rejected this request. This is a non-recoverable error.</p></td>
+    <td>&nbsp;</td>
+    <td><p>&lt;CKError 0x174050fb0: &quot;Server Rejected Request&quot; (15/2000); server message = &quot;Internal server error&quot;; uuid = A89D7CEB-8203-4DCD-B4B3-7E6FA4AC2F13; container ID = &quot;iCloud.jx.Nutrition&quot;&gt;)</p>
+    <p>([], [], Error Domain=NSCocoaErrorDomain Code=4097 &quot;The operation couldn't be completed. (Cocoa error 4097.)&quot; (connection to service named com.apple.cloudd) UserInfo=0x174262280 {NSDebugDescription=connection to service named com.apple.cloudd})</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td><p>AssetFileNotFound</p>
+    <p>The specified asset file was not found.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td><p>AssetFileModified</p>
+    <p>The specified asset file content was modified while being saved.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td><p>IncompatibleVersion</p>
+    <p>The app version is less than the minimum allowed version.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td><p>ConstraintViolation</p>
+    <p>The server rejected the request because there was a conflict with a unique field.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td><p>OperationCancelled</p>
+    <p>A CKOperation object was explicitly cancelled.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td><p>ChangeTokenExpired</p>
+    <p>The previousServerChangeToken value is too old and the client must re-sync from scratch.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td><p>BatchRequestFailed</p>
+    <p>One of the items in this batch operation failed in a zone with atomic updates, so the entire batch was rejected.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td><p>ZoneBusy</p>
+    <p>The server is too busy to handle this zone operation. Try the operation again in a few seconds. If you encounter this error again, increase the delay time exponentially for each subsequent retry to minimize server contention for the zone.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td><p>BadDatabase</p>
+    <p>The operation could not be completed on the given database. This problem was likely caused by attempting to modify zones in a public database.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td><p>QuotaExceeded</p>
+    <p>Saving the record would exceed the user's current storage quota.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td><p>ZoneNotFound</p>
+    <p>The specified record zone does not exist on the server.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td><p>LimitExceeded</p>
+    <p>The request to the server was too large. Try refactoring your request into multiple smaller batches.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td><p>UserDeletedZone</p>
+    <p>The user deleted this zone from the settings UI. Remove your local copy of the zone's data or ask the user if you should upload the data again.</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

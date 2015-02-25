@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>wwdc-2014-208-introducing-cloudkit</title>
+</head>
+
+<body>
+<h1>wwdc-2014-208-introducing-cloudkit</h1>
+<p>&nbsp;</p>
+<h2>TOC - Oliver Bonnet </h2>
+<p>&nbsp;</p>
+<ul>
+  <li>What is CloudKit</li>
+  <li>Enabling CloudKit in your app</li>
+  <li>Introduction to the API</li>
+  <li>User Accounts</li>
+  <li>When to use CloudKit</li>
+</ul>
+<p>&nbsp;</p>
+<h2>What is CloudKit</h2>
+<ul>
+  <li>Access to iCloud servers</li>
+  <li>Supports on OS X and iOS</li>
+  <li>Use iCloud accounts</li>
+  <li>Public and private databases</li>
+  <li>Structured and bulk data</li>
+  <li>Transport, not local persistence</li>
+</ul>
+<p>Enabling CloudKit in Your App</p>
+<p>&nbsp;</p>
+<h2>Intruducing CloudKit API -- Paul Seligman</h2>
+<p>Fundamental CloudKit Objects </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Container</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Databases</td>
+    <td><p>&nbsp;</p>
+    <p>public database - either user contributed or provider provided. </p>
+    <p>private database</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Records</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Record Zone</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Record Identifiers</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>References</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Assets</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>Public</td>
+    <td>Private</td>
+  </tr>
+  <tr>
+    <td>Data Type</td>
+    <td>Shared Data</td>
+    <td>Current User's Data</td>
+  </tr>
+  <tr>
+    <td>Account</td>
+    <td>Required for Writing</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td>Quota</td>
+    <td>Developer</td>
+    <td>User</td>
+  </tr>
+  <tr>
+    <td>Default Permissions</td>
+    <td>World Readable</td>
+    <td>User Readable</td>
+  </tr>
+  <tr>
+    <td>Editing Permissions</td>
+    <td>iCloud Dashboard Roles</td>
+    <td>N/A</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>CloudKit's Convenience API [23:40]</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>operational api</td>
+    <td>convenience api</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>let recordID = CKRecordID(recordName: &quot;&quot;)</p>
+    <p>let publicDB = CKContainer.defaultContainer.publicCloudDatabase</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Save</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>
+    <p>let record = CKRecod(recordType: &quot;&quot; recordID: recordID)</p>
+    <p>&nbsp;</p>
+    <p>publicDB.saveRecord(record, completionHandler: {(saved:CKRecord!, error: NSError!) in ...}  )</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Fetch</td>
+    <td>&nbsp;</td>
+    <td>publicDB.fetchRecordWithID(</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>saving  modified record</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Big Data, Tiny Phone [29]</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>the problem and challenge, requirement</td>
+    <td> the answer</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><ul>
+      <li>Keep your large data in the cloud</li>
+      <li>Client views slice of that data</li>
+      <li>Client view can change </li>
+      <li>Clients use queries to focus their viewport</li>
+    </ul></td>
+    <td>CKQuery,</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Queries are polls</p>
+      <p>Great for slicing through large server data. </p>
+      <p>Bad for large, most static data set (bad for battery life, networking traffic, user experience) </p>
+    <p>What you want is the server running your query (in badground, after every record save, </p></td>
+    <td>Subscription </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>CloudKit User Accounts [37:30]</h2>
+<p>&nbsp;</p>
+<p>User Identity </p>
+<p>Metadata </p>
+<p>Privacy</p>
+<p>Discovery</p>
+<p>CKContainer.defaultContainer.fetchUserRecordIDWithCompletionHandler</p>
+<h2>When to use Cloudkit - Oliver Bonnet [49]</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>data structure</td>
+    <td>account</td>
+  </tr>
+  <tr>
+    <td>iCloud Key Value Store</td>
+    <td><ul>
+      <li>Asynchronously kept up to date</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iCloud Drive</td>
+    <td><ul>
+      <li>Simple API</li>
+      <li>Full offline cache</li>
+    </ul></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iCloud Core Data</td>
+    <td><p>Data replicated to all devices</p>
+    <p>Data is single-user</p>
+    <p>Great for </p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CloudKit</td>
+    <td><p>Public data</p>
+    <p>Structured and bulk data</p>
+    <p>large data set</p>
+    <p>&nbsp;</p>
+    <p>Client directed data transfer</p></td>
+    <td>&nbsp;</td>
+    <td>Use iCloud accounts</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h2>Summary [53:30]</h2>
+<ul>
+  <li>Access to iCloud servers</li>
+  <li>Public and private data</li>
+  <li>Structured and bulk</li>
+</ul>
+<p>Dave </p>
+<h2>The End [54:40]</h2>
+</body>
+</html>

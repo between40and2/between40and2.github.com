@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-CKContainer-CKDatabase</title>
+</head>
+
+<body>
+<h1>api-CKContainer-CKDatabase</h1>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html">CKContainer</a></h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>class func defaultContainer() -&gt; CKContainer!</p>
+    <p>init!(identifier containerIdentifier: String!) -&gt; CKContainer</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>var publicCloudDatabase: CKDatabase! { get }</p>
+    <p>var privateCloudDatabase: CKDatabase! { get }</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var containerIdentifier: String! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func accountStatusWithCompletionHandler(_ completionHandler: ((CKAccountStatus,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func requestApplicationPermission(_ applicationPermission: CKApplicationPermissions,<br />
+    completionHandler completionHandler: CKApplicationPermissionBlock!)</p>
+    <p>func statusForApplicationPermission(_ applicationPermission: CKApplicationPermissions,<br />
+completionHandler completionHandler: CKApplicationPermissionBlock!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>func addOperation(_ operation: CKOperation!)</p>
+<p>func addOperation(_ operation: CKDatabaseOperation!)</p>
+<h2>CKDatabase</h2>
+<p>See operations below</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html">CKContainer</a></td>
+    <td>CKDatabase</td>
+  </tr>
+  <tr>
+    <td>addOperation</td>
+    <td>func addOperation(_ operation: CKOperation!)</td>
+    <td>func addOperation(_ operation: CKDatabaseOperation!)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>convenience method and their Operation class</h2>
+<p>&nbsp;</p>
+<h3>Container</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>func discoverAllContactUserInfosWithCompletionHandler(_ completionHandler: (([AnyObject]!,<br />
+      NSError!) -&gt; Void)!)</td>
+    <td>CKDiscoverAllContactsOperation</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>func discoverUserInfoWithEmailAddress(_ email: String!,<br />
+      completionHandler completionHandler: ((CKDiscoveredUserInfo!,<br />
+      NSError!) -&gt; Void)!)</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/cl/CKDiscoverUserInfosOperation">CKDiscoverUserInfosOperation</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>func discoverUserInfoWithUserRecordID(_ userRecordID: CKRecordID!,<br />
+      completionHandler completionHandler: ((CKDiscoveredUserInfo!,<br />
+      NSError!) -&gt; Void)!)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>func fetchUserRecordIDWithCompletionHandler(_ completionHandler: ((CKRecordID!,<br />
+      NSError!) -&gt; Void)!)</td>
+    <td>&nbsp;</td>
+  </tr>
+</table><p>&nbsp;</p>
+<h3>Database</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="5">record</td>
+    <td>func fetchRecordWithID(_ recordID: CKRecordID!,<br />
+completionHandler completionHandler: ((CKRecord!,<br />
+NSError!) -&gt; Void)!)</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/cl/CKFetchRecordsOperation">CKFetchRecordsOperation</a></td>
+  </tr>
+  <tr>
+    <td><p>func performQuery(_ query: CKQuery!,<br />
+      inZoneWithID zoneID: CKRecordZoneID!,<br />
+      completionHandler completionHandler: (([AnyObject]!,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/cl/CKQueryOperationhttps://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/cl/CKQueryOperation">CKQueryOperation</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/cl/CKFetchRecordChangesOperation">CKFetchRecordChangesOperation</a></td>
+  </tr>
+  <tr>
+    <td> <p>func saveRecord(_ record: CKRecord!,<br />
+      completionHandler completionHandler: ((CKRecord!,<br />
+    NSError!) -&gt; Void)!)</p></td>
+    <td rowspan="2"><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/cl/CKModifyRecordsOperation">CKModifyRecordsOperation</a></td>
+  </tr>
+  <tr>
+    <td>func deleteRecordWithID(_ recordID: CKRecordID!,<br />
+      completionHandler completionHandler: ((CKRecordID!,<br />
+    NSError!) -&gt; Void)!)</td>
+  </tr>
+  <tr>
+    <td rowspan="4">record zone</td>
+    <td><p>func fetchAllRecordZonesWithCompletionHandler(_ completionHandler: (([AnyObject]!,<br />
+    NSError!) -&gt; Void)!)</p>
+    <p>&nbsp;</p></td>
+    <td rowspan="2">CKFetchRecordZonesOperation</td>
+  </tr>
+  <tr>
+    <td>func fetchRecordZoneWithID(_ zoneID: CKRecordZoneID!,<br />
+      completionHandler completionHandler: ((CKRecordZone!,<br />
+      NSError!) -&gt; Void)!)</td>
+  </tr>
+  <tr>
+    <td>func saveRecordZone(_ zone: CKRecordZone!,<br />
+      completionHandler completionHandler: ((CKRecordZone!,<br />
+    NSError!) -&gt; Void)!)</td>
+    <td rowspan="2"><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/cl/CKModifyRecordZonesOperation">CKModifyRecordZonesOperation</a></td>
+  </tr>
+  <tr>
+    <td>func deleteRecordZoneWithID(_ zoneID: CKRecordZoneID!,<br />
+      completionHandler completionHandler: ((CKRecordZoneID!,<br />
+    NSError!) -&gt; Void)!)</td>
+  </tr>
+  <tr>
+    <td rowspan="4">subscription</td>
+    <td>func fetchAllSubscriptionsWithCompletionHandler(_ completionHandler: (([AnyObject]!,<br />
+NSError!) -&gt; Void)!)</td>
+    <td rowspan="2"><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/cl/CKFetchSubscriptionsOperation">CKFetchSubscriptionsOperation</a></td>
+  </tr>
+  <tr>
+    <td>func fetchSubscriptionWithID(_ subscriptionID: String!,<br />
+      completionHandler completionHandler: ((CKSubscription!,<br />
+    NSError!) -&gt; Void)!)</td>
+  </tr>
+  <tr>
+    <td>func saveSubscription(_ subscription: CKSubscription!,<br />
+      completionHandler completionHandler: ((CKSubscription!,<br />
+    NSError!) -&gt; Void)!)</td>
+    <td rowspan="2"><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/cl/CKModifySubscriptionsOperation">CKModifySubscriptionsOperation</a></td>
+  </tr>
+  <tr>
+    <td>func deleteSubscriptionWithID(_ subscriptionID: String!,<br />
+      completionHandler completionHandler: ((String!,<br />
+    NSError!) -&gt; Void)!)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>No convenience operation</h3>
+<ul>
+  <li><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/cl/CKFetchNotificationChangesOperation">CKFetchNotificationChangesOperation</a></li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/cl/CKMarkNotificationsReadOperation">CKMarkNotificationsReadOperation</a></li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/cl/CKModifyBadgeOperation">CKModifyBadgeOperation</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
