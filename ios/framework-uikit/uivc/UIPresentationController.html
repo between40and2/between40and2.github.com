@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>PresentationController</title>
+</head>
+
+<body>
+<h1>UIPresentationController-subclassing</h1>
+<p>&nbsp;</p>
+<p>Usage</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>no explicit PC</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>popover PC</td>
+    <td><p>vc_content.modalPresentationStyle = UIModalPresentationPopover</p>
+      <p>UIPopoverPresentationController * popPC = vc_content.popoverPresentationController;</p>
+      <p>popPC.barButtonItem = item;</p>
+      <p>popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; </p>
+    <p>[self presentVC: vc_content]</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>custom PC</td>
+    <td><p>vc_content.transitioningDelegate = </p>
+    <p>vc_content -&gt; UIVCTransitioningDelegate -&gt; UIPresentationController</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>WWDC 2014-228 A Look Inside Presentation Controllers</p>
+<h2>Changes on <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController">UIViewController</a> in iOS 8</h2>
+<p>var presentationController: UIPresentationController? { get }</p>
+<p>var popoverPresentationController: UIPopoverPresentationController? { get }</p>
+<h3>enum UIModalPresentationStyle (<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/c/tdef/UIModalPresentationStyle">Apple Developer Link</a>) (My Link) </h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Built-in </p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>UIAlertController(title: &quot;ss&quot;, message: &quot;222&quot;, preferredStyle: UIAlertControllerStyle.Alert)</td>
+    <td>&nbsp;</td>
+    <td>_UIAlertControllerAlertPresentationController</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td rowspan="2"><p>UIAlertController </p>
+    <p>preferredStyle: UIAlertControllerStyle.ActionSheet</p></td>
+    <td>&nbsp;</td>
+    <td>_UIAlertControllerActionSheetCompactPresentationController</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Your application has presented a UIAlertController (&lt;UIAlertController: 0x12751eb00&gt;) of style UIAlertControllerStyleActionSheet. The modalPresentationStyle of a UIAlertController with this style is UIModalPresentationPopover. You must provide location information for this popover through the alert controller's popoverPresentationController. You must provide either a sourceView and sourceRect or a barButtonItem.  If this information is not known when you present the alert controller, you may provide it in the UIPopoverPresentationControllerDelegate method -prepareForPopoverPresentation.</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Sample</h2>
+<p>LookInsight</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/cl/UIPresentationController">UIPresentationController</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/cl/UIPopoverPresentationController">UIPopoverPresentationController</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>init(presentingViewController presentingViewController: UIViewController!,<br />
+        presentedViewController presentedViewController: UIViewController!)      </p>
+      <p>Getting the Presentation Objects      </p>
+      <ul>
+        <li>var presentingViewController: UIViewController! { get }</li>
+        <li>var presentedViewController: UIViewController! { get }</li>
+        <li>var containerView: UIView! { get }</li>
+        <li>func presentedView() -&gt; UIView!</li>
+      </ul>
+      <p>Adjusting the Size and Layout of the Presentation      </p>
+      <ul>
+        <li>func frameOfPresentedViewInContainerView() -&gt; CGRect</li>
+        <li>var overrideTraitCollection: UITraitCollection!</li>
+        <li>func containerViewWillLayoutSubviews()</li>
+        <li>func containerViewDidLayoutSubviews()</li>
+      </ul>
+      <p>Tracking the Transition's Start and End</p>
+      <ul>
+        <li>func presentationTransitionWillBegin()</li>
+        <li>func presentationTransitionDidEnd(_ completed: Bool)</li>
+        <li>func dismissalTransitionWillBegin()</li>
+        <li>func dismissalTransitionDidEnd(_ completed: Bool)</li>
+      </ul>
+      <p>Getting the Presentation Attributes</p>
+      <ul>
+        <li>var presentationStyle: UIModalPresentationStyle { get }</li>
+        <li>func adaptivePresentationStyle() -&gt; UIModalPresentationStyle</li>
+        <li>func shouldPresentInFullscreen() -&gt; Bool</li>
+        <li>func shouldRemovePresentersView() -&gt; Bool</li>
+    </ul></td>
+    <td><p>&nbsp;</p>
+      <h2>&nbsp;</h2>
+      <p>Configuring the Popover Appearance</p>
+      <p>&nbsp;</p>
+      <ul>
+        <li><s>var popoverContentSize: CGSize</s></li>
+        <li>var popoverLayoutMargins: UIEdgeInsets</li>
+        <li>var backgroundColor: UIColor!</li>
+        <li>var passthroughViews: AnyObject[]!</li>
+        <li>var popoverBackgroundViewClass: AnyObject.Type!</li>
+      </ul>
+      <p>Specifying the Popover's Anchor Point</p>
+      <ul>
+        <li>var barButtonItem: UIBarButtonItem!</li>
+        <li>var sourceView: UIView!</li>
+        <li>var sourceRect: CGRect</li>
+      </ul>
+      <p>&nbsp;</p>
+<p>Configuring the Popover Arrows</p>
+      <ul>
+        <li>var permittedArrowDirections: UIPopoverArrowDirection</li>
+        <li>var arrowDirection: UIPopoverArrowDirection { get }</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Delegate</td>
+    <td><p>var delegate: UIAdaptivePresentationControllerDelegate!</p></td>
+    <td><p>var delegate: UIPopoverPresentationControllerDelegate!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAdaptivePresentationControllerDelegate_protocol/index.html">UIAdaptivePresentationControllerDelegate</a></p>
+    <p>optional func adaptivePresentationStyleForPresentationController(_ controller: UIPresentationController) -&gt; UIModalPresentationStyle</p>
+    <p>optional func presentationController(_ controller: UIPresentationController,<br />
+      viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -&gt; UIViewController?<br />
+    OBJECTIVE-C</p></td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationControllerDelegate_protocol/index.html#//apple_ref/swift/intf/UIPopoverPresentationControllerDelegate">UIPopoverPresentationControllerDelegate</a></p>
+    <p>&nbsp;</p>
+    <p>optional func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController)</p>
+    <p>optional func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -&gt; Bool</p>
+    <p>optional func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController)</p>
+    <p>optional func popoverPresentationController(_ popoverPresentationController: UIPopoverPresentationController,<br />
+willRepositionPopoverToRect rect: UnsafeMutablePointer&lt;CGRect&gt;,<br />
+inView view: AutoreleasingUnsafeMutablePointer&lt;UIView?&gt;)</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>vc_content.modalPresentationStyle = UIModalPresentationPopover</p>
+      <p>UIPopoverPresentationController * popPC = vc_content.popoverPresentationController;</p>
+      <p>popPC.barButtonItem = item;</p>
+      <p>popPC.permittedArrowDirections = UIPopoverArrowDirectionAny; </p>
+    <p>[self presentVC: vc_content]</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>vc_content.settransitionDelegate (CoolTrnasitioningDelegate)</p>
+</body>
+</html>

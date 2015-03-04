@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html">UIContentContainer</a></p>
+<p>&nbsp;</p>
+<h2>Responding to Environment Changes</h2>
+<p>func viewWillTransitionToSize(_ size: CGSize,<br />
+withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)</p>
+<p>func willTransitionToTraitCollection(_ newCollection: UITraitCollection,<br />
+withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)</p>
+<h2>Responding to Changes in Child View Controllers</h2>
+<p>func sizeForChildContentContainer(_ container: UIContentContainer,<br />
+withParentContainerSize parentSize: CGSize) -&gt; CGSize</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>func preferredContentSizeDidChangeForChildContentContainer(_ container: UIContentContainer)</p>
+<p>var preferredContentSize: CGSize { get }</p>
+<p>&nbsp;</p>
+<p>func systemLayoutFittingSizeDidChangeForChildContentContainer(_ container: UIContentContainer)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>See WWDC 2014 228 [30-40]</h2>
+<p>［37］</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>coarse-grain control</p>
+    <p>adaptivity</p>
+    <p>screens</p>
+    <p>auto-hiding status bar</p></td>
+    <td>UIContentContainer willTransitionToTraitCollection</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>medium-grain control</p>
+    <p>child controller size requests</p>
+    <p>rotation</p>
+    <p>resizable simulator</p></td>
+    <td>UIContentContainer viewWillTransitionToSize</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>fine-grain control</p>
+    <p>resize subviews</p>
+    <p>child container views</p></td>
+    <td><p>UIViewController viewWillLayoutSubviews</p>
+    <p>UIPresentationController containerViewWillLayoutSubviews</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
