@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>api-CIDetector</p>
+<p>&nbsp;</p>
+<p>init!(ofType type: String!,<br />
+context context: CIContext!,<br />
+options options: [NSObject : AnyObject]!) -&gt; CIDetector</p>
+<p>&nbsp;</p>
+<p>func featuresInImage(_ image: CIImage!) -&gt; [AnyObject]!</p>
+<p>func featuresInImage(_ image: CIImage!,<br />
+options options: [NSObject : AnyObject]!) -&gt; [AnyObject]!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>let CIDetectorTypeFace: NSString!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>let CIDetectorTypeRectangle: NSString!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>let CIDetectorTypeQRCode: NSString!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><br />
+  <br />
+</p>
+<p>let CIDetectorAccuracy: NSString!<br />
+  let CIDetectorTracking: NSString!<br />
+let CIDetectorMinFeatureSize: NSString!</p>
+<p>var bounds: CGRect { get }</p>
+<h2>Features</h2>
+<ul>
+  <li>NSObject
+    <ul>
+      <li><a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFeature_Ref/index.html#//apple_ref/occ/cl/CIFeature">CIFeature</a>
+        <ul>
+          <li><a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/cl/CIFaceFeature">CIFaceFeature</a></li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html">CIRectangleFeature</a></li>
+          <li><a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/cl/CIQRCodeFeature">CIQRCodeFeature</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p><a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFeature_Ref/index.html#//apple_ref/occ/cl/CIFeature">CIFeature</a></p>
+<p>var bounds: CGRect { get }</p>
+<p>var type: String! { get }</p>
+<p>let CIFeatureTypeFace: NSString!</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/cl/CIFaceFeature">CIFaceFeature</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasFaceAngle: Bool { get }</td>
+    <td>var faceAngle: Float { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasLeftEyePosition: Bool { get }</td>
+    <td>var leftEyePosition: CGPoint { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasRightEyePosition: Bool { get }</td>
+    <td>var rightEyePosition: CGPoint { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasMouthPosition: Bool { get }</td>
+    <td>var mouthPosition: CGPoint { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>iOS 7</p>
+<p>var hasSmile: Bool { get }</p>
+<p>var leftEyeClosed: Bool { get }</p>
+<p>var rightEyeClosed: Bool { get }</p>
+<h3>Tracking Distinct Faces in Video (iOS 6)</h3>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasTrackingID: Bool { get }</td>
+    <td>var trackingID: Int32 { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var hasTrackingFrameCount: Bool { get }</td>
+    <td>var trackingFrameCount: Int32 { get }</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/cl/CIQRCodeFeature">CIQRCodeFeature</a> (iOS 8)</p>
+<p>var messageString: String! { get }</p>
+<ul>
+  <li>var bottomLeft: CGPoint { get }</li>
+  <li>var bottomRight: CGPoint { get }</li>
+  <li>var topLeft: CGPoint { get }</li>
+  <li>var topRight: CGPoint { get }</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html">CIRectangleFeature</a> (iOS 8)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
