@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AVCaptureOutput</title>
+</head>
+
+<body>
+<h1>AVCaptureOutput
+  family </h1>
+<p>&nbsp;</p>
+<p>Categories</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Sample Code</td>
+    <td>since</td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p>With Content Details. e.g. accessing CMSampleBufferRef </p>
+    <p></p></td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureAudioDataOutput">AVCaptureAudioDataOutput</a></p></td>
+    <td><p>&nbsp;</p></td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>AVCaptureVideoDataOutput</td>
+    <td><p>SquareCam</p>
+      <p>GLCameraRipple</p>
+    <p>Core Image Filters with Photos and Video for iOS (CIFunHouse)</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureStillImageOutput">AVCaptureStillImageOutput</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Treat content as a whole, </td>
+    <td><p>AVCaptureFileOutput</p></td>
+    <td>&nbsp;</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>AVCaptureMovieFileOutput</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Processing for you, and return results. </td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/cl/AVCaptureMetadataOutput">AVCaptureMetadataOutput</a></td>
+    <td>&nbsp;</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>XAVCaptureOutputAssistant</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureOutput">AVCaptureOutput</a></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var connections: [AnyObject]! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func connectionWithMediaType(_ mediaType: String!) -&gt; AVCaptureConnection!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func transformedMetadataObjectForMetadataObject(_ metadataObject: AVMetadataObject!,<br />
+connection connection: AVCaptureConnection!) -&gt; AVMetadataObject!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func metadataOutputRectOfInterestForRect(_ rectInOutputCoordinates: CGRect) -&gt; CGRect</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func rectForMetadataOutputRectOfInterest(_ rectInMetadataOutputCoordinates: CGRect) -&gt; CGRect</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>iOS ver</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureAudioDataOutput">AVCaptureAudioDataOutput</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/swift/intf/AVCaptureAudioDataOutputSampleBufferDelegate">AVCaptureAudioDataOutputSampleBufferDelegate</a></td>
+    <td rowspan="5">4</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>AVCaptureFileOutput</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutputRecordingDelegate_Protocol/index.html#//apple_ref/swift/intf/AVCaptureFileOutputRecordingDelegate">AVCaptureFileOutputRecordingDelegate</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>AVCaptureMovieFileOutput</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureStillImageOutput">AVCaptureStillImageOutput</a></td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>AVCaptureVideoDataOutput</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/swift/intf/AVCaptureVideoDataOutputSampleBufferDelegate">AVCaptureVideoDataOutputSampleBufferDelegate</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/cl/AVCaptureMetadataOutput">AVCaptureMetadataOutput</a></td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutputObjectsDelegate_Protocol/index.html#//apple_ref/swift/intf/AVCaptureMetadataOutputObjectsDelegate">AVCaptureMetadataOutputObjectsDelegate</a></p>
+    <p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataObject_Class/index.html#//apple_ref/occ/cl/AVMetadataObject">AVMetadataObject</a> <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/cl/AVMetadataFaceObject">AVMetadataFaceObject</a></p></td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>AVMetadataMachineReadableCodeObject</td>
+    <td>7</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;	</p>
+<p>&nbsp;</p>
+<p>AVCaptureMetadataOutput</p>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureAudioDataOutput">AVCaptureAudioDataOutput</a></p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Managing the Delegate</td>
+    <td><p>func setSampleBufferDelegate(_ sampleBufferDelegate: AVCaptureAudioDataOutputSampleBufferDelegate!,<br />
+    queue sampleBufferCallbackQueue: dispatch_queue_t!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var sampleBufferDelegate: AVCaptureAudioDataOutputSampleBufferDelegate! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>var sampleBufferCallbackQueue: dispatch_queue_t! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting and Setting Audio Settings </td>
+    <td>func recommendedAudioSettingsForAssetWriterWithOutputFileType(_ outputFileType: String!) -&gt; [NSObject : AnyObject]!</td>
+    <td>&nbsp;</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/occ/intf/AVCaptureAudioDataOutputSampleBufferDelegate">AVCaptureAudioDataOutputSampleBufferDelegate</a></p>
+<p>optional func captureOutput(_ captureOutput: AVCaptureOutput!,<br />
+didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,<br />
+fromConnection connection: AVCaptureConnection!)</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/cl/AVCaptureVideoDataOutput">AVCaptureVideoDataOutput</a></p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Configuration</td>
+    <td>var videoSettings: [NSObject : AnyObject]!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var alwaysDiscardsLateVideoFrames: Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func recommendedVideoSettingsForAssetWriterWithOutputFileType(_ outputFileType: String!) -&gt; [NSObject : AnyObject]!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Retrieving Supported Video Types</td>
+    <td>var availableVideoCVPixelFormatTypes: [AnyObject]! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var availableVideoCodecTypes: [AnyObject]! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Managing the Delegate</td>
+    <td><p>func setSampleBufferDelegate(_ sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate!,<br />
+    queue sampleBufferCallbackQueue: dispatch_queue_t!)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var sampleBufferCallbackQueue: dispatch_queue_t! { get }</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/swift/intf/AVCaptureVideoDataOutputSampleBufferDelegate">AVCaptureVideoDataOutputSampleBufferDelegate</a></p>
+<p>optional func captureOutput(_ captureOutput: AVCaptureOutput!,<br />
+didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,<br />
+fromConnection connection: AVCaptureConnection!)</p>
+<p>optional func captureOutput(_ captureOutput: AVCaptureOutput!,<br />
+didDropSampleBuffer sampleBuffer: CMSampleBuffer!,<br />
+fromConnection connection: AVCaptureConnection!)</p>
+</body>
+</html>

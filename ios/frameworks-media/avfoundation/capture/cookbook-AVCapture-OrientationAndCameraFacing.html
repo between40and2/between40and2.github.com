@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>cookbook-AVCapture-OrientationAndCameraFacing</title>
+</head>
+
+<body>
+<p>cookbook-AVCapture-OrientationAndCameraFacing
+</p>
+<p>&nbsp;</p>
+<p>device orientation + cameraFacing (front) </p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>AVCaptureOutput type</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>feature layer</td>
+    <td>&nbsp;</td>
+    <td rowspan="2">VideoData</td>
+    <td rowspan="3">SquareCam</td>
+  </tr>
+  <tr>
+    <td>used in face detector's feature option</td>
+    <td><p>search exifOrientation</p>
+      <p>CIDetectorImageOrientation</p>
+      <p>kCGImagePropertyOrientation</p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>feature/overlay to image , when saving</td>
+    <td>&nbsp;</td>
+    <td rowspan="2">StillImage</td>
+  </tr>
+  <tr>
+    <td>assetsWriterInput's setTransform</td>
+    <td>&nbsp;</td>
+    <td>StopNGo</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Copied from code</p>
+<p> /* kCGImagePropertyOrientation values<br />
+The intended display orientation of the image. If present, this key is a CFNumber value with the same value as defined<br />
+by the TIFF and EXIF specifications -- see enumeration of integer constants.<br />
+The value specified where the origin (0,0) of the image is located. If not present, a value of 1 is assumed.<br />
+<br />
+used when calling featuresInImage: options: The value for this key is an integer NSNumber from 1..8 as found in kCGImagePropertyOrientation.<br />
+If present, the detection will be done based on that orientation but the coordinates in the returned features will still be based on those of the image. */</p>
+</body>
+</html>

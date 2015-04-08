@@ -8,7 +8,7 @@
 <body>
 <h1>UITableView-Elements</h1>
 <p>Since iOS 6, Header/View and Cell are treated in the same manner, thanks to introduction of UICollectionView. Even Header/FooterView is still underused for most developers, it is worthy to study it in comparison with Cell, so that you may get some insight on Cell too, needless to say on UICollectionView too. </p>
-<p>&nbsp;</p>
+<p>UITableView-Mutating </p>
 <p>&nbsp;</p>
 <h2>Creating Elements</h2>
 <p>3 parts/roles in methods are introduced for creating headers and cells.</p>
@@ -116,5 +116,59 @@ forRowAtIndexPath indexPath: NSIndexPath)</td>
 <h2>Inserting, Deleting, and Moving Elements (e.g. Rows and Sections)</h2>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>No Animation</td>
+    <td>With Animation</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/index.html#//apple_ref/occ/instm/UITableView/reloadData">func reloadData()</a></p>
+    <p>make datasource ready. </p></td>
+    <td><p>func beginUpdates()</p>
+    <p>func endUpdates()</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>func insertRowsAtIndexPaths(_ indexPaths: [AnyObject],<br />
+        withRowAnimation animation: UITableViewRowAnimation)</li>
+      <li>func deleteRowsAtIndexPaths(_ indexPaths: [AnyObject],<br />
+withRowAnimation animation: UITableViewRowAnimation)</li>
+      <li>func moveRowAtIndexPath(_ indexPath: NSIndexPath,<br />
+toIndexPath newIndexPath: NSIndexPath)</li>
+      <li>func reloadRowsAtIndexPaths(_ indexPaths: [AnyObject],<br />
+withRowAnimation animation: UITableViewRowAnimation)</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>func insertSections(_ sections: NSIndexSet,<br />
+withRowAnimation animation: UITableViewRowAnimation)</li>
+      <li>func deleteSections(_ sections: NSIndexSet,<br />
+withRowAnimation animation: UITableViewRowAnimation)<br />
+      </li>
+      <li>func moveSection(_ section: Int,<br />
+toSection newSection: Int)</li>
+      <li>func reloadSections(_ sections: NSIndexSet,<br />
+withRowAnimation animation: UITableViewRowAnimation)</li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>enum UITableViewRowAnimation : Int {<br />
+case Fade<br />
+case Right<br />
+case Left<br />
+case Top<br />
+case Bottom<br />
+case None<br />
+case Middle<br />
+case Automatic<br />
+}</p>
 </body>
 </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NSFormatter-Datetime</title>
+</head>
+
+<body>
+<h1>NSFormatter-Datetime</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html">NSDateFormatter</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/cl/NSDateIntervalFormatter">NSDateIntervalFormatter</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/cl/NSDateComponentsFormatter">NSDateComponentsFormatter</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func dateFromString(_ string: String) -&gt; NSDate?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func stringFromDate(_ date: NSDate) -&gt; String</p>
+    <p>class func localizedStringFromDate(_ date: NSDate,<br />
+dateStyle dateStyle: NSDateFormatterStyle,<br />
+timeStyle timeStyle: NSDateFormatterStyle) -&gt; String</p>
+    <p>func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer&lt;AnyObject?&gt;,<br />
+forString string: String,<br />
+range rangep: UnsafeMutablePointer&lt;NSRange&gt;,<br />
+error error: NSErrorPointer) -&gt; Bool</p>
+    <p>var generatesCalendarDates: Bool</p></td>
+    <td>func stringFromDate(_ fromDate: NSDate,<br />
+toDate toDate: NSDate) -&gt; String</td>
+    <td><p>func stringFromDateComponents(_ components: NSDateComponents) -&gt; String?</p>
+      <p>func stringForObjectValue(_ obj: AnyObject) -&gt; String?</p>
+      <p>func stringFromDate(_ startDate: NSDate,<br />
+        toDate endDate: NSDate) -&gt; String?</p>
+      <p>func stringFromTimeInterval(_ ti: NSTimeInterval) -&gt; String?</p>
+      <p>class func localizedStringFromDateComponents(_ components: NSDateComponents,<br />
+    unitsStyle unitsStyle: NSDateComponentsFormatterUnitsStyle) -&gt; String?</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>@NSCopying var calendar: NSCalendar!</td>
+    <td>@NSCopying var calendar: NSCalendar?</td>
+    <td>@NSCopying var calendar: NSCalendar?</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>@NSCopying var locale: NSLocale!</p>
+    <p>@NSCopying var timeZone: NSTimeZone!</p></td>
+    <td><p>@NSCopying var locale: NSLocale?</p>
+    <p>@NSCopying var timeZone: NSTimeZone?</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>var dateFormat: String!</p>
+    <p>var dateStyle: NSDateFormatterStyle</p>
+    <p>var timeStyle: NSDateFormatterStyle</p>
+    <p>class func dateFormatFromTemplate(_ template: String,<br />
+options opts: Int,<br />
+locale locale: NSLocale?) -&gt; String?</p>
+    <p>&nbsp;</p>
+    <p>@NSCopying var defaultDate: NSDate?</p>
+    <p>@NSCopying var twoDigitStartDate: NSDate!</p>
+    <p>@NSCopying var gregorianStartDate: NSDate!</p></td>
+    <td><p>var dateStyle: NSDateIntervalFormatterStyle</p>
+      <p>var timeStyle: NSDateIntervalFormatterStyle</p>
+      <p>var dateTemplate: String?</p>
+      <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
+    <td><p>var allowedUnits: NSCalendarUnit</p>
+    <p>var allowsFractionalUnits: Bool    </p>
+    <p>var collapsesLargestUnit: Bool</p>
+    <p>var includesApproximationPhrase: Bool</p>
+    <p>var includesTimeRemainingPhrase: Bool</p>
+    <p>var maximumUnitCount: Int</p>
+    <p>var unitsStyle: NSDateComponentsFormatterUnitsStyle</p>
+    <p>var zeroFormattingBehavior: NSDateComponentsFormatterZeroFormattingBehavior</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Data Types / Constants</h2>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>enum NSDateFormatterStyle : UInt {<br />
+case NoStyle<br />
+case ShortStyle<br />
+case MediumStyle<br />
+case LongStyle<br />
+case FullStyle<br />
+}</td>
+    <td>enum NSDateIntervalFormatterStyle : UInt {<br />
+      case NoStyle<br />
+      case ShortStyle<br />
+      case MediumStyle<br />
+      case LongStyle<br />
+      case FullStyle<br />
+      }</td>
+    <td>enum NSDateComponentsFormatterUnitsStyle : Int {<br />
+      case Positional<br />
+      case Abbreviated<br />
+      case Short<br />
+      case Full<br />
+      case SpellOut<br />
+      }</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>enum NSDateFormatterBehavior : UInt {<br />
+case BehaviorDefault<br />
+case Behavior10_4<br />
+}</td>
+    <td>&nbsp;</td>
+    <td>struct NSDateComponentsFormatterZeroFormattingBehavior : RawOptionSetType {<br />
+      init(_ rawValue: UInt)<br />
+      init(rawValue rawValue: UInt)<br />
+      static var None: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var Default: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var DropLeading: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var DropMiddle: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var DropTrailing: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var DropAll: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      static var Pad: NSDateComponentsFormatterZeroFormattingBehavior { get }<br />
+      }</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/cl/NSDateComponentsFormatter"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -6,22 +6,74 @@
 </head>
 
 <body>
-<p>UISplitViewController</p>
+<h1>UISplitViewController (Big leap in iOS 8)</h1>
 <p>&nbsp;</p>
-<p>Big leap in iOS 8. See WWDC 2014-214 View Controller Advancements in iOS 8</p>
+<p>WWDC</p>
+<ul>
+  <li>2014
+    <ul>
+      <li>214 View Controller Advancements in iOS 8 [9~20]</li>
+      <li>216 Building Adaptive apps with UIKit [20~]</li>
+    </ul>
+  </li>
+</ul>
 <p>&nbsp;</p>
-<h1><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/doc/uid/TP40009277">UISplitViewController</a></h1>
+<h2><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/doc/uid/TP40009277">UISplitViewController</a></h2>
 <p>&nbsp;</p>
 <ul>
   <li>var viewControllers: [AnyObject]!</li>
   <li>var presentsWithGesture: Bool</li>
   <li>unowned(unsafe) var delegate: UISplitViewControllerDelegate!</li>
 </ul>
-<h2>Managing the Display Mode</h2>
+<p>&nbsp;</p>
+<p>What if only one VC is assigned into viewControllers ?</p>
+<ul>
+  <li>iPad, displays it in full. </li>
+  <li> </li>
+</ul>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iPad</td>
+    <td>displays it in full. </td>
+    <td>Split view controller &lt;UISplitViewController: 0x100911980&gt; should have its children set before layout!</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iPhone 6</td>
+    <td>&nbsp;</td>
+    <td>primaryViewControllerFor CollapsingSplitViewController</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iPhone 6 Plus</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Managing the Display Mode</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td><p><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/doc/uid/TP40009277">UISplitViewController</a></p>
+    <p>Managing the Display Mode</p></td>
+    <td><p><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/doc/uid/TP40009454">UISplitViewControllerDelegate</a>
+    </p>
+    <p>Responding to Display Mode Changes</p></td>
   </tr>
   <tr>
     <td>var preferredDisplayMode: UISplitViewControllerDisplayMode</td>
@@ -29,20 +81,16 @@
   </tr>
   <tr>
     <td>var displayMode: UISplitViewControllerDisplayMode { get }</td>
-    <td>enum UISplitViewControllerDisplayMode : Int {<br />
-case Automatic<br />
-case PrimaryHidden<br />
-case AllVisible<br />
-case PrimaryOverlay<br />
-}</td>
+    <td>optional func splitViewController(_ svc: UISplitViewController!,<br />
+willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode)</td>
   </tr>
   <tr>
     <td>func displayModeButtonItem() -&gt; UIBarButtonItem!</td>
-    <td>&nbsp;</td>
+    <td>optional func targetDisplayModeForActionInSplitViewController(_ svc: UISplitViewController!) -&gt; UISplitViewControllerDisplayMode</td>
   </tr>
 </table>
 <p>&nbsp;</p>
-<h3>UISplitViewControllerDisplayMode</h3>
+<h3>enum UISplitViewControllerDisplayMode : Int </h3>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
@@ -67,6 +115,92 @@ case PrimaryOverlay<br />
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<h2>Collapsing and Expanding the Interface</h2>
+<p>WWDC 2014 214 [12] ; 216 [25?]</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>hR - hC</td>
+    <td>optional func primaryViewControllerForCollapsingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>hC - hR</td>
+    <td><p>optional func primaryViewControllerForExpandingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>hR - hC</td>
+    <td>optional func primaryViewControllerForCollapsingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+      collapseSecondaryViewController secondaryViewController: UIViewController!,<br />
+      ontoPrimaryViewController primaryViewController: UIViewController!) -&gt; Bool</td>
+    <td><p>true, display primary</p>
+    <p>false, display secondary</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>hC - hR</td>
+    <td><p>optional func primaryViewControllerForExpandingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</p>
+      <p></p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+      separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController!) -&gt; UIViewController! </p>
+      <p></p></td>
+    <td><p>nil</p>
+    <p>EmptyVC's instance</p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>iPad</td>
+    <td>iPhone 6</td>
+    <td>iPhone 6 Plus</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>NA</td>
+    <td><p>primaryViewControllerFor CollapsingSplitViewController</p>
+    <p>collapseSecondaryViewController</p></td>
+    <td><p>primaryViewControllerFor CollapsingSplitViewController</p>
+    <p>collapseSecondaryViewController</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>NA</td>
+    <td>NA</td>
+    <td><p>primaryViewControllerFor ExpandingSplitViewController</p>
+    <p>separateSecondaryViewControllerFromPrimaryViewController</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <h2>Getting the Split View Configuration</h2>
 <ul>
   <li>var collapsed: Bool { get }</li>
@@ -76,113 +210,49 @@ case PrimaryOverlay<br />
   <li>var maximumPrimaryColumnWidth: CGFloat</li>
 </ul>
 <h2>Action Methods for Displaying View Controllers</h2>
-<ul>
-  <li>func showDetailViewController(_ vc: UIViewController!,<br />
-sender sender: AnyObject!)</li>
-  <li>func showViewController(_ vc: UIViewController!,<br />
-sender sender: AnyObject!)</li>
-</ul>
-<p>&nbsp;</p>
-<h1>UISplitViewControllerDelegate</h1>
-<h3>Responding to Display Mode Changes</h3>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><p><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/doc/uid/TP40009277">UISplitViewController</a></p>
+    <p>Action Methods for Displaying View Controllers</p></td>
+    <td><p><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/doc/uid/TP40009454">UISplitViewControllerDelegate</a></p>
+    <p>Overriding the Presentation Behavior</p></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>optional func splitViewController(_ svc: UISplitViewController!,<br />
-willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>func showViewController(_ vc: UIViewController!,<br />
+sender sender: AnyObject!)</td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+      showViewController vc: UIViewController!,<br />
+      sender sender: AnyObject!) -&gt; Bool</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>optional func targetDisplayModeForActionInSplitViewController(_ svc: UISplitViewController!) -&gt; UISplitViewControllerDisplayMode</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><p>func showDetailViewController(_ vc: UIViewController!,<br />
+    sender sender: AnyObject!)</p></td>
+    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
+      showDetailViewController vc: UIViewController!,<br />
+      sender sender: AnyObject!) -&gt; Bool</td>
   </tr>
 </table>
+<p></p>
 <p>&nbsp;</p>
-<h3>Collapsing and Expanding the Interface</h3>
-<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/doc/uid/TP40009454">UISplitViewControllerDelegate</a></h2>
+<h3>&nbsp;</h3>
+<p>Overriding the Interface Orientations (iOS 7)</p>
 <table width="100%" border="1">
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>optional func primaryViewControllerForCollapsingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
-collapseSecondaryViewController secondaryViewController: UIViewController!,<br />
-ontoPrimaryViewController primaryViewController: UIViewController!) -&gt; Bool</td>
-    <td>&nbsp;</td>
+    <td>optional func splitViewControllerPreferredInterfaceOrientationForPresentation(_ splitViewController: UISplitViewController) -&gt; UIInterfaceOrientation</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td><p>optional func primaryViewControllerForExpandingSplitViewController(_ splitViewController: UISplitViewController!) -&gt; UIViewController!</p>
-    <p></p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><p>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
-      separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController!) -&gt; UIViewController!
-    </p>
-    <p></p></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h3>Overriding the Presentation Behavior</h3>
-<p>&nbsp;</p>
-<table width="100%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
-showViewController vc: UIViewController!,<br />
-sender sender: AnyObject!) -&gt; Bool</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>optional func splitViewController(_ splitViewController: UISplitViewController!,<br />
-showDetailViewController vc: UIViewController!,<br />
-sender sender: AnyObject!) -&gt; Bool</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>

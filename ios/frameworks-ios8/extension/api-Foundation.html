@@ -17,9 +17,24 @@
   <li><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionRequestHandling_Protocol/index.html#//apple_ref/occ/intf/NSExtensionRequestHandling">NSExtensionRequestHandling</a></li>
 </ul>
 <p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/cl/NSExtensionContext">NSExtensionContext</a></h2>
 <p>&nbsp;</p>
+<p>func cancelRequestWithError(_ error: NSError)</p>
+<p>func completeRequestReturningItems(_ items: [AnyObject]?,<br />
+completionHandler completionHandler: ((Bool) -&gt; Void)?)</p>
 <p>&nbsp;</p>
-<p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/doc/uid/TP40014340">NSFileProviderExtension</a></p>
+<p> func openURL(_ URL: NSURL,<br />
+completionHandler completionHandler: ((Bool) -&gt; Void)?)</p>
+<p>var inputItems: [AnyObject] { get }</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/cl/NSExtensionItem">NSExtensionItem</a></h2>
+<p>&nbsp;</p>
+<p>@NSCopying var attributedTitle: NSAttributedString?</p>
+<p>var userInfo: [NSObject : AnyObject]?</p>
+<p>var attachments: [AnyObject]?</p>
+<p>@NSCopying var attributedContentText: NSAttributedString?</p>
+<p>&nbsp;</p>
+<h2><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/doc/uid/TP40014340">NSFileProviderExtension</a></h2>
 <p>&nbsp;</p>
 <table width="100%" border="1">
   <tr>

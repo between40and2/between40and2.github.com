@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cookbook on CIImage</title>
+</head>
+
+<body>
+<p>Cookbook
+  on CIImage </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Create a pure color image with certain size </p>
+    <p>2015-03-26</p></td>
+    <td><p>let ci = CIImage(color: CIColor(color: UIColor.greenColor()))</p>
+    <p>let ci2 = ci.imageByCroppingToRect(CGRect(x: 0, y: 0, width: 10, height: 10))</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>convert (hard) to CG and UIImage</p>
+    <p>2015-03-26</p></td>
+    <td>let ctx = CIContext(options: nil)<br />
+let cg = ctx.createCGImage(ci, fromRect: ci.extent())<br />
+let ui = UIImage(CGImage: cg)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Filters - Generators</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>Generate QR Code</p>
+    <p>2015-03-25</p></td>
+    <td><p>let data = str.dataUsingEncoding(NSISOLatin1StringEncoding) <br />
+      <br />
+      let filter = CIFilter(&quot;CIQRCodeGenerator&quot;)<br />
+    </p>
+      <p>filter.setValue(data, forKey: &quot;inputMessage&quot;)<br />
+        <br />
+    let ci = filter.outputImage</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/doc/uid/TP40006665-SW15">CIImage Class Reference</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

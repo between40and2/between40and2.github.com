@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NSFormatter-PhysicsUnit</title>
+</head>
+
+<body>
+<h2>NSFormatter-PhysicsUnit (iOS8)</h2>
+<p>&nbsp;</p>
+<ul>
+  <li>NSObject
+    <ul>
+  <li>NSFormatter
+    <ul>
+      <li><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html">NSMassFormatter</a></li>
+      <li><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html">NSLengthFormatter</a></li>
+      <li><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSEnergyFormatter_Class/index.html#//apple_ref/occ/cl/NSEnergyFormatter">NSEnergyFormatter</a></li>
+      </ul>
+  </li>
+  </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<h2>Commons</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3">var forPersonMassUse: Bool </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3"><p>func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer&lt;AnyObject?&gt;,<br />
+      forString string: String,<br />
+      errorDescription error: AutoreleasingUnsafeMutablePointer&lt;NSString?&gt;) -&gt; Bool</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3">@NSCopying var numberFormatter: NSNumberFormatter!</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3">var unitStyle: NSFormattingUnitStyle</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Diffs</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html">NSMassFormatter</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html">NSLengthFormatter</a></td>
+    <td><a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSEnergyFormatter_Class/index.html#//apple_ref/occ/cl/NSEnergyFormatter">NSEnergyFormatter</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func stringFromKilograms(_ numberInKilograms: Double) -&gt; String</p>
+      <p>&nbsp;</p>
+      <p>func stringFromValue(_ value: Double,<br />
+    unit unit: NSMassFormatterUnit) -&gt; String</p></td>
+    <td><p>func stringFromMeters(_ numberInMeters: Double) -&gt; String</p>
+    <p>func stringFromValue(_ value: Double,<br />
+unit unit: NSLengthFormatterUnit) -&gt; String</p></td>
+    <td><p>func stringFromJoules(_ numberInJoules: Double) -&gt; String</p>
+    <p>func stringFromValue(_ value: Double,<br />
+unit unit: NSEnergyFormatterUnit) -&gt; String</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func unitStringFromKilograms(_ numberInKilograms: Double,<br />
+      usedUnit unitp: UnsafeMutablePointer&lt;NSMassFormatterUnit&gt;) -&gt; String</p>
+      <p>func unitStringFromValue(_ value: Double,<br />
+    unit unit: NSMassFormatterUnit) -&gt; String</p></td>
+    <td><p>func unitStringFromMeters(_ numberInMeters: Double,<br />
+    usedUnit unitp: UnsafeMutablePointer&lt;NSLengthFormatterUnit&gt;) -&gt; String</p>
+    <p>func unitStringFromValue(_ value: Double,<br />
+unit unit: NSLengthFormatterUnit) -&gt; String<br />
+    </p></td>
+    <td><p>func unitStringFromJoules(_ numberInJoules: Double,<br />
+    usedUnit unitp: UnsafeMutablePointer&lt;NSEnergyFormatterUnit&gt;) -&gt; String</p>
+    <p>func unitStringFromValue(_ value: Double,<br />
+unit unit: NSEnergyFormatterUnit) -&gt; String</p></td>
+  </tr>
+  <tr>
+    <td>enum</td>
+    <td>enum NSMassFormatterUnit : Int {<br />
+case Gram<br />
+case Kilogram<br />
+case Ounce<br />
+case Pound<br />
+case Stone<br />
+}</td>
+    <td><p>enum NSLengthFormatterUnit : Int {<br />
+      case Millimeter<br />
+      case Centimeter<br />
+      case Meter<br />
+      case Kilometer<br />
+      case Inch<br />
+      case Foot<br />
+      case Yard<br />
+      case Mile<br />
+    }</p></td>
+    <td>enum NSEnergyFormatterUnit : Int {<br />
+case Joule<br />
+case Kilojoule<br />
+case Calorie<br />
+case Kilocalorie<br />
+}</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
