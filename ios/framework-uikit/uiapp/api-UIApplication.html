@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-UIApplication</title>
+<style type="text/css">
+.red {
+	color: #C00;
+}
+</style>
+</head>
+
+<body>
+<p>api-UIApplication</p>
+<p>&nbsp;</p>
+<h2>Aspects</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="api-UIApplication-ApplicationState.html">api-UIApplication-ApplicationState</a></td>
+    <td>2,3,4,6,7</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="api-UIApplication-UserNotification.html">api-UIApplication-UserNotification</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="api-UIApplication-DataProtection.html">api-UIApplication-DataProtection</a></td>
+    <td>4</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="api-UIApplication-StateRestoration.html">api-UIApplication-StateRestoration</a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>iOS 8</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>Tasks</td>
+    <td>UIApplication</td>
+    <td>UIApplicationDelegate</td>
+  </tr>
+  <tr>
+    <td>Getting the App Instance(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>class func sharedApplication() -&gt; UIApplication</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting the App Delegate(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>unowned(unsafe) var delegate: UIApplicationDelegate?</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Getting App Windows(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>var keyWindow: UIWindow? { get }</li>
+      <li>var windows: [AnyObject] { get }</li>
+    </ul>    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Providing a Window for Storyboarding(Available in iOS 5.0 and later.)</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>optional var window: UIWindow? { get set }</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Controlling and Handling Events(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>func sendEvent(_ event: UIEvent) </li>
+      <li>func sendAction(_ action: Selector,              to target: AnyObject?,            from sender: AnyObject?,        forEvent event: UIEvent?) -&gt; Bool</li>
+      <li>func beginIgnoringInteractionEvents()</li>
+      <li>func endIgnoringInteractionEvents() </li>
+      <li>func isIgnoringInteractionEvents() -&gt; Bool</li>
+      <li>var applicationSupportsShakeToEdit: Bool(Available in iOS 3.0 and later.)</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Opening a URL Resource</td>
+    <td><ul>
+      <li>func openURL(_ url: NSURL) -&gt; Bool(Available in iOS 2.0 and later.)</li>
+      <li>func canOpenURL(_ url: NSURL) -&gt; Bool (Available in iOS 3.0 and later.)</li>
+    </ul></td>
+    <td><ul>
+      <li>optional func application(_ application: UIApplication,                   openURL url: NSURL,         sourceApplication sourceApplication: String?,                annotation annotation: AnyObject?) -&gt; Bool(Available in iOS 4.2 and later.)</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Responding to System Notifications(Available in iOS 2.0 and later.)</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>optional func applicationDidReceiveMemoryWarning(_ application: UIApplication)</li>
+      <li>optional func applicationSignificantTimeChange(_ application: UIApplication)</li>
+    </ul>    </td>
+  </tr>
+  <tr>
+    <td>Registering for Remote Control Events(Available in iOS 4.0 and later.)</td>
+    <td><ul>
+      <li>func beginReceivingRemoteControlEvents()</li>
+      <li>func endReceivingRemoteControlEvents()</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Managing the App Idle Timer(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>var idleTimerDisabled: Bool</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Setting the Icon of a Newsstand App(Available in iOS 5.0 and later.)</td>
+    <td><ul>
+      <li>func setNewsstandIconImage(_ image: UIImage?)</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Deprecated Methods in iOS8</td>
+    <td><ul>
+      <li>func registerForRemoteNotificationTypes(_ types: UIRemoteNotificationType)</li>
+      <li>func enabledRemoteNotificationTypes() -&gt; UIRemoteNotificationType</li>
+    </ul>    </td>
+    <td><ul>
+      <li>optional func applicationDidFinishLaunching(_ application: UIApplication)</li>
+      <li>optional func application(_ application: UIApplication,             handleOpenURL url: NSURL) -&gt; Boolsa </li>
+    </ul></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

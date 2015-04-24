@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-UIApplication-StateRestoration</title>
+<style type="text/css">
+.red {	color: #C00;
+}
+</style>
+</head>
+
+<body>
+<h1>api-UIApplication-StateRestoration</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>Managing the State Restoration Behavior(Available in iOS 6.0 and later.)</td>
+    <td><ul>
+      <li>func extendStateRestoration()</li>
+      <li>func completeStateRestoration()</li>
+      <li></li>
+    </ul></td>
+    <td><ul>
+      <li> optional func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -&gt; Bool</li>
+      <li> optional func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -&gt; Bool</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Managing App State Restoration(<span class="red">Available in iOS 6.0 and later</span>.)</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li></li>
+      <li> optional func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [AnyObject],                                       coder coder: NSCoder) -&gt; UIViewController?</li>
+      <li>optional func application(_ application: UIApplication, willEncodeRestorableStateWithCoder coder: NSCoder)</li>
+      <li> optional func application(_ application: UIApplication, didDecodeRestorableStateWithCoder coder: NSCoder)</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>(Available in iOS 7.0 and later.)</td>
+    <td><ul>
+      <li>func ignoreSnapshotOnNextApplicationLaunch()</li>
+      <li>class func registerObjectForStateRestoration(_ object: UIStateRestoring,                        restorationIdentifier restorationIdentifier: String)</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p><a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/StrategiesforImplementingYourApp/StrategiesforImplementingYourApp.html#//apple_ref/doc/uid/TP40007072-CH5-SW2">Preserving Your App's Visual Appearance Across Launches</a></p>
+</body>
+</html>

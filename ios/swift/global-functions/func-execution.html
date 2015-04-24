@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>func-execution</title>
+</head>
+
+<body>
+<h1>func-execution</h1>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func assert</p></td>
+    <td>(condition: @autoclosure () -&gt; Bool, _ message: @autoclosure () -&gt; String = default, file: StaticString = default, line: UWord = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>@inline(__always)  func assertionFailure</p></td>
+    <td>(_ message: @autoclosure () -&gt; String = default, file: StaticString = default, line: UWord = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>@noreturn  func fatalError</td>
+    <td>(_ message: @autoclosure () -&gt; String = default, file: StaticString = default, line: UWord = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func precondition</td>
+    <td>(condition: @autoclosure () -&gt; Bool, _ message: @autoclosure () -&gt; String = default, file: StaticString = default, line: UWord = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>@noreturn  func preconditionFailure</td>
+    <td>(_ message: @autoclosure () -&gt; String = default, file: StaticString = default, line: UWord = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<h2>Description</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>assert</td>
+    <td><p>Traditional C-style assert with an optional message.</p>
+    <p>Use this function for internal sanity checks that are active during testing but do not impact performance of shipping code. To check for invalid usage in Release builds; see precondition.</p></td>
+  </tr>
+  <tr>
+    <td>assertionFailure</td>
+    <td><p>Indicate that an internal sanity check failed.</p>
+    <p>Use this function to stop the program, without impacting the performance of shipping code, when control flow is not expected to reach the call (e.g. in the default case of a switch where you have knowledge that one of the other cases must be satisfied). To protect code from invalid usage in Release builds; see preconditionFailure.</p></td>
+  </tr>
+  <tr>
+    <td><a href="http://swiftdoc.org/func/fatalError/">fatalError</a></td>
+    <td>Unconditionally print a message and stop execution.</td>
+  </tr>
+  <tr>
+    <td><a href="http://swiftdoc.org/func/precondition/">precondition</a></td>
+    <td><p>Check a necessary condition for making forward progress.</p>
+    <p>Use this function to detect conditions that must prevent the program from proceeding even in shipping code.</p></td>
+  </tr>
+  <tr>
+    <td>preconditionFailure</td>
+    <td>Indicate that a precondition was violated.</td>
+  </tr>
+</table>
+<h2>In Difference builds</h2>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>In playgrounds and -Onone builds (the default for Xcode's Debug configuration)</td>
+    <td>In -O builds (the default for Xcode's Release configuration)</td>
+    <td>In -Ounchecked builds</td>
+  </tr>
+  <tr>
+    <td><p>assert</p>
+    <p>&nbsp;</p></td>
+    <td> if condition evaluates to false, stop program execution in a debuggable state after printing message.</td>
+    <td>condition is not evaluated, and there are no effects.</td>
+    <td><p>condition is not evaluated, but the optimizer may assume that it would evaluate to true. </p>
+    <p>Failure to satisfy that assumption in -Ounchecked builds is a serious programming error.</p></td>
+  </tr>
+  <tr>
+    <td><p>assertionFailure</p></td>
+    <td>stop program execution in a debuggable state after printing message.</td>
+    <td>has no effect.</td>
+    <td><p>the optimizer may assume that this function will never be called. </p>
+    <p>Failure to satisfy that assumption is a serious programming error.</p></td>
+  </tr>
+  <tr>
+    <td>precondition</td>
+    <td>if condition evaluates to false, stop program execution in a debuggable state after printing message.</td>
+    <td>if condition evaluates to false, stop program execution.</td>
+    <td><p>condition is not evaluated, but the optimizer may assume that it would evaluate to true. </p>
+    <p>Failure to satisfy that assumption in -Ounchecked builds is a serious programming error.</p></td>
+  </tr>
+  <tr>
+    <td><p>preconditionFailure</p>
+    <p>&nbsp;</p></td>
+    <td>stop program execution in a debuggable state after printing message.</td>
+    <td>stop program execution.</td>
+    <td> <p>the optimizer may assume that this function will never be called. </p>
+    <p>Failure to satisfy that assumption is a serious programming error.</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

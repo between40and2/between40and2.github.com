@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>func-CollectionType</title>
+</head>
+
+<body>
+<h1>func-CollectionType</h1>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func count&lt;T : _CollectionType&gt;(x: T) -&gt; T.Index.Distance</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func find&lt;C : CollectionType where C.Generator.Element : Equatable&gt;(domain: C, value: C.Generator.Element) -&gt; C.Index?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func first&lt;C : CollectionType&gt;(x: C) -&gt; C.Generator.Element?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func indices&lt;C : CollectionType&gt;(x: C) -&gt; Range&lt;C.Index&gt;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>isEmpty&lt;C : CollectionType&gt;(x: C) -&gt; Bool</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func last&lt;C : CollectionType where C.Index : BidirectionalIndexType&gt;(x: C) -&gt; C.Generator.Element?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func reverse&lt;C : CollectionType where C.Index : BidirectionalIndexType&gt;(source: C) -&gt; [C.Generator.Element]</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>MutableCollectionType</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="2">func partition</td>
+    <td>&lt;C : MutableCollectionType where C.Index : RandomAccessIndexType, C.Generator.Element : Comparable&gt;</td>
+    <td>(inout elements: C, range: Range&lt;C.Index&gt;)</td>
+    <td>-&gt; C.Index</td>
+  </tr>
+  <tr>
+    <td><p>&lt;C : MutableCollectionType where C.Index : RandomAccessIndexType&gt;</p></td>
+    <td>(inout elements: C, range: Range&lt;C.Index&gt;, isOrderedBefore: (C.Generator.Element, C.Generator.Element) -&gt; Bool) </td>
+    <td>-&gt; C.Index</td>
+  </tr>
+  <tr>
+    <td rowspan="2">func sort</td>
+    <td>&lt;C : MutableCollectionType where C.Index : RandomAccessIndexType, C.Generator.Element : Comparable&gt;</td>
+    <td>(inout collection: C)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&lt;C : MutableCollectionType where C.Index : RandomAccessIndexType&gt;</p></td>
+    <td>(inout collection: C, isOrderedBefore: (C.Generator.Element, C.Generator.Element) -&gt; Bool)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func dropFirst</td>
+    <td><p>&lt;Seq : Sliceable&gt;</p></td>
+    <td>(s: Seq)</td>
+    <td> -&gt; Seq.SubSlice</td>
+  </tr>
+  <tr>
+    <td>func dropLast</td>
+    <td>&lt;S : Sliceable where S.Index : BidirectionalIndexType&gt;</td>
+    <td>(s: S) </td>
+    <td>-&gt; S.SubSlice</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func prefix</td>
+    <td>&lt;S : Sliceable&gt;</td>
+    <td>(s: S, maxLength: Int)</td>
+    <td> -&gt; S.SubSlice</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func split</td>
+    <td><p>&lt;S : Sliceable, R : BooleanType&gt;</p></td>
+    <td>(elements: S, maxSplit: Int = default, allowEmptySlices: Bool = default, #isSeparator: @noescape (S.Generator.Element) -&gt; R)</td>
+    <td> -&gt; [S.SubSlice]</td>
+  </tr>
+  <tr>
+    <td>func suffix</td>
+    <td>&lt;S : Sliceable where S.Index : BidirectionalIndexType&gt;</td>
+    <td>(s: S, maxLength: Int)</td>
+    <td> -&gt; S.SubSlice</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>RangeReplaceableCollectionType</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func extend</td>
+    <td>&lt;C : RangeReplaceableCollectionType, S : CollectionType where C.Generator.Element == C.Generator.Element&gt;</td>
+    <td>(inout x: C, newElements: S)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func insert</td>
+    <td><p>&lt;C : RangeReplaceableCollectionType&gt;</p></td>
+    <td>(inout x: C, newElement: C.Generator.Element, atIndex i: C.Index)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func removeAll</td>
+    <td>&lt;C : RangeReplaceableCollectionType&gt;</td>
+    <td>(inout x: C, keepCapacity: Bool = default)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>func removeAtIndex</td>
+    <td>&lt;C : RangeReplaceableCollectionType&gt;</td>
+    <td>(inout x: C, index: C.Index)</td>
+    <td> -&gt; C.Generator.Element</td>
+  </tr>
+  <tr>
+    <td>func removeLast</td>
+    <td>&lt;C : RangeReplaceableCollectionType where C.Index : BidirectionalIndexType&gt;</td>
+    <td>(inout x: C) </td>
+    <td>-&gt; C.Generator.Element</td>
+  </tr>
+  <tr>
+    <td>func removeRange</td>
+    <td>&lt;C : RangeReplaceableCollectionType&gt;</td>
+    <td>(inout x: C, subRange: Range&lt;C.Index&gt;)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func splice&lt;C : RangeReplaceableCollectionType, S : CollectionType where C.Generator.Element == C.Generator.Element&gt;(inout x: C, newElements: S, atIndex i: C.Index)</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>func join&lt;C : ExtensibleCollectionType, S : SequenceType where C == C&gt;(separator: C, elements: S) -&gt; C</p>
+<p>&nbsp;</p>
+</body>
+</html>

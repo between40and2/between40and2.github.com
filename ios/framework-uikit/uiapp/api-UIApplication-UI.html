@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>api-UIApplication-UI</title>
+</head>
+
+<body>
+<p>api-UIApplication-UI</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>UIApplication</td>
+    <td>UIApplicationDelegate or UIApplication Notification</td>
+  </tr>
+  <tr>
+    <td>Controlling App Appearance(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>func setStatusBarHidden(_ hidden: Bool,           withAnimation animation: UIStatusBarAnimation)(Available in iOS 3.2 and later.)</li>
+      <li>var statusBarHidden: Bool</li>
+      <li>func setStatusBarStyle(_ statusBarStyle: UIStatusBarStyle,               animated animated: Bool)</li>
+      <li>var statusBarStyle: UIStatusBarStyle</li>
+      <li>var statusBarFrame: CGRect { get }</li>
+      <li>var networkActivityIndicatorVisible: Bool</li>
+      <li>var applicationIconBadgeNumber: Int</li>
+      <li>var userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection { get }(Available in iOS 5.0 and later.)</li>
+    </ul></td>
+    <td><p>UIApplicationWillChangeStatusBarFrameNotification</p>
+      <p>UIApplicationWillChangeStatusBarOrientationNotification</p>
+      <p>UIApplicationDidChangeStatusBarFrameNotification</p>
+    <p>UIApplicationDidChangeStatusBarOrientationNotification</p></td>
+  </tr>
+  <tr>
+    <td>Managing the Default Interface Orientations(Available in iOS 6.0 and later.)</td>
+    <td><ul>
+      <li>func supportedInterfaceOrientationsForWindow(_ window: UIWindow) -&gt; Int</li>
+    </ul></td>
+    <td> optional func application(_ application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -&gt; Int(Available in iOS 6.0 and later.)</td>
+  </tr>
+  <tr>
+    <td>Managing Status Bar Orientation(Available in iOS 2.0 and later.)</td>
+    <td><ul>
+      <li>func setStatusBarOrientation(_ interfaceOrientation: UIInterfaceOrientation,                     animated animated: Bool)</li>
+      <li>var statusBarOrientation: UIInterfaceOrientation</li>
+      <li>var statusBarOrientationAnimationDuration: NSTimeInterval { get }</li>
+    </ul></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Managing Status Bar Changes(<span class="red">Available in iOS 2.0 and later</span>.)</td>
+    <td>&nbsp;</td>
+    <td><ul>
+      <li>optional func application(_ application: UIApplication, willChangeStatusBarOrientation newStatusBarOrientation: UIInterfaceOrientation,                       duration duration: NSTimeInterval)</li>
+      <li> optional func application(_ application: UIApplication, didChangeStatusBarOrientation oldStatusBarOrientation: UIInterfaceOrientation)</li>
+      <li>optional func application(_ application: UIApplication,  willChangeStatusBarFrame newStatusBarFrame: CGRect)</li>
+      <li>optional func application(_ application: UIApplication,   didChangeStatusBarFrame oldStatusBarFrame: CGRect)</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Getting the Font Sizing Preference(Available in iOS 7.0 and later.)</td>
+    <td><ul>
+      <li>var preferredContentSizeCategory: String { get }</li>
+    </ul></td>
+    <td>UIContentSizeCategoryDidChangeNotification</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>UIApplicationWillChangeStatusBarFrameNotification</p>
+<p>UIApplicationWillChangeStatusBarOrientationNotification</p>
+<p>UIApplicationDidChangeStatusBarFrameNotification</p>
+<p>UIApplicationDidChangeStatusBarOrientationNotification</p>
+<p>&nbsp;</p>
+<p>UIApplicationUserDidTakeScreenshotNotification</p>
+<p>&nbsp;</p>
+<p>UIContentSizeCategoryDidChangeNotification</p>
+</body>
+</html>
