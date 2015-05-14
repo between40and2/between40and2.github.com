@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NSFileManager-Read</title>
+</head>
+
+<body>
+<h1><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileManager_Class/index.html">NSFileManager</a>-Read</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>func URLForDirectory(_ directory: NSSearchPathDirectory,<br />
+inDomain domain: NSSearchPathDomainMask,<br />
+appropriateForURL url: NSURL?,<br />
+create shouldCreate: Bool,<br />
+error error: NSErrorPointer) -&gt; NSURL?</p>
+<p>&nbsp;</p>
+<p>func URLsForDirectory(_ directory: NSSearchPathDirectory,<br />
+inDomains domainMask: NSSearchPathDomainMask) -&gt; [AnyObject]</p>
+<p>&nbsp;</p>
+<p>Locating Application Group Container Directories (iOS 7)</p>
+<p>func containerURLForSecurityApplicationGroupIdentifier(_ groupIdentifier: String) -&gt; NSURL?</p>
+<p>&nbsp;</p>
+<p>Discovering Directory Contents</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>URL version</td>
+    <td>Path version</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func contentsOfDirectoryAtURL(_ url: NSURL,<br />
+includingPropertiesForKeys keys: [AnyObject]?,<br />
+options mask: NSDirectoryEnumerationOptions,<br />
+error error: NSErrorPointer) -&gt; [AnyObject]?</td>
+    <td>func contentsOfDirectoryAtPath(_ path: String,<br />
+error error: NSErrorPointer) -&gt; [AnyObject]?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func enumeratorAtURL(_ url: NSURL,<br />
+includingPropertiesForKeys keys: [AnyObject]?,<br />
+options mask: NSDirectoryEnumerationOptions,<br />
+errorHandler handler: ((NSURL!,<br />
+NSError!) -&gt; Bool)?) -&gt; NSDirectoryEnumerator?</td>
+    <td>func enumeratorAtPath(_ path: String) -&gt; NSDirectoryEnumerator?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>func subpathsOfDirectoryAtPath(_ path: String,<br />
+error error: NSErrorPointer) -&gt; [AnyObject]?</td>
+    <td>func subpathsAtPath(_ path: String) -&gt; [AnyObject]?</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>func mountedVolumeURLsIncludingResourceValuesForKeys(_ propertyKeys: [AnyObject]?,<br />
+    options options: NSVolumeEnumerationOptions) -&gt; [AnyObject]?</p></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Getting the Relationship Between Items (iOS 8)</h2>
+<p>func getRelationship(_ outRelationship: UnsafeMutablePointer&lt;NSURLRelationship&gt;,<br />
+ofDirectoryAtURL directoryURL: NSURL,<br />
+toItemAtURL otherURL: NSURL,<br />
+error error: NSErrorPointer) -&gt; Bool</p>
+<p>func getRelationship(_ outRelationship: UnsafeMutablePointer&lt;NSURLRelationship&gt;,<br />
+ofDirectory directory: NSSearchPathDirectory,<br />
+inDomain domainMask: NSSearchPathDomainMask,<br />
+toItemAtURL url: NSURL,<br />
+error error: NSErrorPointer) -&gt; Bool</p>
+<p>&nbsp;</p>
+<p>enum NSURLRelationship : Int {<br />
+case Contains<br />
+case Same<br />
+case Other<br />
+}</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

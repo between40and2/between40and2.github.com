@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>IntervalType</title>
+</head>
+
+<body>
+<h1>IntervalType</h1>
+<ul>
+  <li>1 protocol
+    <ul>
+      <li>IntervalType</li>
+    </ul>
+  </li>
+  <li>2 structs  
+    <ul>
+      <li>ClosedInterval</li>
+      <li>HalfOpenInterval</li>
+    </ul>
+  </li>
+  <li>2 global funcs
+    <ul>
+      <li>overlaps</li>
+      <li> ~=</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// An interval over a `Comparable` type.<br />
+    protocol IntervalType </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// The type of the `Interval`\ 's endpoints<br />
+    typealias Bound : Comparable</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>/// Returns `true` iff the interval contains `value`<br />
+      func contains(value: Bound) -&gt; Bool</p>
+      <p> /// Return `rhs` clamped to `self`.  The bounds of the result, even<br />
+        /// if it is empty, are always within the bounds of `self`<br />
+    func clamp(intervalToClamp: Self) -&gt; Self</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>/// True iff `self` is empty<br />
+      var isEmpty: Bool { get }</p>
+      <p> /// The `Interval`\ 's lower bound. Invariant: `start` &lt;= `end`<br />
+        var start: Bound { get }</p>
+      <p> /// The `Interval`\ 's upper bound. Invariant: `start` &lt;= `end`<br />
+    var end: Bound { get }</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>// A closed `IntervalType`, which contains both its `start` and its<br />
+      /// `end`.  Cannot represent an empty interval.</td>
+    <td>/// A half-open `IntervalType`, which contains its `start` but not its<br />
+/// `end`.  Can represent an empty interval.<br />
+ : IntervalType, Equatable, Printable, DebugPrintable, Reflectable</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>struct ClosedInterval&lt;T : Comparable&gt;  Equatable</td>
+    <td>struct HalfOpenInterval&lt;T : Comparable&gt;</td>
+  </tr>
+  <tr>
+    <td>IntervalType</td>
+    <td>/// The type of the `Interval`\ 's endpoints<br />
+typealias Bound = T</td>
+    <td>/// The type of the `Interval`\ 's endpoints<br />
+typealias Bound = T</td>
+  </tr>
+  <tr>
+    <td>Equatable</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><p>/// Construct a copy of `x`<br />
+      init(_ x: ClosedInterval&lt;T&gt;)</p>
+      <p> /// Construct an interval with the given bounds.  Requires: `start`<br />
+        /// &lt;= `end`.<br />
+    init(_ start: T, _ end: T)</p></td>
+    <td><p>/// Construct a copy of `x`<br />
+      init(_ x: HalfOpenInterval&lt;T&gt;)</p>
+      <p> /// Construct an interval with the given bounds.  Requires: `start`<br />
+        /// &lt;= `end`.<br />
+    init(_ start: T, _ end: T)</p></td>
+  </tr>
+  <tr>
+    <td>IntervalType</td>
+    <td><p>var start: T { get }</p>
+      <p>var end: T { get }</p>
+      <p>&nbsp;</p>
+      <p> /// Returns `true` iff the `Interval` contains `x`<br />
+        func contains(x: T) -&gt; Bool</p>
+      <p> /// Return `intervalToClamp` clamped to `self`.  The bounds of the<br />
+        /// result, even if it is empty, are always limited to the bounds of<br />
+        /// `self`<br />
+        func clamp(intervalToClamp: ClosedInterval&lt;T&gt;) -&gt; ClosedInterval&lt;T&gt;</p>
+      <p><br />
+      </p></td>
+    <td><ul>
+      <li>var start: T { get }<br />
+        </li>
+      <li>var end: T { get }</li>
+    </ul>
+<p>&nbsp;</p>
+      <p> /// Returns `true` iff the `Interval` contains `x`<br />
+        func contains(x: T) -&gt; Bool</p>
+      <p> /// Return `intervalToClamp` clamped to `self`.  The bounds of the<br />
+        /// result, even if it is empty, are always limited to the bounds of<br />
+        /// `self`<br />
+    func clamp(intervalToClamp: HalfOpenInterval&lt;T&gt;) -&gt; HalfOpenInterval&lt;T&gt;</p></td>
+  </tr>
+  <tr>
+    <td>Printable, DebugPrintable</td>
+    <td><ul>
+      <li>var description: String { get }</li>
+      <li>var debugDescription: String { get }</li>
+    </ul></td>
+    <td><ul>
+      <li>var description: String { get }</li>
+      <li>var debugDescription: String { get }      </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td>Reflectable</td>
+    <td>/// Returns a mirror that reflects `self`.<br />
+func getMirror() -&gt; MirrorType</td>
+    <td>/// Returns a mirror that reflects `self`.<br />
+func getMirror() -&gt; MirrorType</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>/// `true` iff the `Interval` is empty.  In the case of<br />
+/// `ClosedInterval`, always returns `false`<br />
+var isEmpty: Bool { get }</td>
+    <td>/// `true` iff the `Interval` is empty.<br />
+var isEmpty: Bool { get }</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>/// Returns `true` if `lhs` and `rhs` have a non-empty intersection</td>
+    <td><br />
+    func overlaps&lt;I0 : IntervalType, I1 : IntervalType where I0.Bound == I0.Bound&gt;</td>
+    <td>&nbsp;</td>
+    <td>(lhs: I0, rhs: I1) -&gt; Bool</td>
+  </tr>
+  <tr>
+    <td>/// Returns `true` iff `pattern` contains `value`</td>
+    <td><br />
+    func ~=&lt;I : IntervalType&gt;</td>
+    <td>&nbsp;</td>
+    <td>(pattern: I, value: I.Bound) -&gt; Bool</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
